@@ -71,6 +71,7 @@ public class ManipuladorXML {
 
 					for (int j = 0; j < nlAutores.getLength(); j++) {
 						Node autor = nlAutores.item(j);
+						
 
 						// este é um hashmap...
 						NamedNodeMap atributosDoAutor = autor.getAttributes();
@@ -78,6 +79,8 @@ public class ManipuladorXML {
 						// pega tag nome autor
 						String nomeCompletoAutor = atributosDoAutor.getNamedItem("NOME-COMPLETO-DO-AUTOR")
 								.getNodeValue();
+						
+						System.out.println("Tratando autor " + nomeCompletoAutor);
 
 						// if (atributosDoAutor.getNamedItem("NRO-ID-CNPQ") ==
 						// null) {
@@ -93,6 +96,7 @@ public class ManipuladorXML {
 						
 						Pessoa pessoaux = pessoaExiste(nomeCompletoAutor, idCNPQAutor);
 						if (pessoaux == null){
+							System.out.println("Incluindo autor " + nomeCompletoAutor);
 							pessoaux = new Pessoa(nomeCompletoAutor, idCNPQAutor);
 							mapaPessoas.put(nomeCompletoAutor, pessoaux);
 
@@ -110,14 +114,14 @@ public class ManipuladorXML {
 						if (listaPublicacoes.isEmpty()) {
 
 							listaPublicacoes.add(publicacao);
-							estaNaLista = true;
+							
 						} else {
 
 							for (int x = 0; x < listaPublicacoes.size(); x++) {
 								if (listaPublicacoes.get(x).getTitulo().trim().equals(publicacao.getTitulo().trim())
 										&& listaPublicacoes.get(x).getAno().trim().equals(publicacao.getAno().trim())) {
 									estaNaLista = true;
-
+									break;
 								} else {
 									estaNaLista = false;
 								}
@@ -147,25 +151,26 @@ public class ManipuladorXML {
 
 		// varre a lista de publicacoes
 		for (int i = 0; i < listaPublicacoes.size(); i++) {
-			 System.out.println("\n\n"+listaPublicacoes.get(i).getTitulo());
+			 Publicacao publicacao = listaPublicacoes.get(i);
+			System.out.println("\n\n"+publicacao.getTitulo());
 
 			// varre a lista de coautores de cada publicacao
-			for (int j = 0; j < listaPublicacoes.get(i).getCoautores().size(); j++) {
+			for (int j = 0; j < publicacao.getCoautores().size(); j++) {
 
-				Tupla par = existePar(listaPublicacoes.get(i).getAutor(),listaPublicacoes.get(i).getCoautores().get(j));
+				Tupla par = existePar(publicacao.getAutor(),publicacao.getCoautores().get(j));
 				
 				if (par == null) {
 					par = new Tupla();
-					par.setP1(listaPublicacoes.get(i).getAutor());
-					par.setP2(listaPublicacoes.get(i).getCoautores().get(j));
-					par.getPublicacoes().add(listaPublicacoes.get(i));
+					par.setP1(publicacao.getAutor());
+					par.setP2(publicacao.getCoautores().get(j));
+					par.getPublicacoes().add(publicacao);
 					par.setPeso(1);
 					listaDePares.add(par);
 					System.out.println("entrou no if");
 					System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
 				} else {
-					if(!checaEAdicionaPublicacao(listaPublicacoes.get(i), par)){
-						par.getPublicacoes().add(listaPublicacoes.get(i));
+					if(!checaEAdicionaPublicacao(publicacao, par)){
+						par.getPublicacoes().add(publicacao);
 						par.setPeso(par.getPeso()+1);
 						System.out.println("entrou no else");
 						System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
@@ -190,30 +195,36 @@ public class ManipuladorXML {
 	public static Tupla existePar(Pessoa p1, Pessoa p2){
 		
 		for (Tupla tupla : listaDePares) {
-			if(tupla.getP1().getId().equals(tupla.getP2().getId())|| tupla.getP1().getNome().equals(tupla.getP2().getNome())){
-				//lancar excecao
-			}
-			if(p1.getId().equals(tupla.getP1().getId()) && p2.getId().equals(tupla.getP2().getId()) || p1.getNome().equals(tupla.getP1().getId()) && p2.getNome().equals(tupla.getP2().getNome())){
+			if (tupla.saoMembros(p1, p2)) {
 				return tupla;
 			}
-			if(p1.getId().equals(tupla.getP2().getId()) && p2.getId().equals(tupla.getP1().getId()) || p1.getNome().equals(tupla.getP2().getNome()) && p2.getNome().equals(tupla.getP1().getNome())){
-				return tupla;
-			}
+//			if(tupla.getP1().getId().equals(tupla.getP2().getId())|| tupla.getP1().getNome().equals(tupla.getP2().getNome())){
+//				//lancar excecao
+//			}
+//			if(p1.getId().equals(tupla.getP1().getId()) && p2.getId().equals(tupla.getP2().getId()) || p1.getNome().equals(tupla.getP1().getId()) && p2.getNome().equals(tupla.getP2().getNome())){
+//				return tupla;
+//			}
+//			if(p1.getId().equals(tupla.getP2().getId()) && p2.getId().equals(tupla.getP1().getId()) || p1.getNome().equals(tupla.getP2().getNome()) && p2.getNome().equals(tupla.getP1().getNome())){
+//				return tupla;
+//			}
 			
 		}
 		return null;
 	}
 	
 	public static Pessoa pessoaExiste(String nome, String id){
-		for (String s : mapaPessoas.keySet()) {
-			if(s.equals(nome) || s.equals(id)){
-				Pessoa p = mapaPessoas.get(s);
-				return p;
-			}
-		}
-
-
-		return null;
+		return mapaPessoas.get(nome);
+		
+		
+//		for (String s : mapaPessoas.keySet()) {
+//			if(s.equals(nome) || s.equals(id)){
+//				Pessoa p = mapaPessoas.get(s);
+//				return p;
+//			}
+//		}
+//
+//
+//		return null;
 	}
 
 	private static Document criaDocument(File curriculo) {

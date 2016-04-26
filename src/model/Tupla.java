@@ -43,7 +43,10 @@ public class Tupla {
 		return false;
 	}
 	
-	
+	public boolean saoMembros(Pessoa p1, Pessoa p2) {
+		return (p1.equals(this.p1) && p2.equals(this.p2)) ||
+			   (p1.equals(this.p2) && p2.equals(this.p1));
+	}
 	
 	
 	
