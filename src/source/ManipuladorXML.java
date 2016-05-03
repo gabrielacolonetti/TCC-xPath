@@ -80,7 +80,7 @@ public class ManipuladorXML {
 						String nomeCompletoAutor = atributosDoAutor.getNamedItem("NOME-COMPLETO-DO-AUTOR")
 								.getNodeValue();
 						
-						System.out.println("Tratando autor " + nomeCompletoAutor);
+//						System.out.println("Tratando autor " + nomeCompletoAutor);
 
 						// if (atributosDoAutor.getNamedItem("NRO-ID-CNPQ") ==
 						// null) {
@@ -96,7 +96,7 @@ public class ManipuladorXML {
 						
 						Pessoa pessoaux = pessoaExiste(nomeCompletoAutor, idCNPQAutor);
 						if (pessoaux == null){
-							System.out.println("Incluindo autor " + nomeCompletoAutor);
+//							System.out.println("Incluindo autor " + nomeCompletoAutor);
 							pessoaux = new Pessoa(nomeCompletoAutor, idCNPQAutor);
 							mapaPessoas.put(nomeCompletoAutor, pessoaux);
 
@@ -152,7 +152,7 @@ public class ManipuladorXML {
 		// varre a lista de publicacoes
 		for (int i = 0; i < listaPublicacoes.size(); i++) {
 			 Publicacao publicacao = listaPublicacoes.get(i);
-			System.out.println("\n\n"+publicacao.getTitulo());
+//			System.out.println("\n\n"+publicacao.getTitulo());
 
 			// varre a lista de coautores de cada publicacao
 			for (int j = 0; j < publicacao.getCoautores().size(); j++) {
@@ -166,14 +166,14 @@ public class ManipuladorXML {
 					par.getPublicacoes().add(publicacao);
 					par.setPeso(1);
 					listaDePares.add(par);
-					System.out.println("entrou no if");
-					System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
+//					System.out.println("entrou no if");
+//					System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
 				} else {
 					if(!checaEAdicionaPublicacao(publicacao, par)){
 						par.getPublicacoes().add(publicacao);
 						par.setPeso(par.getPeso()+1);
-						System.out.println("entrou no else");
-						System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
+//						System.out.println("entrou no else");
+//						System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
 					}
 					
 				}

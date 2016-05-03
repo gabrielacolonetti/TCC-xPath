@@ -19,21 +19,24 @@ public class Main {
 
 		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
 		List<Tupla> listaTupla = ManipuladorXML.criaPares();
-
-		for (Tupla tupla : listaTupla) {
-			System.out.println(
-					"\n\n" + tupla.getP1().getNome() + "---" + tupla.getP2().getNome() + "---" + tupla.getPeso());
-
-			for (int i = 0; i < tupla.getPublicacoes().size(); i++) {
-				System.out.println(
-						tupla.getPublicacoes().get(i).getTitulo() + "-" + tupla.getPublicacoes().get(i).getAno());
-
-			}
-		}
-
+		
 		Grafo g = new Grafo();
 		g.criaVertice(listaTupla);
-		System.out.println(g);
+//		System.out.println(g);
+    	g.criaGrupo();
+
+		
+//		for (Tupla tupla : listaTupla) {
+//			System.out.println(
+//					"\n\n" + tupla.getP1().getNome() + "---" + tupla.getP2().getNome() + "---" + tupla.getPeso());
+//
+//			for (int i = 0; i < tupla.getPublicacoes().size(); i++) {
+//				System.out.println(
+//						tupla.getPublicacoes().get(i).getTitulo() + "-" + tupla.getPublicacoes().get(i).getAno());
+//
+//			}
+//		}
+
 
 		// for (Publicacao p : listaPublicacao) {
 		// System.out.println("\n\n\n"+p.getTitulo()+"--"+p.getAno());
