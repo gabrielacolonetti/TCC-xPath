@@ -3,8 +3,12 @@ package main;
 import java.io.File;
 import java.util.List;
 
+import org.jgrapht.graph.DefaultWeightedEdge;
+import org.jgrapht.graph.SimpleWeightedGraph;
+
 import model.CalcFilesUtil;
 import model.Grafo;
+import model.Grupo;
 //import model.Pessoa;
 import model.Publicacao;
 import model.Tupla;
@@ -23,8 +27,15 @@ public class Main {
 		Grafo g = new Grafo();
 		g.criaVertice(listaTupla);
 //		System.out.println(g);
-    	g.criaGrupo();
-
+		List<Grupo> listaDegrupos= g.criaGrupo();
+		for(int i=0;i<listaDegrupos.size();i++){
+			for(int j=0;j<listaDegrupos.get(i).getGrupos().size();j++){
+			System.out.println(listaDegrupos.get(i).getGrupos().get(j));
+			
+			}
+			System.out.println("\n\n");
+		}
+			
 		
 //		for (Tupla tupla : listaTupla) {
 //			System.out.println(

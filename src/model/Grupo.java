@@ -2,14 +2,12 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+
 
 import org.jgrapht.graph.DefaultWeightedEdge;
 
 public class Grupo {
 
-	
 	List<DefaultWeightedEdge> grupos;
 	
 	public Grupo(){
@@ -23,5 +21,7 @@ public class Grupo {
 	public void setGrupos(List<DefaultWeightedEdge> grupos) {
 		this.grupos = grupos;
 	}
+
+
 	
 }
