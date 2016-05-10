@@ -36,7 +36,7 @@ public class ManipuladorXML {
 		try {
 
 			for (File curriculo : listaDeCurriculoXML) {
-
+				System.out.println("Analisando curriculo " + curriculo.getName());
 				if (curriculo.isDirectory())
 					continue;
 				Document document = criaDocument(curriculo);

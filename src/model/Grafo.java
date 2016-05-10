@@ -13,11 +13,30 @@ public class Grafo {
 	SimpleWeightedGraph<String, DefaultWeightedEdge> grafo;
 	List<Grupo> listaDegrupos = new ArrayList<Grupo>();
 	SimpleWeightedGraph<String, DefaultWeightedEdge> grafoCopia = new SimpleWeightedGraph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
+	int threshold = 1;
+
+	public int getThreshold() {
+		return threshold;
+	}
+
+
+	public void setThreshold(int threshold) {
+		this.threshold = threshold;
+	}
+
+
+	public SimpleWeightedGraph<String, DefaultWeightedEdge> getObjetoGrafo() {
+		return grafo;
+	}
+
+	
+	public SimpleWeightedGraph<String, DefaultWeightedEdge> getGrafoCopia() {
+		return grafoCopia;
+	}
 
 
 	public Grafo(){
 		grafo = new SimpleWeightedGraph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
-
 	}
 
 	public double retornaPeso(DefaultWeightedEdge e){
@@ -45,17 +64,30 @@ public class Grafo {
 				System.err.println("Autor nulo!");
 				System.exit(1);
 			}
-			grafo.addVertex(p1);
-			grafo.addVertex(p2);
-			DefaultWeightedEdge e = new DefaultWeightedEdge();
-			grafo.setEdgeWeight(e, tupla.getPeso());
-			grafo.addEdge(p1, p2, e);
-
+			try {
+			
+			incluirDupla(grafo, p1, p2, tupla);
+			incluirDupla(grafoCopia, p1, p2, tupla);
+			} catch (Exception e) {
+				for (Publicacao p : tupla.getPublicacoes()) {
+					System.out.println(p.getTitulo());
+				}
+				throw e;
+			}
+			
 
 
 
 		}
-		grafoCopia = grafo;
+	}
+
+
+	private void incluirDupla(SimpleWeightedGraph<String, DefaultWeightedEdge> grafoIncluir, String p1, String p2, Tupla tupla) {
+		grafoIncluir.addVertex(p1);
+		grafoIncluir.addVertex(p2);
+		DefaultWeightedEdge e = new DefaultWeightedEdge();
+		grafoIncluir.setEdgeWeight(e, tupla.getPeso());
+		grafoIncluir.addEdge(p1, p2, e);
 	}
 
 	public void addArestasMaiorNoGrupo(Grupo grupo, SimpleWeightedGraph<String, DefaultWeightedEdge> grafoCopia, List<DefaultWeightedEdge> arestasPesoMaior){
@@ -69,7 +101,7 @@ public class Grafo {
 		     
 		for (DefaultWeightedEdge dw : arestas) {
 			double peso = retornaPeso(dw);
-			if(peso>=1){
+			if(peso>=getThreshold()){
 				grafoCopia.setEdgeWeight(dw, 0);
 				grupo.getGrupos().add(dw);
 				retornaArestasVertice1(dw, grupo, grafoCopia);
@@ -82,7 +114,7 @@ public class Grafo {
 	     
 		for (DefaultWeightedEdge dw : arestas) {
 			double peso = retornaPeso(dw);
-			if(peso>=1){
+			if(peso>=getThreshold()){
 				grafoCopia.setEdgeWeight(dw, 0);
 				grupo.getGrupos().add(dw);
 				retornaArestasVertice2(dw, grupo, grafoCopia);
@@ -149,7 +181,7 @@ public class Grafo {
 		for (DefaultWeightedEdge dw : listaAresta1) {
 
 			double peso = retornaPeso(dw);
-			if(peso>1){
+			if(peso>threshold){
 				criaGrupo();
 				
 				
