@@ -64,6 +64,10 @@ public class Grafo {
 				System.err.println("Autor nulo!");
 				System.exit(1);
 			}
+			if (p1 == p2 ) {
+				System.err.println("Autores iguais!");
+				continue;
+			}
 			try {
 			
 			incluirDupla(grafo, p1, p2, tupla);
@@ -162,7 +166,7 @@ public class Grafo {
 
 		for (DefaultWeightedEdge dw : listaAresta) {
 			double peso = retornaPeso(dw);
-			if(peso >maior ){ //&& peso>3
+			if(peso >maior && peso>=threshold){ //&& peso>3
 				maior = peso;
 				arestaMaior = dw;
 			}
@@ -181,17 +185,36 @@ public class Grafo {
 		for (DefaultWeightedEdge dw : listaAresta1) {
 
 			double peso = retornaPeso(dw);
-			if(peso>threshold){
+			if(peso>=threshold){
 				criaGrupo();
 				
 				
 			}
 			
 		}
-
+		incluirGruposRestantes();
 		return listaDegrupos;
 
 
+
+	}
+
+
+	private void incluirGruposRestantes() {
+		Grupo grupo = new Grupo();
+		Set<DefaultWeightedEdge> listaAresta1 = grafoCopia.edgeSet();
+
+
+		for (DefaultWeightedEdge dw : listaAresta1) {
+
+			double peso = retornaPeso(dw);
+			if(peso<=threshold && peso!=0){
+				grafoCopia.setEdgeWeight(dw, 0);
+				grupo.getGrupos().add(dw);
+				listaDegrupos.add(grupo);
+			}
+
+		}
 
 	}
 

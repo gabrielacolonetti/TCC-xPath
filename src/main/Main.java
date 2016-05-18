@@ -18,8 +18,8 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		//CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/mega-plus");
-		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/debug");
+		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/plus");
+//		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/debug");
 		List<File> listaDeCurriculoXML = calcFilesUtil.getCurriculosXML();
 
 		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
@@ -27,7 +27,7 @@ public class Main {
 
 		Grafo g = new Grafo();
 		g.criaVertice(listaTupla);
-		// System.out.println(g);
+//		 System.out.println(g);
 		g.setThreshold(3);
 		List<Grupo> listaDegrupos = g.criaGrupo();
 		for (int i = 0; i < listaDegrupos.size(); i++) {
