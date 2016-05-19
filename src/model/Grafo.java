@@ -201,14 +201,15 @@ public class Grafo {
 
 
 	private void incluirGruposRestantes() {
-		Grupo grupo = new Grupo();
 		Set<DefaultWeightedEdge> listaAresta1 = grafoCopia.edgeSet();
 
 
 		for (DefaultWeightedEdge dw : listaAresta1) {
 
 			double peso = retornaPeso(dw);
+
 			if(peso<=threshold && peso!=0){
+				Grupo grupo = new Grupo();
 				grafoCopia.setEdgeWeight(dw, 0);
 				grupo.getGrupos().add(dw);
 				listaDegrupos.add(grupo);
