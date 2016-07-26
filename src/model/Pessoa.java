@@ -1,11 +1,17 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //import java.util.ArrayList;
 //import java.util.List;
 
 public class Pessoa {
 	private String nome;
 	private String id;
+	//private List<String> areas = new ArrayList<String>();
+	//private List<String> especialidade = new ArrayList<String>();
+
 	//private List<Publicacao> publicacoes = new ArrayList<Publicacao>();
 	//private List<Pessoa> coautores = new ArrayList<Pessoa>();
 	
@@ -28,6 +34,12 @@ public class Pessoa {
 	public void setId(String id) {
 		this.id = id;
 	}
+//	public List<String> getAreas() {
+//		return areas;
+//	}
+//	public void setAreas(List<String> areas) {
+//		this.areas = areas;
+//	}
 	
 	
 	

@@ -36,7 +36,7 @@ public class ManipuladorXML {
 		try {
 
 			for (File curriculo : listaDeCurriculoXML) {
-				System.out.println("Analisando curriculo " + curriculo.getName());
+				//System.out.println("Analisando curriculo " + curriculo.getName());
 				if (curriculo.isDirectory())
 					continue;
 				Document document = criaDocument(curriculo);
@@ -45,6 +45,8 @@ public class ManipuladorXML {
 				XPath xpath = xPathfactory.newXPath();
 				// XPathExpression exprAchaArtigos =
 				// xpath.compile("//ARTIGO-PUBLICADO");
+				
+	
 				XPathExpression exprAchaArtigos = xpath
 						.compile("/CURRICULO-VITAE/PRODUCAO-BIBLIOGRAFICA/ARTIGOS-PUBLICADOS/ARTIGO-PUBLICADO");
 				NodeList nlArtigos = (NodeList) exprAchaArtigos.evaluate(document, XPathConstants.NODESET);
@@ -52,6 +54,18 @@ public class ManipuladorXML {
 				XPathExpression exprAchaTitulo = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@TITULO-DO-ARTIGO");
 				XPathExpression exprAchaAno = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@ANO-DO-ARTIGO");
 				XPathExpression exprAchaAutores = xpath.compile("AUTORES");
+				
+				
+				
+
+				//XPathExpression exprAchaNomeArea = xpath.compile("contains(local-name(), 'AREA-DO-CONHECIMENTO')/@NOME-DA-AREA-DO-CONHECIMENTO");
+
+				
+				//XPathExpression exprAchaNomeArea = xpath.compile("[starts-with(name(),'AREA-DO-CONHECIMENTO')*]/@NOME-DA-AREA-DO-CONHECIMENTO");
+				//XPathExpression exprAchaNomeArea = xpath.compile("substring-before(name(),AREA-DO-CONHECIMENTO) =''*/@NOME-DA-AREA-DO-CONHECIMENTO");
+				//[substring(name(), string-length(name()) - 2) = 'AREA-DO-CONHECIMENTO']*
+				///data/stats/*[substring-after(name(), '_cost') = '']
+			
 
 				for (int i = 0; i < nlArtigos.getLength(); i++) {
 					Node artigo = nlArtigos.item(i);
@@ -101,6 +115,37 @@ public class ManipuladorXML {
 							mapaPessoas.put(nomeCompletoAutor, pessoaux);
 
 						}
+					
+						XPathExpression exprAchaAreasConhecimento = xpath.compile("//AREAS-DO-CONHECIMENTO");
+						XPathExpression exprAchaArea = xpath.compile("//*[starts-with(name(), 'AREA-DO-CONHECIMENTO')]");
+						XPathExpression exprAchaNomeAreaConhecimento = xpath.compile("@NOME-DA-AREA-DO-CONHECIMENTO");
+						XPathExpression exprAchaNomeEspecialidade = xpath.compile("@NOME-DA-ESPECIALIDADE");
+
+						NodeList nlAreasConhecimento = (NodeList) exprAchaAreasConhecimento.evaluate(document, XPathConstants.NODESET);
+
+						for (int x=0; x < nlAreasConhecimento.getLength() ;x++){
+							Node nodeAreas = nlAreasConhecimento.item(x);
+							NodeList nlAreasConhecimentoNome = (NodeList) exprAchaArea.evaluate(nodeAreas, XPathConstants.NODESET);
+							
+							
+							for(int s=0;s < nlAreasConhecimentoNome.getLength();s++){
+								Node nodeNomeAreaConhecimento = nlAreasConhecimentoNome.item(s);
+
+								String nomeArea = (String) exprAchaNomeAreaConhecimento.evaluate(nodeNomeAreaConhecimento, XPathConstants.STRING);
+								String nomeEspecialidade = (String) exprAchaNomeEspecialidade.evaluate(nodeNomeAreaConhecimento, XPathConstants.STRING);
+
+								
+								System.out.println("nome da area "+ s +": "+nomeArea);
+								System.out.println("especialidade "+ s +": "+nomeEspecialidade);
+
+						}
+
+							
+							
+							
+							
+						    //pessoaux.getAreas().add(nomeArea);
+						}
 							
 						// verifica se é autor
 						if (j == 0) {
@@ -134,6 +179,9 @@ public class ManipuladorXML {
 
 						// System.out.println(nomeCompletoAutor + " - " +
 						// idCNPQAutor );
+						
+
+						
 
 					}
 					continue;
@@ -166,13 +214,11 @@ public class ManipuladorXML {
 					par.getPublicacoes().add(publicacao);
 					par.setPeso(1);
 					listaDePares.add(par);
-//					System.out.println("entrou no if");
 //					System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
 				} else {
 					if(!checaEAdicionaPublicacao(publicacao, par)){
 						par.getPublicacoes().add(publicacao);
 						par.setPeso(par.getPeso()+1);
-//						System.out.println("entrou no else");
 //						System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
 					}
 					
