@@ -1,19 +1,16 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-//import java.util.ArrayList;
-//import java.util.List;
+import java.util.HashMap;
 
 public class Pessoa {
 	private String nome;
 	private String id;
-	//private List<String> areas = new ArrayList<String>();
-	//private List<String> especialidade = new ArrayList<String>();
+	private HashMap<String,String> areas = new HashMap<String, String>();
+	private String codUniversidade ;
 
 	//private List<Publicacao> publicacoes = new ArrayList<Publicacao>();
 	//private List<Pessoa> coautores = new ArrayList<Pessoa>();
+	
 	
 	public Pessoa() {
 		
@@ -34,27 +31,22 @@ public class Pessoa {
 	public void setId(String id) {
 		this.id = id;
 	}
-//	public List<String> getAreas() {
-//		return areas;
-//	}
-//	public void setAreas(List<String> areas) {
-//		this.areas = areas;
-//	}
+
+	public HashMap<String, String> getAreas() {
+		return areas;
+	}
+	public void setAreas(HashMap<String, String> areas) {
+		this.areas = areas;
+	}
+	public String getCodUniversidade() {
+		return codUniversidade;
+	}
+	public void setCodUniversidade(String codUniversidade) {
+		this.codUniversidade = codUniversidade;
+	}
 	
 	
-	
-//	public List<Publicacao> getPublicacoes() {
-//		return publicacoes;
-//	}
-//	public void setPublicacoes(List<Publicacao> publicacoes) {
-//		this.publicacoes = publicacoes;
-//	}
-//	public List<Pessoa> getCoautores() {
-//		return coautores;
-//	}
-//	public void setCoautores(List<Pessoa> coautores) {
-//		this.coautores = coautores;
-//	}
+
 	
 	
 	

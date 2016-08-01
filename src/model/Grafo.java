@@ -130,26 +130,30 @@ public class Grafo {
 
 
 
-	public Grupo retornaArestasVertice1(DefaultWeightedEdge e,Grupo grupo, SimpleWeightedGraph<String, DefaultWeightedEdge> grafoCopia){
+	public Grupo retornaArestasVertice1(DefaultWeightedEdge arestaMaior,Grupo grupo, SimpleWeightedGraph<String, DefaultWeightedEdge> grafoCopia){
 		//pego vertice1
-		String v1= grafoCopia.getEdgeSource(e);
+		String v1= grafoCopia.getEdgeSource(arestaMaior);
 
 		//pego as arestas do vertice1
-		Set<DefaultWeightedEdge> arestasV1 =  grafoCopia.edgesOf(v1);
-		verificaPesoArestasV1(arestasV1,grafoCopia,grupo);
+		if(v1 !=null){
+			Set<DefaultWeightedEdge> arestasV1 =  grafoCopia.edgesOf(v1);
+			verificaPesoArestasV1(arestasV1,grafoCopia,grupo);
+			return grupo;
+		}
 		return grupo;
-		
 	}
 	
-	public Grupo retornaArestasVertice2(DefaultWeightedEdge e,Grupo grupo, SimpleWeightedGraph<String, DefaultWeightedEdge> grafoCopia){
+	public Grupo retornaArestasVertice2(DefaultWeightedEdge arestaMaior,Grupo grupo, SimpleWeightedGraph<String, DefaultWeightedEdge> grafoCopia){
 		//pego vertice1
-		String v1= grafoCopia.getEdgeTarget(e);
+		String v1= grafoCopia.getEdgeTarget(arestaMaior);
 
 		//pego as arestas do vertice1
-		Set<DefaultWeightedEdge> arestasV2 =  grafoCopia.edgesOf(v1);
-		verificaPesoArestasV1(arestasV2,grafoCopia,grupo);
+		if (v1 != null){
+			Set<DefaultWeightedEdge> arestasV2 =  grafoCopia.edgesOf(v1);
+			verificaPesoArestasV1(arestasV2,grafoCopia,grupo);
+			return grupo;
+		}
 		return grupo;
-		
 	}
 
 
