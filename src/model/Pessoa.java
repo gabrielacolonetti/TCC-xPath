@@ -6,7 +6,7 @@ public class Pessoa {
 	private String nome;
 	private String id;
 	private HashMap<String,String> areas = new HashMap<String, String>();
-	private String codUniversidade ;
+	//private String codUniversidade ;
 
 	//private List<Publicacao> publicacoes = new ArrayList<Publicacao>();
 	//private List<Pessoa> coautores = new ArrayList<Pessoa>();
@@ -38,12 +38,12 @@ public class Pessoa {
 	public void setAreas(HashMap<String, String> areas) {
 		this.areas = areas;
 	}
-	public String getCodUniversidade() {
-		return codUniversidade;
-	}
-	public void setCodUniversidade(String codUniversidade) {
-		this.codUniversidade = codUniversidade;
-	}
+//	public String getCodUniversidade() {
+//		return codUniversidade;
+//	}
+//	public void setCodUniversidade(String codUniversidade) {
+//		this.codUniversidade = codUniversidade;
+//	}
 	
 	
 

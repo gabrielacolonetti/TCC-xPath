@@ -6,6 +6,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
@@ -28,16 +29,18 @@ public class Main {
 		List<File> listaDeCurriculoXML = calcFilesUtil.getCurriculosXML();
 
 		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
-		//List<Tupla> listaTupla = ManipuladorXML.criaPares();
-
+		List<Tupla> listaTupla = ManipuladorXML.criaPares();
 		Grafo g = new Grafo();
-		//g.criaVertice(listaTupla);
+		g.criaVertice(listaTupla);
 //		 System.out.println(g);
 		g.setThreshold(3);
-		//List<Grupo> listaDegrupos = g.criaGrupo();
+		HashMap<String,List<String>> mapaDeVerticeQuantidadeVizinhos = g.retornaTodosVerticesGrafo();
+		
+//		List<Grupo> listaDegrupos = g.criaGrupoAlgoritmoSimples();
 //		PrintStream p = new PrintStream("grupos.txt");
 //		System.setOut(p);
-		//lista de publicacao
+		
+		//lista de publicacao imprimi titulo, ano, autor, coautores
 //		for (Publicacao p1 : listaPublicacao) {
 //			System.out.println("\n\n\n"+p1.getTitulo()+"--"+p1.getAno());
 //			System.out.println(p1.getAutor().getNome());
@@ -52,25 +55,20 @@ public class Main {
 //
 //		}
 
+		//imprimi area e especialidade do autor principal
 			for (int i =0; i < listaPublicacao.size(); i++)	{
 				HashMap<String,String> areas = listaPublicacao.get(i).getAutor().getAreas();
-				System.out.println(listaPublicacao.get(i).getAutor().getNome()+" cod: "+listaPublicacao.get(i).getAutor().getCodUniversidade());
-				System.out.println(listaPublicacao.get(i).getCoautores().get(0).getNome()+" cod: " +listaPublicacao.get(i).getCoautores().get(0).getCodUniversidade());
-
+				
 				for (String area: areas.keySet()){
 					
 					System.out.println("Area: "+areas.get(area)+ " Especialização: "+ area);
 				
 				}
-				
-					
-					
 			}
 		
 		
-		
+		//imprimi a lista de grupos com seus pesos
 //		for (int i = 0; i < listaDegrupos.size(); i++) {
-			
 //            System.setOut(p);
 //			System.out.println("Grupo " + i + "\n\n");
 //			
@@ -86,6 +84,8 @@ public class Main {
 //		p.close();
 
 
+		//imprimi a lista de tuplas
+		
 //		 for (Tupla tupla : listaTupla) {
 //		 System.out.println(
 //		 "\n" + tupla.getP1().getNome() + "---" + tupla.getP2().getNome() +
@@ -98,7 +98,14 @@ public class Main {
 //		
 //		 }
 //		 }
-
+		
+		//imprimi os vertices e seus vizinhos	
+		for (Map.Entry<String,List<String>> v1 : mapaDeVerticeQuantidadeVizinhos.entrySet()) {
+			System.out.println(v1.getKey());
+			for (String vizinhos: v1.getValue()){
+				System.out.println(vizinhos);
+			}
+		}
 		 
 	}
 }
