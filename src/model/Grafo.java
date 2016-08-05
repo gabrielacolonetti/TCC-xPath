@@ -6,15 +6,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
-
+import source.CosineSimilaridade;
 import source.JaccardSimilaridade;
+import source.OverlapSimilaridade;
 
 public class Grafo {
 
 	List<JaccardSimilaridade> coeficientesJaccard = new ArrayList<JaccardSimilaridade>();
+	List<CosineSimilaridade> coeficientesCosine = new ArrayList<CosineSimilaridade>();
+	List<OverlapSimilaridade> coeficientesOverlap = new ArrayList<OverlapSimilaridade>();
+
 	SimpleWeightedGraph<String, DefaultWeightedEdge> grafo;
 	List<Grupo> listaDegrupos = new ArrayList<Grupo>();
 	SimpleWeightedGraph<String, DefaultWeightedEdge> grafoCopia = new SimpleWeightedGraph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
@@ -245,7 +248,7 @@ public class Grafo {
 		return quantidadeVertices;
 	}
 
-	public void verificaInterseccaoeUniaoVertices(){
+	public void calculaJaccard(){
 
 		for (Map.Entry<String,List<String>> v1 : quantidadeVertices.entrySet()) {
 			for (Map.Entry<String,List<String>> v2 : quantidadeVertices.entrySet()) {
@@ -271,9 +274,76 @@ public class Grafo {
 						}
 					}
 				}
+				coeficientesJaccard.add(j);
 			}
 		}
+	}
+
+	public void calculaCosine(){
+		for (Map.Entry<String,List<String>> v1 : quantidadeVertices.entrySet()) {
+			for (Map.Entry<String,List<String>> v2 : quantidadeVertices.entrySet()) {
+				int qtdInterseccao=0;
+				int qtdVizinhosV1=0;
+				int qtdVizinhosV2=0;
+
+				CosineSimilaridade c = new CosineSimilaridade();
 
 
+				if(v1.getKey().equals(v2.getKey())){
+					continue;
+				}else{
+					for (String vizinhosv1 : v1.getValue()) {
+						qtdVizinhosV1++;
+						for (String vizinhosv2 : v2.getValue()) {
+							qtdVizinhosV2++;
+							if(!vizinhosv1.equals(vizinhosv2)){
+								c.setP1(v1.getKey());
+								c.setP2(v2.getKey());
+								qtdInterseccao++;
+								c.setInterseccao(qtdInterseccao);
+							}
+						}
+					}
+					c.setQtdV1(qtdVizinhosV1);
+					c.setQtdV2(qtdVizinhosV2);
+				}
+				coeficientesCosine.add(c);
+			}
+		}
+	}
+	
+	public void calculaOverlap(){
+		for (Map.Entry<String,List<String>> v1 : quantidadeVertices.entrySet()) {
+			for (Map.Entry<String,List<String>> v2 : quantidadeVertices.entrySet()) {
+				int qtdInterseccao=0;
+				int qtdVizinhosV1=0;
+				int qtdVizinhosV2=0;
+
+				OverlapSimilaridade o = new OverlapSimilaridade();
+
+
+				if(v1.getKey().equals(v2.getKey())){
+					continue;
+				}else{
+					for (String vizinhosv1 : v1.getValue()) {
+						qtdVizinhosV1++;
+						for (String vizinhosv2 : v2.getValue()) {
+							qtdVizinhosV2++;
+							if(!vizinhosv1.equals(vizinhosv2)){
+								o.setP1(v1.getKey());
+								o.setP2(v2.getKey());
+								qtdInterseccao++;
+								o.setInterseccao(qtdInterseccao);
+							}
+						}
+					}
+					o.setQtdV1(qtdVizinhosV1);
+					o.setQtdV2(qtdVizinhosV2);
+				}
+				coeficientesOverlap.add(o);
+			}
+		}
 	}
 }
+
+
