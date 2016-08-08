@@ -50,8 +50,8 @@ public class ManipuladorXML {
 				XPathExpression exprAchaAno = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@ANO-DO-ARTIGO");
 				XPathExpression exprAchaAutores = xpath.compile("AUTORES");
 				//XPathExpression exprAchaAreasConhecimento = xpath.compile("//AREAS-DO-CONHECIMENTO");
-				XPathExpression exprAchaNomeAreaConhecimento = xpath.compile("@NOME-DA-AREA-DO-CONHECIMENTO");
-				XPathExpression exprAchaNomeEspecialidade = xpath.compile("@NOME-DA-ESPECIALIDADE");
+			//	XPathExpression exprAchaNomeAreaConhecimento = xpath.compile("@NOME-DA-AREA-DO-CONHECIMENTO");
+			//	XPathExpression exprAchaNomeEspecialidade = xpath.compile("@NOME-DA-ESPECIALIDADE");
 				//XPathExpression exprAchaUniversidade = xpath.compile("/CURRICULO-VITAE/DADOS-GERAIS/ENDERECO/ENDERECO-PROFISSIONAL/@CODIGO-INSTITUICAO-EMPRESA");
 				//XPathExpression exprAchaNomeCurriculo = xpath.compile("/CURRICULO-VITAE/DADOS-GERAIS/@NOME-COMPLETO");
 				//String codUniversidade = (String) exprAchaUniversidade.evaluate(document, XPathConstants.STRING);
@@ -124,28 +124,28 @@ public class ManipuladorXML {
 						}
 
 						//recupero elementos "area de conhecimento"
-						XPathExpression exprAchaArea = xpath.compile("//*[starts-with(name(), 'AREA-DO-CONHECIMENTO')]");
-						NodeList nlAreasConhecimento = (NodeList) exprAchaArea.evaluate(document, XPathConstants.NODESET);
+				//		XPathExpression exprAchaArea = xpath.compile("//*[starts-with(name(), 'AREA-DO-CONHECIMENTO')]");
+				//		NodeList nlAreasConhecimento = (NodeList) exprAchaArea.evaluate(document, XPathConstants.NODESET);
 
-						for (int x=0; x < nlAreasConhecimento.getLength() ;x++){
-							Node nodeAreas = nlAreasConhecimento.item(x);
+				//		for (int x=0; x < nlAreasConhecimento.getLength() ;x++){
+				//			Node nodeAreas = nlAreasConhecimento.item(x);
 
 							//NodeList nlAreasConhecimentoNome = (NodeList) exprAchaArea.evaluate(nodeAreas, XPathConstants.NODESET);
 							//recupero elemento "area de conhecimento-x"
 							//for(int s=0;s < nlAreasConhecimentoNome.getLength();s++){
 							//Node nodeNomeAreaConhecimento = nlAreasConhecimentoNome.item(s);
 
-							String nomeArea = (String) exprAchaNomeAreaConhecimento.evaluate(nodeAreas, XPathConstants.STRING);
-							String nomeEspecialidade = (String) exprAchaNomeEspecialidade.evaluate(nodeAreas, XPathConstants.STRING);
+				//			String nomeArea = (String) exprAchaNomeAreaConhecimento.evaluate(nodeAreas, XPathConstants.STRING);
+				//			String nomeEspecialidade = (String) exprAchaNomeEspecialidade.evaluate(nodeAreas, XPathConstants.STRING);
 							
-							if(nomeArea != "" && nomeEspecialidade != ""){
-								pessoaux.getAreas().put(nomeEspecialidade, nomeArea);
+				//			if(nomeArea != "" && nomeEspecialidade != ""){
+				//				pessoaux.getAreas().put(nomeEspecialidade, nomeArea);
 
-							}
+				//			}
 							//System.out.println("nome da area " +x+": "+nomeArea);
 							//System.out.println("especialidade "+x+": "+nomeEspecialidade);
 							//}
-						}
+			//			}
 
 					}
 					continue;

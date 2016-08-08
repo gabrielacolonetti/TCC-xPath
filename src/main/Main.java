@@ -18,6 +18,7 @@ import model.Pessoa;
 import model.Pessoa;
 import model.Publicacao;
 import model.Tupla;
+import source.JaccardSimilaridade;
 import source.ManipuladorXML;
 
 public class Main {
@@ -56,15 +57,15 @@ public class Main {
 //		}
 
 		//imprimi area e especialidade do autor principal
-			for (int i =0; i < listaPublicacao.size(); i++)	{
-				HashMap<String,String> areas = listaPublicacao.get(i).getAutor().getAreas();
-				
-				for (String area: areas.keySet()){
-					
-					System.out.println("Area: "+areas.get(area)+ " Especialização: "+ area);
-				
-				}
-			}
+//			for (int i =0; i < listaPublicacao.size(); i++)	{
+//				HashMap<String,String> areas = listaPublicacao.get(i).getAutor().getAreas();
+//				
+//				for (String area: areas.keySet()){
+//					
+//					System.out.println("Area: "+areas.get(area)+ " Especialização: "+ area);
+//				
+//				}
+//			}
 		
 		
 		//imprimi a lista de grupos com seus pesos
@@ -101,10 +102,24 @@ public class Main {
 		
 		//imprimi os vertices e seus vizinhos	
 		for (Map.Entry<String,List<String>> v1 : mapaDeVerticeQuantidadeVizinhos.entrySet()) {
-			System.out.println(v1.getKey());
+			//System.out.println(v1.getKey());
 			for (String vizinhos: v1.getValue()){
-				System.out.println(vizinhos);
+				
+				//System.out.println(vizinhos);
 			}
+		}
+		
+		//calculo similaridade
+		g.retornaTodosVerticesGrafo();
+		g.calculaJaccard();
+		g.calculaCosine();
+		g.calculaOverlap();
+		
+		for (JaccardSimilaridade s: g.coeficientesJaccard) {
+			//System.out.println(s.getP1()+" "+ s.getP2());
+			//System.out.println(s.getCalculo());
+			
+			
 		}
 		 
 	}

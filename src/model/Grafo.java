@@ -14,9 +14,9 @@ import source.OverlapSimilaridade;
 
 public class Grafo {
 
-	List<JaccardSimilaridade> coeficientesJaccard = new ArrayList<JaccardSimilaridade>();
-	List<CosineSimilaridade> coeficientesCosine = new ArrayList<CosineSimilaridade>();
-	List<OverlapSimilaridade> coeficientesOverlap = new ArrayList<OverlapSimilaridade>();
+	public List<JaccardSimilaridade> coeficientesJaccard = new ArrayList<JaccardSimilaridade>();
+	public List<CosineSimilaridade> coeficientesCosine = new ArrayList<CosineSimilaridade>();
+	public List<OverlapSimilaridade> coeficientesOverlap = new ArrayList<OverlapSimilaridade>();
 
 	SimpleWeightedGraph<String, DefaultWeightedEdge> grafo;
 	List<Grupo> listaDegrupos = new ArrayList<Grupo>();
@@ -252,28 +252,37 @@ public class Grafo {
 
 		for (Map.Entry<String,List<String>> v1 : quantidadeVertices.entrySet()) {
 			for (Map.Entry<String,List<String>> v2 : quantidadeVertices.entrySet()) {
+				
 				int qtdInterseccao =0;
 				int qtdUniao =0;
 				JaccardSimilaridade j = new JaccardSimilaridade();
 
-
 				if(v1.getKey().equals(v2.getKey())){
 					continue;
 				}else{
+					System.out.println("vertice 1 "+v1.getKey());
+					System.out.println("vertice 2 "+v2.getKey());
+					
 					for (String vizinhosv1 : v1.getValue()) {
-						for (String vizinhosv2 : v2.getValue()) {
+						System.out.println("vizinho do v1 "+ vizinhosv1);
+						for (String vizinhosv2 : v2.getValue()) {		
+							System.out.println("vizinho do v2 "+ vizinhosv2);
+							j.setP1(v1.getKey());
+							j.setP2(v2.getKey());
+							
 							if(vizinhosv1.equals(vizinhosv2)){
-								j.setP1(v1.getKey());
-								j.setP2(v2.getKey());
-								qtdUniao++;
-								j.setUniao(qtdUniao);
-							}else{
 								qtdInterseccao++;
-								j.setInterseccao(qtdInterseccao);
+								System.out.println("interseccao "+qtdInterseccao);
 							}
-						}
+					   }
 					}
 				}
+				qtdUniao = (v1.getValue().size() + v2.getValue().size()) - qtdInterseccao;
+				System.out.println(qtdUniao);
+				j.setUniao(qtdUniao);
+				j.setInterseccao(qtdInterseccao);
+
+				j.realizaCalculo();
 				coeficientesJaccard.add(j);
 			}
 		}
@@ -295,14 +304,15 @@ public class Grafo {
 					for (String vizinhosv1 : v1.getValue()) {
 						qtdVizinhosV1++;
 						for (String vizinhosv2 : v2.getValue()) {
+							c.setP1(v1.getKey());
+							c.setP2(v2.getKey());
 							qtdVizinhosV2++;
-							if(!vizinhosv1.equals(vizinhosv2)){
-								c.setP1(v1.getKey());
-								c.setP2(v2.getKey());
+							if(vizinhosv1.equals(vizinhosv2)){
 								qtdInterseccao++;
-								c.setInterseccao(qtdInterseccao);
 							}
 						}
+						c.setInterseccao(qtdInterseccao);
+
 					}
 					c.setQtdV1(qtdVizinhosV1);
 					c.setQtdV2(qtdVizinhosV2);
@@ -329,14 +339,14 @@ public class Grafo {
 						qtdVizinhosV1++;
 						for (String vizinhosv2 : v2.getValue()) {
 							qtdVizinhosV2++;
-							if(!vizinhosv1.equals(vizinhosv2)){
-								o.setP1(v1.getKey());
-								o.setP2(v2.getKey());
+							o.setP1(v1.getKey());
+							o.setP2(v2.getKey());
+							if(vizinhosv1.equals(vizinhosv2)){
 								qtdInterseccao++;
-								o.setInterseccao(qtdInterseccao);
 							}
 						}
 					}
+					o.setInterseccao(qtdInterseccao);
 					o.setQtdV1(qtdVizinhosV1);
 					o.setQtdV2(qtdVizinhosV2);
 				}
