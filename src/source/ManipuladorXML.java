@@ -124,29 +124,27 @@ public class ManipuladorXML {
 						}
 
 						//recupero elementos "area de conhecimento"
-				//		XPathExpression exprAchaArea = xpath.compile("//*[starts-with(name(), 'AREA-DO-CONHECIMENTO')]");
-				//		NodeList nlAreasConhecimento = (NodeList) exprAchaArea.evaluate(document, XPathConstants.NODESET);
+						XPathExpression exprAchaArea = xpath.compile("//*[starts-with(name(), 'AREA-DO-CONHECIMENTO')]");
+						NodeList nlAreasConhecimento = (NodeList) exprAchaArea.evaluate(document, XPathConstants.NODESET);
 
-				//		for (int x=0; x < nlAreasConhecimento.getLength() ;x++){
-				//			Node nodeAreas = nlAreasConhecimento.item(x);
+						for (int x=0; x < nlAreasConhecimento.getLength() ;x++){
+							Node nodeAreas = nlAreasConhecimento.item(x);
+							NamedNodeMap atributosDoArea = nodeAreas.getAttributes();
 
-							//NodeList nlAreasConhecimentoNome = (NodeList) exprAchaArea.evaluate(nodeAreas, XPathConstants.NODESET);
-							//recupero elemento "area de conhecimento-x"
-							//for(int s=0;s < nlAreasConhecimentoNome.getLength();s++){
-							//Node nodeNomeAreaConhecimento = nlAreasConhecimentoNome.item(s);
-
-				//			String nomeArea = (String) exprAchaNomeAreaConhecimento.evaluate(nodeAreas, XPathConstants.STRING);
-				//			String nomeEspecialidade = (String) exprAchaNomeEspecialidade.evaluate(nodeAreas, XPathConstants.STRING);
+							// pega elemento nome autor
+							String nomeArea = atributosDoArea.getNamedItem("NOME-DA-AREA-DO-CONHECIMENTO")
+									.getNodeValue();
 							
-				//			if(nomeArea != "" && nomeEspecialidade != ""){
-				//				pessoaux.getAreas().put(nomeEspecialidade, nomeArea);
+							String nomeEspecialidade = atributosDoArea.getNamedItem("NOME-DA-ESPECIALIDADE")
+									.getNodeValue();
+							
+							if(nomeArea != "" && nomeEspecialidade != ""){
+								pessoaux.getAreas().put(nomeEspecialidade, nomeArea);
 
-				//			}
-							//System.out.println("nome da area " +x+": "+nomeArea);
-							//System.out.println("especialidade "+x+": "+nomeEspecialidade);
-							//}
-			//			}
-
+							}
+//							System.out.println("nome da area " +x+": "+nomeArea);
+//							System.out.println("especialidade "+x+": "+nomeEspecialidade);
+						}
 					}
 					continue;
 				}
@@ -192,6 +190,7 @@ public class ManipuladorXML {
 	}
 
 	public static boolean checaEAdicionaPublicacao(Publicacao publi, Tupla par){
+
 		for(int i=0; i< par.getPublicacoes().size();i++){
 			if(par.getPublicacoes().get(i).getTitulo().equals(publi.getTitulo()) && par.getPublicacoes().get(i).getAno().equals(publi.getAno())){
 				return true;
@@ -199,6 +198,7 @@ public class ManipuladorXML {
 		}
 		return false;
 	}
+	
 	public static Tupla existePar(Pessoa p1, Pessoa p2){
 
 		for (Tupla tupla : listaDePares) {

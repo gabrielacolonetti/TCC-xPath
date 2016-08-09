@@ -1,0 +1,140 @@
+
+
+
+Gerenciamento de Dados Agrícolas Utilizando a Computação Móvel em Dispositivos com Limitada Capacidade de Armazenamento--2007
+Ricardo Ogliari
+Cristiano Roberto Cervi
+Willingthon Pavan
+Carina Friedrich Dorneles
+
+
+
+Mapeamento baseado em regras da W3C XML Schema para o o SQL-92--2008
+Stevan Viapiana
+Carina Friedrich Dorneles
+
+
+
+XML--2009
+Mirella Moro
+Vanessa de Paula Braganholo
+Dênio Duarte
+Renata de Matos Galante
+Ronaldo dos Santos Mello
+Carina Friedrich Dorneles
+
+
+
+A strategy for allowing meaningful and comparable scores in approximate matching--2009
+Nunes, Marcos Freitas
+Heuser, Carlos A.
+Moreira, Viviane P.
+da Silva, Altigran S.
+de Moura, Edleno S.
+Carina Friedrich Dorneles
+
+
+
+Uma Biblioteca Digital de Trabalhos Científicos com Serviços Integrados--2009
+Cristiano Roberto Cervi
+Edimar Manica
+Carina Friedrich Dorneles
+Renata de Matos Galante
+
+
+
+Efetuando Junção por Similaridade de Documentos XML Armazenados em Sistemas de Arquivo--2010
+Fabio Bocassanta
+Carina Friedrich Dorneles
+
+
+
+Supporting Temporal Queries on XML Keyword Search Engines--2010
+Edimar Manica
+Carina Friedrich Dorneles
+Renata de Matos Galante
+
+
+
+Approximate data instance matching: a survey--2011
+Carina Friedrich Dorneles
+Gonçalves, Rodrigo
+Santos Mello, Ronaldo
+
+
+
+Research on Complex Data Management and Analysis at UFSC--2011
+Ronaldo dos Santos Mello
+Renato Fileto
+Carina Friedrich Dorneles
+Vania Bogorny
+
+
+
+Handling temporal information in web search engines--2012
+Edimar Manica
+Carina Friedrich Dorneles
+Renata de Matos Galante
+
+
+
+Web table taxonomy and formalization--2013
+Larissa R. Lautert
+Marcelo Scheidt
+Carina Friedrich Dorneles
+
+
+
+Automatic Web Page Segmentation and Noise Removal for Structured Extraction using Tag Path Sequences--2013
+Roberto Panerai Velloso
+Carina Friedrich Dorneles
+
+
+
+Metrics to Evaluate the Use of Object Oriented Frameworks--2009
+Evandro César Freiberger
+Ricardo Pereira e Silva
+
+
+
+A Method for the Unification of XML Schemata--2002
+Silvana Castano
+Carlos Alberto Heuser
+Ronaldo dos Santos Mello
+
+
+
+Designing XML documents from conceptual schemas and workload information--2009
+Schroeder, Rebeca
+Ronaldo dos Santos Mello
+
+
+
+XML: Some Papers in a Haystack--2009
+MORO, Mirella M.
+Vanessa de Paula Braganholo
+Carina Friedrich Dorneles
+Denio Duarte
+Renata de Matos Galante
+Ronaldo dos Santos Mello
+
+
+
+Indexing Web Form Constraints--2010
+Ramesh Pinnamanemi
+Juliana Freire
+Ronaldo dos Santos Mello
+
+
+
+XML e Banco de Dados: Análise de um SGBD XML Nativo--2004
+Arthur Pereira Frantz
+Helo Petry
+Ronaldo dos Santos Mello
+
+
+
+On Evaluating an Approach for Balancing the Trade-off on XML Schema Design--2012
+Rebeca Schroeder
+Denio Duarte
+Ronaldo dos Santos Mello

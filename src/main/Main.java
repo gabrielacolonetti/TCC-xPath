@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
@@ -18,8 +19,10 @@ import model.Pessoa;
 import model.Pessoa;
 import model.Publicacao;
 import model.Tupla;
+import source.CosineSimilaridade;
 import source.JaccardSimilaridade;
 import source.ManipuladorXML;
+import source.OverlapSimilaridade;
 
 public class Main {
 
@@ -35,7 +38,7 @@ public class Main {
 		g.criaVertice(listaTupla);
 //		 System.out.println(g);
 		g.setThreshold(3);
-		HashMap<String,List<String>> mapaDeVerticeQuantidadeVizinhos = g.retornaTodosVerticesGrafo();
+		HashMap<String,Set<String>> mapaDeVerticeQuantidadeVizinhos = g.retornaTodosVerticesGrafo();
 		
 //		List<Grupo> listaDegrupos = g.criaGrupoAlgoritmoSimples();
 //		PrintStream p = new PrintStream("grupos.txt");
@@ -101,26 +104,40 @@ public class Main {
 //		 }
 		
 		//imprimi os vertices e seus vizinhos	
-		for (Map.Entry<String,List<String>> v1 : mapaDeVerticeQuantidadeVizinhos.entrySet()) {
-			//System.out.println(v1.getKey());
-			for (String vizinhos: v1.getValue()){
-				
-				//System.out.println(vizinhos);
-			}
-		}
+//		for (Map.Entry<String,Set<String>> v1 : mapaDeVerticeQuantidadeVizinhos.entrySet()) {
+//			System.out.println("vertice: "+v1.getKey());
+//			for (String vizinhos: v1.getValue()){
+//				
+//				System.out.println("vizinho: " +vizinhos);
+//			}
+//		}
 		
 		//calculo similaridade
-		g.retornaTodosVerticesGrafo();
-		g.calculaJaccard();
-		g.calculaCosine();
-		g.calculaOverlap();
+		g.coeficienteJaccard();
+		g.coeficienteCosine();
+		g.coeficienteOverlap();
+		
 		
 		for (JaccardSimilaridade s: g.coeficientesJaccard) {
-			//System.out.println(s.getP1()+" "+ s.getP2());
-			//System.out.println(s.getCalculo());
-			
-			
+			System.out.println("\ncoeficientes Jaccard");
+			System.out.println(s.getP1()+" "+ s.getP2());
+			System.out.println(s.getCalculo());
+
+
 		}
+
+		for(CosineSimilaridade c : g.coeficientesCosine){
+			System.out.println("\ncoeficientes Cosine");
+			System.out.println(c.getP1()+" "+c.getP2());
+			System.out.println(c.getCalculo());
+		}
+		
+		for(OverlapSimilaridade c : g.coeficientesOverlap){
+			System.out.println("\ncoeficientes Overlap");
+			System.out.println(c.getP1()+" "+c.getP2());
+			System.out.println(c.getCalculo());
+		}
+		
 		 
 	}
 }

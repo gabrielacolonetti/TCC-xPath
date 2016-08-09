@@ -3,9 +3,12 @@ package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
+
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
 import source.CosineSimilaridade;
@@ -22,7 +25,7 @@ public class Grafo {
 	List<Grupo> listaDegrupos = new ArrayList<Grupo>();
 	SimpleWeightedGraph<String, DefaultWeightedEdge> grafoCopia = new SimpleWeightedGraph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
 	int threshold = 1;
-	HashMap<String,List<String> > quantidadeVertices = new HashMap<String, List<String>>();
+	HashMap<String,Set<String> > quantidadeVertices = new HashMap<String, Set<String>>();
 
 	public int getThreshold() {
 		return threshold;
@@ -210,48 +213,132 @@ public class Grafo {
 
 	}
 
-	public HashMap<String, List<String>> retornaTodosVerticesGrafo(){
+	public HashMap<String, Set<String>> retornaTodosVerticesGrafo(){
 		//recupera todos os vertices do grafo
 		Set<String> listaTodosVertices = grafo.vertexSet();
 
 		for (String vertice : listaTodosVertices) {
-			//int somaVizinhos = 0;
-			//System.out.println("vertice ");
-			//System.out.println(vertice);
-
 			//lista de vizinhos
-			List <String> vizinhos = new ArrayList<String>();
+			Set<String> vizinhos = new TreeSet<String>();
 
 			//pego todas as arestas do vertice
 			Set<DefaultWeightedEdge> arestasVizinhas = grafo.edgesOf(vertice);
 
 			//varredura na lista de arestas
 			for (DefaultWeightedEdge dw : arestasVizinhas) {
-				//System.out.println("vizinho ");
-
 				String grafoSource = grafo.getEdgeSource(dw);
 				String grafoTarget = grafo.getEdgeTarget(dw);
 
 				if(grafoSource.equals(vertice)){
-					//somaVizinhos +=somaVizinhos;
 					vizinhos.add(grafoTarget);
 				}else{
-					//somaVizinhos +=somaVizinhos;
 					vizinhos.add(grafoSource);
 				}
 				quantidadeVertices.put(vertice,vizinhos);
-
-				//System.out.println(grafoSource);
-				//System.out.println(grafoTarget);
 			}
 		}
 		return quantidadeVertices;
 	}
 
-	public void calculaJaccard(){
+	public void coeficienteJaccard(){
+		for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {
+			for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
+				
+				JaccardSimilaridade j = new JaccardSimilaridade();
+								
+				if(v1.getKey().equals(v2.getKey())){
+					continue;
+				}else{
+				
+				j.setP1(v1.getKey());
+				j.setP2(v2.getKey());
+				
+				Set<String> interseccao = new TreeSet(v1.getValue());
+				interseccao.retainAll(v2.getValue());
+				double qtdInterseccao = interseccao.size();
+//				System.out.println(qtdInterseccao+" Interseccao de "+ v1.getKey()+" e "+ v2.getKey() );
+					    
+				Set<String> uniao = new TreeSet(v1.getValue());
+				uniao.addAll(v2.getValue());
+				double qtdUniao = uniao.size();
+//				System.out.println(qtdUniao+" Uniao de "+ v1.getKey()+" e "+ v2.getKey() );
+				
+				j.setInterseccao(qtdInterseccao);
+				j.setUniao(qtdUniao);
+				j.realizaCalculo();
+				coeficientesJaccard.add(j);
+				}
+			}
+		}
+	}
+	
+	public void coeficienteCosine(){
+		for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {			
+			for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
 
-		for (Map.Entry<String,List<String>> v1 : quantidadeVertices.entrySet()) {
-			for (Map.Entry<String,List<String>> v2 : quantidadeVertices.entrySet()) {
+				CosineSimilaridade c = new CosineSimilaridade();
+
+				if(v1.getKey().equals(v2.getKey())){
+					continue;
+				}else{
+
+
+					c.setP1(v1.getKey());
+					c.setP2(v2.getKey());
+					Set<String> interseccao = new TreeSet(v1.getValue());
+					interseccao.retainAll(v2.getValue());
+					double qtdInterseccao = interseccao.size();
+					//				System.out.println(qtdInterseccao+" Interseccao de "+ v1.getKey()+" e "+ v2.getKey() );
+					//				
+					//				System.out.println("qtd vertice 1 "+v1.getValue().size());
+					//				System.out.println("qtd vertice 2 "+v2.getValue().size());
+
+					c.setQtdV1(v1.getValue().size());
+					c.setQtdV2(v2.getValue().size());
+					c.setInterseccao(qtdInterseccao);
+					c.realizaCalculo();
+					coeficientesCosine.add(c);
+				}
+			}
+		}
+	}
+				
+    public void coeficienteOverlap(){
+			for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {			
+				for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
+					
+					OverlapSimilaridade o = new OverlapSimilaridade();
+									
+					if(v1.getKey().equals(v2.getKey())){
+						continue;
+					}else{
+					
+
+					o.setP1(v1.getKey());
+					o.setP2(v2.getKey());
+					Set<String> interseccao = new TreeSet(v1.getValue());
+					interseccao.retainAll(v2.getValue());
+					double qtdInterseccao = interseccao.size();
+//					System.out.println(qtdInterseccao+" Interseccao de "+ v1.getKey()+" e "+ v2.getKey() );
+//					
+//					System.out.println("qtd vertice 1 "+v1.getValue().size());
+//					System.out.println("qtd vertice 2 "+v2.getValue().size());
+
+					o.setQtdV1(v1.getValue().size());
+	                o.setQtdV2(v2.getValue().size());
+					o.setInterseccao(qtdInterseccao);
+					o.realizaCalculo();
+					coeficientesOverlap.add(o);
+					}
+				}
+			}
+		
+		
+	}
+	public void calculaJaccardOld(){
+
+		for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {
+			for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
 				
 				int qtdInterseccao =0;
 				int qtdUniao =0;
@@ -260,13 +347,9 @@ public class Grafo {
 				if(v1.getKey().equals(v2.getKey())){
 					continue;
 				}else{
-					System.out.println("vertice 1 "+v1.getKey());
-					System.out.println("vertice 2 "+v2.getKey());
 					
 					for (String vizinhosv1 : v1.getValue()) {
-						System.out.println("vizinho do v1 "+ vizinhosv1);
 						for (String vizinhosv2 : v2.getValue()) {		
-							System.out.println("vizinho do v2 "+ vizinhosv2);
 							j.setP1(v1.getKey());
 							j.setP2(v2.getKey());
 							
@@ -278,7 +361,6 @@ public class Grafo {
 					}
 				}
 				qtdUniao = (v1.getValue().size() + v2.getValue().size()) - qtdInterseccao;
-				System.out.println(qtdUniao);
 				j.setUniao(qtdUniao);
 				j.setInterseccao(qtdInterseccao);
 
@@ -287,10 +369,9 @@ public class Grafo {
 			}
 		}
 	}
-
-	public void calculaCosine(){
-		for (Map.Entry<String,List<String>> v1 : quantidadeVertices.entrySet()) {
-			for (Map.Entry<String,List<String>> v2 : quantidadeVertices.entrySet()) {
+	public void calculaCosineOld(){
+		for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {
+			for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
 				int qtdInterseccao=0;
 				int qtdVizinhosV1=0;
 				int qtdVizinhosV2=0;
@@ -322,9 +403,9 @@ public class Grafo {
 		}
 	}
 	
-	public void calculaOverlap(){
-		for (Map.Entry<String,List<String>> v1 : quantidadeVertices.entrySet()) {
-			for (Map.Entry<String,List<String>> v2 : quantidadeVertices.entrySet()) {
+	public void calculaOverlapOld(){
+		for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {
+			for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
 				int qtdInterseccao=0;
 				int qtdVizinhosV1=0;
 				int qtdVizinhosV2=0;
