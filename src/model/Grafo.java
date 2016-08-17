@@ -3,12 +3,10 @@ package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
 import source.CosineSimilaridade;
@@ -228,7 +226,6 @@ public class Grafo {
 			for (DefaultWeightedEdge dw : arestasVizinhas) {
 				String grafoSource = grafo.getEdgeSource(dw);
 				String grafoTarget = grafo.getEdgeTarget(dw);
-
 				if(grafoSource.equals(vertice)){
 					vizinhos.add(grafoTarget);
 				}else{
@@ -240,36 +237,37 @@ public class Grafo {
 		return quantidadeVertices;
 	}
 
-	public void coeficienteJaccard(){
+	public   List<JaccardSimilaridade> coeficienteJaccard(){
 		for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {
 			for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
-				
+		
 				JaccardSimilaridade j = new JaccardSimilaridade();
-								
+
 				if(v1.getKey().equals(v2.getKey())){
 					continue;
 				}else{
-				
-				j.setP1(v1.getKey());
-				j.setP2(v2.getKey());
-				
-				Set<String> interseccao = new TreeSet(v1.getValue());
-				interseccao.retainAll(v2.getValue());
-				double qtdInterseccao = interseccao.size();
-//				System.out.println(qtdInterseccao+" Interseccao de "+ v1.getKey()+" e "+ v2.getKey() );
-					    
-				Set<String> uniao = new TreeSet(v1.getValue());
-				uniao.addAll(v2.getValue());
-				double qtdUniao = uniao.size();
-//				System.out.println(qtdUniao+" Uniao de "+ v1.getKey()+" e "+ v2.getKey() );
-				
-				j.setInterseccao(qtdInterseccao);
-				j.setUniao(qtdUniao);
-				j.realizaCalculo();
-				coeficientesJaccard.add(j);
+
+					j.setP1(v1.getKey());
+					j.setP2(v2.getKey());
+
+					Set<String> interseccao = new TreeSet(v1.getValue());
+					interseccao.retainAll(v2.getValue());
+					double qtdInterseccao = interseccao.size();
+					//System.out.println(qtdInterseccao+" Interseccao de "+ v1.getKey()+" e "+ v2.getKey() );
+
+					Set<String> uniao = new TreeSet(v1.getValue());
+					uniao.addAll(v2.getValue());
+					double qtdUniao = uniao.size();
+					//System.out.println(qtdUniao+" Uniao de "+ v1.getKey()+" e "+ v2.getKey() );
+
+					j.setInterseccao(qtdInterseccao);
+					j.setUniao(qtdUniao);
+					j.realizaCalculo();
+					coeficientesJaccard.add(j);
 				}
 			}
 		}
+		return coeficientesJaccard;
 	}
 	
 	public void coeficienteCosine(){
@@ -288,10 +286,10 @@ public class Grafo {
 					Set<String> interseccao = new TreeSet(v1.getValue());
 					interseccao.retainAll(v2.getValue());
 					double qtdInterseccao = interseccao.size();
-					//				System.out.println(qtdInterseccao+" Interseccao de "+ v1.getKey()+" e "+ v2.getKey() );
-					//				
-					//				System.out.println("qtd vertice 1 "+v1.getValue().size());
-					//				System.out.println("qtd vertice 2 "+v2.getValue().size());
+									//System.out.println(qtdInterseccao+" Interseccao de "+ v1.getKey()+" e "+ v2.getKey() );
+									
+									//System.out.println("qtd vertice 1 "+v1.getValue().size());
+									//System.out.println("qtd vertice 2 "+v2.getValue().size());
 
 					c.setQtdV1(v1.getValue().size());
 					c.setQtdV2(v2.getValue().size());

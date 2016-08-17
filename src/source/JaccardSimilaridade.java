@@ -1,5 +1,10 @@
 package source;
 
+import java.util.List;
+
+import datastructures.core.Matrix2D;
+import utility.similarity.ParDocumento;
+
 public class JaccardSimilaridade {
     
 	public String p1;
@@ -7,7 +12,7 @@ public class JaccardSimilaridade {
 	public double interseccao;
 	public double uniao;
 	public double calculo;
-	
+		
 	public String getP1() {
 		return p1;
 	}
@@ -39,6 +44,18 @@ public class JaccardSimilaridade {
 	
 	public double getCalculo(){
 		return calculo;
+	}
+	public Matrix2D criaMatriz(Matrix2D matrizDeSimilaridades,List<JaccardSimilaridade> listaDeCoeficientes, int objectsCount) {
+		
+		for (int i = 0; i < objectsCount; i++) {
+			double similaridade = listaDeCoeficientes.get(i).getCalculo();
+			for (int j = i+1 ; j < objectsCount; j++) {
+				matrizDeSimilaridades.set(i, j, similaridade );
+				System.out.println(matrizDeSimilaridades);
+
+			}
+		}
+		return matrizDeSimilaridades;
 	}
 	
 	
