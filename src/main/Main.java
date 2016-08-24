@@ -72,16 +72,12 @@ public class Main {
 			System.out.println(c.getCalculo());
 		}
 		
-	
-
-		
-		
-		
 		//criando cluster usando ursa		
 		ClusteringProcess primeiroProcesso = new ClusteringProcess();
 		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(g.getThreshold()));
-		DataObjectAutor.addObject(primeiroProcesso, quantidadeVertices);
 		Matrix2D matrizDeSimilaridades = j.criaMatriz(listaDeCoeficientes, g.quantidadeVertices.size());
+				
+		
 	    primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
 

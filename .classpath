@@ -7,10 +7,6 @@
 	<classpathentry kind="lib" path="lib/jgrapht-ext-0.9.1-uber.jar"/>
 	<classpathentry kind="lib" path="lib/jgrapht-ext-0.9.1.jar"/>
 	<classpathentry kind="lib" path="lib/jgraphx-2.0.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gbcolonetti/git/CALC/lib/commons-io-2.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gbcolonetti/git/CALC/lib/jgoodies-common-1.7.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gbcolonetti/git/CALC/lib/jgoodies-forms-1.7.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gbcolonetti/git/CALC/lib/jgoodies-looks-2.5.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/gbcolonetti/git/CALC/lib/URSA.jar"/>
+	<classpathentry kind="lib" path="lib/URSA.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
