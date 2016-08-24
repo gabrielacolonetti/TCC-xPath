@@ -22,10 +22,10 @@ import model.Pessoa;
 import model.Publicacao;
 import model.Tupla;
 import source.CosineSimilaridade;
+import source.DataObjectAutor;
 import source.JaccardSimilaridade;
 import source.ManipuladorXML;
 import source.OverlapSimilaridade;
-import source.TextFilesUtilityCALC;
 
 public class Main {
 
@@ -44,7 +44,7 @@ public class Main {
 		g.setThreshold(3);
 		
 		//calculo similaridade
-		g.retornaTodosVerticesGrafo();
+		HashMap<String, Set<String>> quantidadeVertices = g.retornaTodosVerticesGrafo();
 		List<JaccardSimilaridade> listaDeCoeficientes = g.coeficienteJaccard();
 		//g.coeficienteJaccard();
 		g.coeficienteCosine();
@@ -80,11 +80,9 @@ public class Main {
 		//criando cluster usando ursa		
 		ClusteringProcess primeiroProcesso = new ClusteringProcess();
 		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(g.getThreshold()));
-		int objectsCount = listaDeCoeficientes.size();
-		Matrix2D matrizDeSimilaridades = new Matrix2D(objectsCount);
-		TextFilesUtilityCALC.addDataObjects(primeiroProcesso, listaDeCoeficientes);
-		matrizDeSimilaridades = j.criaMatriz(matrizDeSimilaridades, listaDeCoeficientes, objectsCount);
-		primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
+		DataObjectAutor.addObject(primeiroProcesso, quantidadeVertices);
+		Matrix2D matrizDeSimilaridades = j.criaMatriz(listaDeCoeficientes, g.quantidadeVertices.size());
+	    primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
 
 		

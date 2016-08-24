@@ -23,7 +23,7 @@ public class Grafo {
 	List<Grupo> listaDegrupos = new ArrayList<Grupo>();
 	SimpleWeightedGraph<String, DefaultWeightedEdge> grafoCopia = new SimpleWeightedGraph<String, DefaultWeightedEdge>(DefaultWeightedEdge.class);
 	int threshold = 1;
-	HashMap<String,Set<String> > quantidadeVertices = new HashMap<String, Set<String>>();
+	public HashMap<String,Set<String> > quantidadeVertices = new HashMap<String, Set<String>>();
 
 	public int getThreshold() {
 		return threshold;
@@ -70,7 +70,7 @@ public class Grafo {
 				System.err.println("Autor nulo!");
 				System.exit(1);
 			}
-			if (p1 == p2 ) {
+			if (p1 == p2) {
 				System.err.println("Autores iguais!");
 				continue;
 			}
