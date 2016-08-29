@@ -1,6 +1,10 @@
 package source;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import datastructures.core.Matrix2D;
 
@@ -44,12 +48,21 @@ public class JaccardSimilaridade {
 	public double getCalculo(){
 		return calculo;
 	}
-	public Matrix2D criaMatriz(List<JaccardSimilaridade> listaDeCoeficientes, int objectsCount) {
+	public Matrix2D criaMatriz(List<JaccardSimilaridade> listaDeCoeficientes, int objectsCount, HashMap<String, Set<String>> quantidadeVertices) {
 		 Matrix2D matrizDeSimilaridades = new Matrix2D(objectsCount);
 		for (int i = 0; i < objectsCount; i++) {
-			double similaridade = listaDeCoeficientes.get(i).getCalculo();
 			for (int j = i+1 ; j < objectsCount; j++) {
-				matrizDeSimilaridades.set(i, j, similaridade );
+				for (Entry<String, Set<String>> verticeVizinhos : quantidadeVertices.entrySet()) {
+					 for (JaccardSimilaridade jac : listaDeCoeficientes) {
+						 for (String vizinho : verticeVizinhos.getValue()) {
+							 if(jac.getP1().equals(verticeVizinhos.getKey())&& jac.getP2().equals(vizinho) || jac.getP1().equals(vizinho) && jac.getP2().equals(verticeVizinhos.getKey())){
+								 matrizDeSimilaridades.set(i, j, jac.getCalculo() );
+							
+							 }
+
+						}
+					}
+				}
 
 			}
 		}

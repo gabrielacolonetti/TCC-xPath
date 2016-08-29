@@ -7,12 +7,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
 
 import clusteringstrategies.implementation.clustering.BestStarClusteringStrategy;
 import datastructures.core.DataCluster;
+import datastructures.core.DataObject;
 import datastructures.core.Matrix2D;
 import model.CalcFilesUtil;
 import model.Grafo;
@@ -31,8 +33,8 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/testeNome");
-//		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/basic");
+//		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/testeNome");
+		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/basic");
 		List<File> listaDeCurriculoXML = calcFilesUtil.getCurriculosXML();
 		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
 		List<Tupla> listaTupla = ManipuladorXML.criaPares();
@@ -74,17 +76,30 @@ public class Main {
 		
 		//criando cluster usando ursa		
 		ClusteringProcess primeiroProcesso = new ClusteringProcess();
-		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(g.getThreshold()));
-		Matrix2D matrizDeSimilaridades = j.criaMatriz(listaDeCoeficientes, g.quantidadeVertices.size());
-				
-		
-	    primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
+		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(0.3));
+		Matrix2D matrizDeSimilaridades = j.criaMatriz(listaDeCoeficientes, g.quantidadeVertices.size(), g.getQuantidadeVertices());
+		System.out.println(matrizDeSimilaridades);
+		DataObjectAutor autor;
+		for (Entry<String, Set<String>> data : g.getQuantidadeVertices().entrySet()) {
+			String nomeautor = data.getKey();
+			autor = new DataObjectAutor(nomeautor);			
+			//System.out.println(autor);
+			primeiroProcesso.addDataObject(autor);
+		}
+		primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
 
-		
-		//for (DataCluster cluster : primeiroProcesso.getDataClusters()) {
-			//	System.out.println(cluster);
-		//}
+		int index =0;
+		for (DataCluster cluster : primeiroProcesso.getDataClusters()) {
+				//cluster.print();
+			System.out.println("\nCluster "+ index);
+				for (int i =0 ; i< cluster.getDataObjects().size();i++){
+					DataObjectAutor data = (DataObjectAutor) cluster.getDataObjects().get(i);
+					System.out.println(data.getMt().getValue());
+				}
+				index++;
+							
+		}
 		
 //		List<Grupo> listaDegrupos = g.criaGrupoAlgoritmoSimples();
 //		PrintStream p = new PrintStream("grupos.txt");

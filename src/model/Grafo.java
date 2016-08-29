@@ -95,6 +95,14 @@ public class Grafo {
 		grafoIncluir.addEdge(p1, p2, e);
 	}
 
+	public HashMap<String, Set<String>> getQuantidadeVertices() {
+		return quantidadeVertices;
+	}
+
+	public void setQuantidadeVertices(HashMap<String, Set<String>> quantidadeVertices) {
+		this.quantidadeVertices = quantidadeVertices;
+	}
+
 	public List<Grupo> criaGrupoAlgoritmoSimples(){
 
 
