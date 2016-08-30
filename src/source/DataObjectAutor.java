@@ -7,7 +7,7 @@ public class DataObjectAutor extends DataObject {
 	
 	public static final int POS_AUTOR = 0;
 //	public static final int POS_VIZINHOS = 0;
-	MetaData mt;
+	 AutorMetaData mt;
 	
 	public MetaData getMt() {
 		return mt;
@@ -16,7 +16,7 @@ public class DataObjectAutor extends DataObject {
 	public DataObjectAutor(){}
 	
 	public DataObjectAutor(String autor){
-		mt = new MetaData("nome", autor);
+		mt = new AutorMetaData("nome", autor);
 		this.addFeature(mt);
 	
 	//	this.addFeature(new MetaData("nome", autor));

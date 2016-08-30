@@ -91,13 +91,13 @@ public class Main {
 
 		int index =0;
 		for (DataCluster cluster : primeiroProcesso.getDataClusters()) {
-				//cluster.print();
-			System.out.println("\nCluster "+ index);
-				for (int i =0 ; i< cluster.getDataObjects().size();i++){
-					DataObjectAutor data = (DataObjectAutor) cluster.getDataObjects().get(i);
-					System.out.println(data.getMt().getValue());
-				}
-				index++;
+				cluster.print();
+//			System.out.println("\nCluster "+ index);
+//				for (int i =0 ; i< cluster.getDataObjects().size();i++){
+//					DataObjectAutor data = (DataObjectAutor) cluster.getDataObjects().get(i);
+//					System.out.println(data.getMt().getValue());
+//				}
+//				index++;
 							
 		}
 		
