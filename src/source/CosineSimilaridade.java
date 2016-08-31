@@ -1,5 +1,12 @@
 package source;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+
+import datastructures.core.Matrix2D;
+
 public class CosineSimilaridade {
 
 	public String p1;
@@ -47,4 +54,32 @@ public class CosineSimilaridade {
 	public double getCalculo(){
 		return calculo;
 	}
+	
+	public Matrix2D criaMatriz(List<CosineSimilaridade> listaDeCoeficientes, int objectsCount, HashMap<String, Set<String>> quantidadeVertices) {
+		 Matrix2D matrizDeSimilaridades = new Matrix2D(objectsCount);
+		 List <String> autores = listaDeTodosAutores(quantidadeVertices);
+		for (int i = 0; i < objectsCount; i++) {
+			for (int j = i+1 ; j < objectsCount; j++) {
+				 for (CosineSimilaridade c : listaDeCoeficientes) {
+					 if(c.getP1().equals(autores.get(i))&& c.getP2().equals(autores.get(j)) || c.getP1().equals(autores.get(j)) && c.getP2().equals(autores.get(i))){
+						// System.out.println(c.getP1()+"-"+c.getP2()+" "+c.getCalculo());
+						 matrizDeSimilaridades.set(i, j, c.getCalculo() );
+					 }
+				}
+			}
+		}
+		return matrizDeSimilaridades;
+	}
+
+	public List<String> listaDeTodosAutores (HashMap<String, Set<String>> quantidadeVertices){
+		List<String> todosVizinhos = new ArrayList<String>();
+		for (String vizinho: quantidadeVertices.keySet()) {
+			todosVizinhos.add(vizinho);
+		}
+		return todosVizinhos;
+		
+	}
+	  
 }
+
+

@@ -245,7 +245,7 @@ public class Grafo {
 		return quantidadeVertices;
 	}
 
-	public   List<JaccardSimilaridade> coeficienteJaccard(){
+	public List<JaccardSimilaridade> coeficienteJaccard(){
 		for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {
 			for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
 		
@@ -278,7 +278,7 @@ public class Grafo {
 		return coeficientesJaccard;
 	}
 	
-	public void coeficienteCosine(){
+	public List<CosineSimilaridade> coeficienteCosine(){
 		for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {			
 			for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
 
@@ -307,9 +307,10 @@ public class Grafo {
 				}
 			}
 		}
+		return coeficientesCosine;
 	}
 				
-    public void coeficienteOverlap(){
+    public List<OverlapSimilaridade> coeficienteOverlap(){
 			for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {			
 				for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
 					
@@ -338,8 +339,7 @@ public class Grafo {
 					}
 				}
 			}
-		
-		
+		return coeficientesOverlap;
 	}
 	public void calculaJaccardOld(){
 

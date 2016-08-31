@@ -1,5 +1,12 @@
 package source;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+
+import datastructures.core.Matrix2D;
+
 public class OverlapSimilaridade {
 	public String p1;
 	public String p2;
@@ -51,4 +58,30 @@ public class OverlapSimilaridade {
 	public double getCalculo(){
 		return calculo;
 	}
+	public Matrix2D criaMatriz(List<OverlapSimilaridade> listaDeCoeficientes, int objectsCount, HashMap<String, Set<String>> quantidadeVertices) {
+		 Matrix2D matrizDeSimilaridades = new Matrix2D(objectsCount);
+		 List <String> autores = listaDeTodosAutores(quantidadeVertices);
+		for (int i = 0; i < objectsCount; i++) {
+			for (int j = i+1 ; j < objectsCount; j++) {
+				 for (OverlapSimilaridade o : listaDeCoeficientes) {
+					 if(o.getP1().equals(autores.get(i))&& o.getP2().equals(autores.get(j)) || o.getP1().equals(autores.get(j)) && o.getP2().equals(autores.get(i))){
+						// System.out.println(o.getP1()+"-"+o.getP2()+" "+o.getCalculo());
+						 matrizDeSimilaridades.set(i, j, o.getCalculo() );
+					 }
+				}
+			}
+		}
+		return matrizDeSimilaridades;
+	}
+
+	public List<String> listaDeTodosAutores (HashMap<String, Set<String>> quantidadeVertices){
+		List<String> todosVizinhos = new ArrayList<String>();
+		for (String vizinho: quantidadeVertices.keySet()) {
+			todosVizinhos.add(vizinho);
+		}
+		return todosVizinhos;
+		
+	}
+
+	
 }

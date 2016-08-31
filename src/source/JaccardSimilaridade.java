@@ -1,5 +1,7 @@
 package source;
 
+import java.awt.FontFormatException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,24 +52,27 @@ public class JaccardSimilaridade {
 	}
 	public Matrix2D criaMatriz(List<JaccardSimilaridade> listaDeCoeficientes, int objectsCount, HashMap<String, Set<String>> quantidadeVertices) {
 		 Matrix2D matrizDeSimilaridades = new Matrix2D(objectsCount);
+		 List <String> autores = listaDeTodosAutores(quantidadeVertices);
 		for (int i = 0; i < objectsCount; i++) {
 			for (int j = i+1 ; j < objectsCount; j++) {
-				for (Entry<String, Set<String>> verticeVizinhos : quantidadeVertices.entrySet()) {
-					 for (JaccardSimilaridade jac : listaDeCoeficientes) {
-						 for (String vizinho : verticeVizinhos.getValue()) {
-							 if(jac.getP1().equals(verticeVizinhos.getKey())&& jac.getP2().equals(vizinho) || jac.getP1().equals(vizinho) && jac.getP2().equals(verticeVizinhos.getKey())){
-								 matrizDeSimilaridades.set(i, j, jac.getCalculo() );
-							
-							 }
-
-						}
-					}
+				 for (JaccardSimilaridade jac : listaDeCoeficientes) {
+					 if(jac.getP1().equals(autores.get(i))&& jac.getP2().equals(autores.get(j)) || jac.getP1().equals(autores.get(j)) && jac.getP2().equals(autores.get(i))){
+						// System.out.println(jac.getP1()+"-"+jac.getP2()+" "+jac.getCalculo());
+						 matrizDeSimilaridades.set(i, j, jac.getCalculo() );
+					 }
 				}
-
 			}
 		}
 		return matrizDeSimilaridades;
 	}
 
-
+	public List<String> listaDeTodosAutores (HashMap<String, Set<String>> quantidadeVertices){
+		List<String> todosVizinhos = new ArrayList<String>();
+		for (String vizinho: quantidadeVertices.keySet()) {
+			todosVizinhos.add(vizinho);
+		}
+		return todosVizinhos;
+		
+	}
+	  
 }
