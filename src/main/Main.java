@@ -48,13 +48,13 @@ public class Main {
 		//calculo similaridade
 		HashMap<String, Set<String>> quantidadeVertices = g.retornaTodosVerticesGrafo();
 		List<JaccardSimilaridade> listaCoeficientesJaccard = g.coeficienteJaccard();
-		List<CosineSimilaridade> listaCoeficientesCosine =  g.coeficienteCosine();
-		List<OverlapSimilaridade> listaCoeficientesOverlap = g.coeficienteOverlap();
+		//List<CosineSimilaridade> listaCoeficientesCosine =  g.coeficienteCosine();
+		//List<OverlapSimilaridade> listaCoeficientesOverlap = g.coeficienteOverlap();
 		
 		//clusterizando utilizando best star
 		JaccardSimilaridade j = new JaccardSimilaridade();
-		CosineSimilaridade c = new CosineSimilaridade();
-		OverlapSimilaridade o = new OverlapSimilaridade();
+		//CosineSimilaridade c = new CosineSimilaridade();
+		//OverlapSimilaridade o = new OverlapSimilaridade();
 		
 //		for(CosineSimilaridade c : g.coeficientesCosine){
 //			System.out.println("\ncoeficientes Cosine");
@@ -80,7 +80,8 @@ public class Main {
 		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(0.3));
 		
 		//alterar a lista de coeficientes que deseja clusterizar
-		Matrix2D matrizDeSimilaridades = j.criaMatriz(listaCoeficientesJaccard, quantidadeVertices.size(), quantidadeVertices);
+		HashMap<String, HashMap<String, Double>> hashCoeficientes = j.criaHashMap(listaCoeficientesJaccard);
+		Matrix2D matrizDeSimilaridades = j.criaMatriz(hashCoeficientes, quantidadeVertices.size(), quantidadeVertices);
 		System.out.println(matrizDeSimilaridades);
 		DataObjectAutor autor;
 		for (Entry<String, Set<String>> data : g.getQuantidadeVertices().entrySet()) {
