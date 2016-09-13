@@ -78,11 +78,11 @@ public class Main {
 		//criando cluster usando ursa		
 		ClusteringProcess primeiroProcesso = new ClusteringProcess();
 		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(0.3));
-		
+
 		//alterar a lista de coeficientes que deseja clusterizar
 		HashMap<String, HashMap<String, Double>> hashCoeficientes = j.criaHashMap(listaCoeficientesJaccard);
 		Matrix2D matrizDeSimilaridades = j.criaMatriz(hashCoeficientes, quantidadeVertices.size(), quantidadeVertices);
-		System.out.println(matrizDeSimilaridades);
+		//System.out.println(matrizDeSimilaridades);
 		DataObjectAutor autor;
 		for (Entry<String, Set<String>> data : g.getQuantidadeVertices().entrySet()) {
 			String nomeautor = data.getKey();
@@ -92,16 +92,8 @@ public class Main {
 		primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
 
-		//int index =0;
 		for (DataCluster cluster : primeiroProcesso.getDataClusters()) {
-				cluster.print();
-//			System.out.println("\nCluster "+ index);
-//				for (int i =0 ; i< cluster.getDataObjects().size();i++){
-//					DataObjectAutor data = (DataObjectAutor) cluster.getDataObjects().get(i);
-//					System.out.println(data.getMt().getValue());
-//				}
-//				index++;
-							
+				cluster.print();						
 		}
 		
 //		List<Grupo> listaDegrupos = g.criaGrupoAlgoritmoSimples();
