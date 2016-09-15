@@ -70,7 +70,7 @@ public class Grafo {
 				System.err.println("Autor nulo!");
 				System.exit(1);
 			}
-			if (p1 == p2) {
+			if (p1.equals(p2)) {
 				System.err.println("Autores iguais!");
 				continue;
 			}

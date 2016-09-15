@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -33,8 +34,8 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-//		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/testeNome");
-		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/plus");
+		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/basic");
+//		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculosplus");
 		List<File> listaDeCurriculoXML = calcFilesUtil.getCurriculosXML();
 		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
 		List<Tupla> listaTupla = ManipuladorXML.criaPares();
@@ -42,7 +43,6 @@ public class Main {
 		//cria grafo
 		Grafo g = new Grafo();
 		g.criaVertice(listaTupla);
-		//System.out.println(g);
 		g.setThreshold(3);
 		
 		//calculo similaridade
@@ -56,39 +56,27 @@ public class Main {
 		//CosineSimilaridade c = new CosineSimilaridade();
 		//OverlapSimilaridade o = new OverlapSimilaridade();
 		
-//		for(CosineSimilaridade c : g.coeficientesCosine){
-//			System.out.println("\ncoeficientes Cosine");
-//			System.out.println(c.getP1()+" "+c.getP2());
-//			System.out.println(c.getCalculo());
-//		}
-		
-//		for (JaccardSimilaridade s: listaDeCoeficientes) {
-//			System.out.println("\ncoeficientes Jaccard");
-//			System.out.println(s.getP1()+" "+ s.getP2());
-//			System.out.println(s.getCalculo());
-//		}
-//		
-		
-//		for(OverlapSimilaridade c : g.coeficientesOverlap){
-//			System.out.println("\ncoeficientes Overlap");
-//			System.out.println(c.getP1()+" "+c.getP2());
-//			System.out.println(c.getCalculo());
-//		}
-//		
+
 		//criando cluster usando ursa		
 		ClusteringProcess primeiroProcesso = new ClusteringProcess();
-		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(0.3));
+		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(0.1));
 
 		//alterar a lista de coeficientes que deseja clusterizar
 		HashMap<String, HashMap<String, Double>> hashCoeficientes = j.criaHashMap(listaCoeficientesJaccard);
-		Matrix2D matrizDeSimilaridades = j.criaMatriz(hashCoeficientes, quantidadeVertices.size(), quantidadeVertices);
+		List <String> autores = j.listaDeTodosAutores(quantidadeVertices);
+	
+		Matrix2D matrizDeSimilaridades = j.criaMatriz(hashCoeficientes, autores.size(), autores);
 		//System.out.println(matrizDeSimilaridades);
+		
+		//inserindo data object
 		DataObjectAutor autor;
-		for (Entry<String, Set<String>> data : g.getQuantidadeVertices().entrySet()) {
-			String nomeautor = data.getKey();
-			autor = new DataObjectAutor(nomeautor);			
+		for(int k=0;k<autores.size();k++){
+			String nomeautor = autores.get(k);
+			autor = new DataObjectAutor(nomeautor);
 			primeiroProcesso.addDataObject(autor);
+
 		}
+		
 		primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
 

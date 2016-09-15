@@ -1,10 +1,8 @@
 package source;
 
-import java.awt.FontFormatException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -50,37 +48,73 @@ public class JaccardSimilaridade {
 	public double getCalculo(){
 		return calculo;
 	}
-	
-	public Matrix2D criaMatriz(HashMap<String, HashMap<String, Double>> hashCoeficientes, int objectsCount, HashMap<String, Set<String>> quantidadeVertices) {
-		 Matrix2D matrizDeSimilaridades = new Matrix2D(objectsCount);
-		 List <String> autores = listaDeTodosAutores(quantidadeVertices);
-		 for (int i = 0; i < objectsCount; i++) {
 
-			 int j = i+1;
-				 //obter segundo hash
-				 //iterar no segundo hash
-				 //a cada linha do segundo hash : setar na matriz o value
-				 HashMap<String, Double> a = hashCoeficientes.get(autores.get(i));								 
-					for (Entry<String, Double> b : a.entrySet()) {
-						matrizDeSimilaridades.set(i, j, b.getValue());
-						matrizDeSimilaridades.set(j, i, b.getValue());
-						j++;
-					}
-				
-		 }
-		 return matrizDeSimilaridades;
+	//	public Matrix2D criaMatriz(HashMap<String, HashMap<String, Double>> hashCoeficientes, int objectsCount, HashMap<String, Set<String>> quantidadeVertices) {
+	//		Matrix2D matrizDeSimilaridades = new Matrix2D(objectsCount);
+	//		List <String> autores = listaDeTodosAutores(quantidadeVertices);
+	//		for (int i = 0; i < objectsCount; i++) {
+	//
+	//			int j = i+1;
+	//			//obter segundo hash
+	//			//iterar no segundo hash
+	//			//a cada linha do segundo hash : setar na matriz o value
+	//			HashMap<String, Double> a = hashCoeficientes.get(autores.get(i));								 
+	//			for (Entry<String, Double> b : a.entrySet()) {
+	//				matrizDeSimilaridades.set(i, j, b.getValue());
+	//				matrizDeSimilaridades.set(j, i, b.getValue());
+	//				j++;
+	//			}
+	//
+	//		}
+	//		return matrizDeSimilaridades;
+	//	}
+
+
+	//	public Matrix2D criaMatrizLenta(List<JaccardSimilaridade> listaDeCoeficientes, int objectsCount, HashMap<String, Set<String>> quantidadeVertices) {
+	//		Matrix2D matrizDeSimilaridades = new Matrix2D(objectsCount);
+	//		List <String> autores = listaDeTodosAutores(quantidadeVertices);
+	//		for (int i = 0; i < objectsCount; i++) {
+	//			for (int j = i+1 ; j < objectsCount; j++) {
+	//				for (Entry<String, Set<String>> verticeVizinhos : quantidadeVertices.entrySet()) {
+	//					for (JaccardSimilaridade jac : listaDeCoeficientes) {
+	//						for (String vizinho : verticeVizinhos.getValue()) {
+	//							if(jac.getP1().equals(verticeVizinhos.getKey())&& jac.getP2().equals(vizinho) || jac.getP1().equals(vizinho) && jac.getP2().equals(verticeVizinhos.getKey())){
+	//								matrizDeSimilaridades.set(i, j, jac.getCalculo() );
+	//
+	//							}
+	//
+	//						}
+	//					}
+	//					}}
+	//		return matrizDeSimilaridades;
+	//	}
+
+	public Matrix2D criaMatriz(HashMap<String, HashMap<String, Double>> hashCoeficientes, int objectsCount, List<String> autores) {
+		Matrix2D matrizDeSimilaridades = new Matrix2D(objectsCount);
+
+		for (int i = 0; i < objectsCount; i++) {
+			for (int j = i+1 ; j < objectsCount; j++) {
+					System.out.println(hashCoeficientes.get(autores.get(i)).get(autores.get(j)));
+					double valor = hashCoeficientes.get(autores.get(i)).get(autores.get(j));
+					matrizDeSimilaridades.set(i, j, valor);
+					matrizDeSimilaridades.set(j, i, 8);
+			}
+		}
+		System.out.println(matrizDeSimilaridades);
+		return matrizDeSimilaridades;
 	}
-	
 
-	
+
 	public List<String> listaDeTodosAutores (HashMap<String, Set<String>> quantidadeVertices){
 		List<String> todosVizinhos = new ArrayList<String>();
 		for (String vizinho: quantidadeVertices.keySet()) {
 			todosVizinhos.add(vizinho);
 		}
 		return todosVizinhos;
-		
+
 	}
+
+
 	public HashMap<String, HashMap<String, Double>> criaHashMap(List<JaccardSimilaridade> listaCoeficientesJaccard) {
 		HashMap<String, HashMap<String,Double>> hashCoeficientes = new HashMap<String, HashMap<String,Double>>();
 		for (JaccardSimilaridade jaccardSimilaridade : listaCoeficientesJaccard) {
@@ -91,10 +125,12 @@ public class JaccardSimilaridade {
 			}else{
 				hashCoeficientes.get(jaccardSimilaridade.getP1()).put(jaccardSimilaridade.getP2(), jaccardSimilaridade.getCalculo());
 			}
-			
+
 		}
 		return hashCoeficientes;
-		
 	}
-	  
+
+
+
+
 }
