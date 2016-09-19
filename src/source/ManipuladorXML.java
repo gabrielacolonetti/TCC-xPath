@@ -43,11 +43,10 @@ public class ManipuladorXML {
 
 				XPathFactory xPathfactory = XPathFactory.newInstance();
 				XPath xpath = xPathfactory.newXPath();
-				XPathExpression exprAchaArtigos = xpath
-						.compile("/CURRICULO-VITAE/PRODUCAO-BIBLIOGRAFICA/ARTIGOS-PUBLICADOS/ARTIGO-PUBLICADO");
+				XPathExpression exprAchaArtigos = xpath.compile("/CURRICULO-VITAE/PRODUCAO-BIBLIOGRAFICA/ARTIGOS-PUBLICADOS/ARTIGO-PUBLICADO|/CURRICULO-VITAE/PRODUCAO-BIBLIOGRAFICA/TRABALHOS-EM-EVENTOS/TRABALHO-EM-EVENTOS");
 				NodeList nlArtigos = (NodeList) exprAchaArtigos.evaluate(document, XPathConstants.NODESET);
-				XPathExpression exprAchaTitulo = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@TITULO-DO-ARTIGO");
-				XPathExpression exprAchaAno = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@ANO-DO-ARTIGO");
+				XPathExpression exprAchaTitulo = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@TITULO-DO-ARTIGO|DADOS-BASICOS-DO-TRABALHO/@TITULO-DO-TRABALHO");
+				XPathExpression exprAchaAno = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@ANO-DO-ARTIGO|DADOS-BASICOS-DO-TRABALHO/@ANO-DO-TRABALHO");
 				XPathExpression exprAchaAutores = xpath.compile("AUTORES");
 				//XPathExpression exprAchaAreasConhecimento = xpath.compile("//AREAS-DO-CONHECIMENTO");
 			//	XPathExpression exprAchaNomeAreaConhecimento = xpath.compile("@NOME-DA-AREA-DO-CONHECIMENTO");

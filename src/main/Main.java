@@ -59,7 +59,7 @@ public class Main {
 
 		//criando cluster usando ursa
 		ClusteringProcess primeiroProcesso = new ClusteringProcess();
-		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(0.1));
+		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(0.05));
 
 		//alterar a lista de coeficientes que deseja clusterizar
 		//HashMap<String, HashMap<String, Double>> hashCoeficientes = j.criaHashMap(listaCoeficientesJaccard);
@@ -73,7 +73,19 @@ public class Main {
      	//Matrix2D matrizDeSimilaridades = j.criaMatriz(hashCoeficientes, autores.size(), autores);
      	//Matrix2D matrizDeSimilaridades = c.criaMatriz(hashCoeficientes, autores.size(), autores);
      	Matrix2D matrizDeSimilaridades = o.criaMatriz(hashCoeficientes, autores.size(), autores);
+     	
 
+//     	for (String autor1 : hashCoeficientes.keySet()) {
+//     		for (Entry<String,Double> tupla: hashCoeficientes.get(autor1).entrySet() ) {
+//     			if (autor1.contains("Ronaldo") && tupla.getKey().contains("Carina")) {
+//     				System.out.println("Similaridade <" + autor1 + "> e <" + tupla.getKey() + "> = " + tupla.getValue());
+//     			}
+//     		}
+//     	}
+     	
+     	//System.out.println("\n\n\n");
+     	
+     	
 		//System.out.println(matrizDeSimilaridades);
 		
 		//inserindo data object
@@ -81,6 +93,7 @@ public class Main {
 		for(int k=0;k<autores.size();k++){
 			String nomeautor = autores.get(k);
 			autor = new DataObjectAutor(nomeautor);
+			autor.setIndex(k);
 			primeiroProcesso.addDataObject(autor);
 
 		}
@@ -88,7 +101,15 @@ public class Main {
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
 
 		for (DataCluster cluster : primeiroProcesso.getDataClusters()) {
-				cluster.print();						
+				cluster.print();
+//				for (DataObject autImp: cluster.getDataObjects()) {
+//					String autImp1 = ((DataObjectAutor)autImp).getMt().getValue();
+//					for (DataObject autImpX: cluster.getDataObjects()) {
+//						String autImp2 = ((DataObjectAutor)autImpX).getMt().getValue();
+//						
+//						System.out.println("Similaridade " + autImp1 + " e " + autImp2 + " = " + hashCoeficientes.get(autImp1).get(autImp2));
+//					}
+//				}
 		}
 		
 		
