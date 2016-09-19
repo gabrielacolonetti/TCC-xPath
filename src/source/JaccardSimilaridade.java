@@ -94,13 +94,13 @@ public class JaccardSimilaridade {
 
 		for (int i = 0; i < objectsCount; i++) {
 			for (int j = i+1 ; j < objectsCount; j++) {
-					System.out.println(hashCoeficientes.get(autores.get(i)).get(autores.get(j)));
+				//	System.out.println(hashCoeficientes.get(autores.get(i)).get(autores.get(j)));
 					double valor = hashCoeficientes.get(autores.get(i)).get(autores.get(j));
 					matrizDeSimilaridades.set(i, j, valor);
-					matrizDeSimilaridades.set(j, i, 8);
+				//	matrizDeSimilaridades.set(j, i, 8);
 			}
 		}
-		System.out.println(matrizDeSimilaridades);
+		//System.out.println(matrizDeSimilaridades);
 		return matrizDeSimilaridades;
 	}
 

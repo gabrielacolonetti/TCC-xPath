@@ -34,7 +34,7 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/basic");
+		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/plus");
 //		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculosplus");
 		List<File> listaDeCurriculoXML = calcFilesUtil.getCurriculosXML();
 		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
@@ -48,24 +48,32 @@ public class Main {
 		//calculo similaridade
 		HashMap<String, Set<String>> quantidadeVertices = g.retornaTodosVerticesGrafo();
 		List<JaccardSimilaridade> listaCoeficientesJaccard = g.coeficienteJaccard();
-		//List<CosineSimilaridade> listaCoeficientesCosine =  g.coeficienteCosine();
-		//List<OverlapSimilaridade> listaCoeficientesOverlap = g.coeficienteOverlap();
+		List<CosineSimilaridade> listaCoeficientesCosine =  g.coeficienteCosine();
+		List<OverlapSimilaridade> listaCoeficientesOverlap = g.coeficienteOverlap();
 		
 		//clusterizando utilizando best star
 		JaccardSimilaridade j = new JaccardSimilaridade();
 		//CosineSimilaridade c = new CosineSimilaridade();
-		//OverlapSimilaridade o = new OverlapSimilaridade();
+		OverlapSimilaridade o = new OverlapSimilaridade();
 		
 
-		//criando cluster usando ursa		
+		//criando cluster usando ursa
 		ClusteringProcess primeiroProcesso = new ClusteringProcess();
 		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(0.1));
 
 		//alterar a lista de coeficientes que deseja clusterizar
-		HashMap<String, HashMap<String, Double>> hashCoeficientes = j.criaHashMap(listaCoeficientesJaccard);
-		List <String> autores = j.listaDeTodosAutores(quantidadeVertices);
-	
-		Matrix2D matrizDeSimilaridades = j.criaMatriz(hashCoeficientes, autores.size(), autores);
+		//HashMap<String, HashMap<String, Double>> hashCoeficientes = j.criaHashMap(listaCoeficientesJaccard);
+		//HashMap<String, HashMap<String, Double>> hashCoeficientes = c.criaHashMap(listaCoeficientesCosine);
+		HashMap<String, HashMap<String, Double>> hashCoeficientes = o.criaHashMap(listaCoeficientesOverlap);
+
+		//List <String> autores = j.listaDeTodosAutores(quantidadeVertices);
+		//List <String> autores = c.listaDeTodosAutores(quantidadeVertices);
+		List <String> autores = o.listaDeTodosAutores(quantidadeVertices);
+		
+     	//Matrix2D matrizDeSimilaridades = j.criaMatriz(hashCoeficientes, autores.size(), autores);
+     	//Matrix2D matrizDeSimilaridades = c.criaMatriz(hashCoeficientes, autores.size(), autores);
+     	Matrix2D matrizDeSimilaridades = o.criaMatriz(hashCoeficientes, autores.size(), autores);
+
 		//System.out.println(matrizDeSimilaridades);
 		
 		//inserindo data object
@@ -76,13 +84,15 @@ public class Main {
 			primeiroProcesso.addDataObject(autor);
 
 		}
-		
 		primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
 
 		for (DataCluster cluster : primeiroProcesso.getDataClusters()) {
 				cluster.print();						
 		}
+		
+		
+		
 		
 //		List<Grupo> listaDegrupos = g.criaGrupoAlgoritmoSimples();
 //		PrintStream p = new PrintStream("grupos.txt");
