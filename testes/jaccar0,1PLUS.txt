@@ -1,0 +1,694 @@
+Analisando curriculo Patricia V.xml
+Analisando curriculo Paulo - 09-06.xml
+Analisando curriculo Raul - 09-04.xml
+Analisando curriculo Ricardo -10-04.xml
+Analisando curriculo Ricardo PS - 14-04.xml
+Analisando curriculo Ricardo S - 14-04.xml
+Analisando curriculo Rogerio - 14-04.xml
+Analisando curriculo Ronaldo - 14-04.xml
+Analisando curriculo Silvia - 14-04.xml
+Analisando curriculo Vania - 14-04.xml
+Analisando curriculo west - 9-04.xml
+Analisando curriculo Willrich - 14-04.xml
+Cluster:
+ <Mauro Marcelo Mattos>
+ <Alexandre Gava Menezes>
+ <F. L. KOCH>
+ <F. L. KOCK>
+ <Carlos Oberdan Rolim>
+ <Morvan Daniel Muller>
+ <Alexandre Parra Carneiro da Silva>
+ <Mueller, Peter>
+ <Rafael B. BRINHOSA;>
+ <Rafael Rodrigues de Freitas>
+ <Aujor Tadeu Andrade>
+ <Cleverson Alessandro Veronez>
+ <Kleber Magno Maciel Vieira>
+ <Mustapha El Hamzaoui>
+ <FERNANDO LUIZ KOCH>
+ <Arantes, Juliana Amaral>
+ < Alexandre Augusto Flores>
+ <Nilo Acir Hirt>
+ < Evandro Alencar Rigon>
+ <Ricardo Ferraro de Souza>
+ <Brigitte Hitce>
+ <Brunner, Marcus>
+ <Luis Marco Caceres Alvarez>
+ <Paulo Fernando Silva>
+ <Luiz Fernando Kormann>
+ <Daniel Ricardo dos Santos>
+ <Alexandre Schulter>
+ <Shirlei Aparecida de Chaves>
+ <T. M. Bonetti>
+ <Saliha Assoul>
+ <NOGUEIRA, José Marcos>
+ <Guilherme Arthur Geronimo>
+ <Leonardo Defenti>
+ <Désiré Nguessan>
+ <Marcos Dias de Assunção>
+ < Rafael Weingartner>
+ <Sergio Roberto Villarreal>
+ <Jorge Werner>
+ < Gabriel Beim Bräscher>
+ <A M  Barotto>
+ <Abderrahim Sekkaki>
+ <Vieira, Kleber>
+ <Rafael de Souza Mendes>
+Cluster:
+ <Marcos Aure&#769;lio Pedroso Leandro>
+Cluster:
+ <Nelkis De La Orden Medina>
+Cluster:
+ <Tereza Gonçalves Kirner>
+Cluster:
+ <Patrícia Cristiane de Souza>
+Cluster:
+ <Bianca Smith Pilla>
+Cluster:
+ <Augusto Bohner Hoffmann>
+Cluster:
+ <Humberto Fioravante Ferro>
+Cluster:
+ <Lucia H T Gonçalves>
+Cluster:
+ <Aline Pereira Soares>
+Cluster:
+ <Paulo Portugal>
+Cluster:
+ <Silvia Nassar>
+Cluster:
+ <Verônica Burmann da Silva>
+Cluster:
+ <A Souza>
+Cluster:
+ <TAYLOR, RUSSELL>
+Cluster:
+ <L M F Carvalho>
+Cluster:
+ <Fernando Mendes Azevedo>
+Cluster:
+ <Carina Friedrich Dorneles>
+Cluster:
+ <Neri dos Santos>
+Cluster:
+ <Fábio Bif Goularte>
+Cluster:
+ <FERREIRA, VIVIANE FERRAZ>
+Cluster:
+ <ALVARES, LUIS OTAVIO>
+Cluster:
+ <Bruno Cesar de Lima de Paula>
+Cluster:
+ <COMUNELLO, E>
+Cluster:
+ <Bartolomeu, Paulo>
+Cluster:
+ <Carlos M.C. Jacinto>
+Cluster:
+ <Fernando Spanhol>
+Cluster:
+ <Maria Luisa Damiani>
+Cluster:
+ <Fröhlich, F.>
+Cluster:
+ <XIKOTA, JC>
+Cluster:
+ <ulián Moreno Cadavid>
+Cluster:
+ <CARLOS ALBERTO JUSTO DA SILVA>
+Cluster:
+ <WASSMER, B>
+Cluster:
+ <Marilza Leal Nascimento>
+Cluster:
+ <Paulo J. Freitas Filho>
+Cluster:
+ <SILVA, MADALENA P.>
+Cluster:
+ <Jose Antonio Fernandes de Macedo>
+Cluster:
+ <Bernardo Gonçalves Riso>
+Cluster:
+ <Ciciliana Maíla Zilio Rech>
+Cluster:
+ <Ned Kock>
+Cluster:
+ <AFFONSO, LUIZ>
+Cluster:
+ <Luciano Paschoal Gaspary>
+Cluster:
+ <Mari&#769;a Elena Villarreal>
+Cluster:
+ <Juliana Freire>
+Cluster:
+ <Maria Janilce Almeida>
+Cluster:
+ <Beatriz Widges>
+Cluster:
+ <Konietschke Rainer>
+Cluster:
+ <Bernd Heinrich Storb>
+Cluster:
+ <Gertrudes A Dandolini>
+Cluster:
+ <CÉ JÚNIOR, JOSÉ>
+Cluster:
+ <Souto, Pedro F.>
+Cluster:
+ <Nilza Medeiros Perin>
+Cluster:
+ <Robert Davison>
+Cluster:
+ <Schulter, Alexandre>
+Cluster:
+ <Ahmed Ali Abdala Esmin>
+Cluster:
+ <GUEDES, LUIZ AFFONSO>
+Cluster:
+ <Natalia Adrienko>
+Cluster:
+ <PRUDÊNCIO, ACHILLES C.>
+Cluster:
+ <Lucia Hisako Takase Gonçalves>
+Cluster:
+ <DANTAS, M A R>
+Cluster:
+ <Roberto Trasarti>
+Cluster:
+ <GUILLEMOT, CLAIRE>
+Cluster:
+ <Bahloul Bensassi>
+Cluster:
+ <André Lins Gonzalez>
+Cluster:
+ <Cristiane Koehler>
+Cluster:
+ <CB Sottovia>
+Cluster:
+ <Meisner, E.>
+Cluster:
+ <de Oliveira, Marco A.>
+Cluster:
+ <Stefano Spaccapietra>
+Cluster:
+ <Artur Ribeiro de Aquino>
+Cluster:
+ <Diego Izidoro>
+Cluster:
+ <Mauricio Rissi>
+Cluster:
+ <Poignet, Philippe>
+Cluster:
+ <Angela Maria Alvarez>
+Cluster:
+ <Mariana D.C. Lima>
+Cluster:
+ <TAYLOR, R>
+Cluster:
+ <FERNANDO MARTINELI LOUREIRO>
+Cluster:
+ <Anna Monreale>
+Cluster:
+ <Mário Lúcio Mesquita Machado>
+Cluster:
+ <POLARO, SANDRA HELENA ISSE>
+Cluster:
+ <Marina Keiko Nakayama>
+Cluster:
+ <Ronaldo Campos>
+Cluster:
+ <Botturi, D.>
+Cluster:
+ <Marta Costa Rosatelli>
+Cluster:
+ <A. S. Córdova>
+Cluster:
+ <Fernando Antonio Forcelini>
+Cluster:
+ <Giner Alor Hernandez>
+Cluster:
+ <Rafael Brundo Uriarte>
+Cluster:
+ <Pierre de Saqui Sannes>
+Cluster:
+ <Andres Pineda>
+Cluster:
+ <Sznitman, R.>
+Cluster:
+ <de Lucca Siqueira, Fernando>
+Cluster:
+ <Carlos Magno C Jacinto>
+Cluster:
+ <Maria Manuela F.P. da S. Martins>
+Cluster:
+ <M S M A Notare>
+Cluster:
+ <Russell Taylor>
+Cluster:
+ <Kishor S. Trivedi>
+Cluster:
+ <Denio Duarte>
+Cluster:
+ <Cláudio Magalhães de Oliveira>
+Cluster:
+ <C Celso Brasil Camargo>
+Cluster:
+ <ANDRÉ P. SILVA>
+Cluster:
+ <MAURICIO L. SILVA>
+Cluster:
+ <Marcelo Gitirana Gomes Ferreira>
+Cluster:
+ <Balicki, M.>
+Cluster:
+ <Ronaldo dos Santos Mello>
+Cluster:
+ <Wagner T Watanabe>
+Cluster:
+ <Gustavo Pereira Mateus>
+Cluster:
+ <Hercules Matheus Avancini>
+Cluster:
+ <Patrícia Vilain>
+Cluster:
+ <Denise Maria Guerreiro Vieira da Silva>
+Cluster:
+ <Ciciliana Maila Zílio Rech>
+Cluster:
+ <Gustavo Lucas>
+Cluster:
+ <Roberto Rabello>
+Cluster:
+ <Chao Liu,>
+Cluster:
+ <Natanael Bavaresco>
+Cluster:
+ <Eduardo Rodrigues Gomes>
+Cluster:
+ <Vania Bogorny>
+Cluster:
+ <Silva, Valter>
+Cluster:
+ <Fernanda Ramos>
+Cluster:
+ <Silvana Castano>
+Cluster:
+ <ULEMA, Mehmet>
+Cluster:
+ <Carlos Alberto Heuser>
+Cluster:
+ <WASSMER, BENJAMIN>
+Cluster:
+ <Kelly Hannel>
+Cluster:
+ <Valiati, Joao F.>
+Cluster:
+ <Sérgio Luiz de Medeiros Rivero>
+Cluster:
+ <Ricardo Felipe Custódio>
+Cluster:
+ <Christopher Viana Lima>
+Cluster:
+ <Mauricio José Pereima>
+Cluster:
+ <Rosa Maria Vicari>
+Cluster:
+ <THURET, G>
+Cluster:
+ <Flesch, Rodolfo C.C.>
+Cluster:
+ <Gennady Adrienko>
+Cluster:
+ <José Alberto Fonseca>
+Cluster:
+ <Christine Parent>
+Cluster:
+ <Felipe Schneider Costa>
+Cluster:
+ <Micheli Jurczik Hirt>
+Cluster:
+ <Renato Fileto>
+Cluster:
+ <H J T Carvalho>
+Cluster:
+ <Raphael Sznitman>
+Cluster:
+ <Jean Pierre Courtiat>
+Cluster:
+ <Diego Gomes de Souza>
+Cluster:
+ <Rosemery Andrade Lentz>
+Cluster:
+ <Cristiano Tolfo>
+Cluster:
+ <Juliana Cristina Lessmann>
+Cluster:
+ <Fernando José Spanhol>
+Cluster:
+ <Diego Garcia Rodrigues>
+Cluster:
+ <Michel Diaz>
+Cluster:
+ <Fernando de Lucca Siqueira>
+Cluster:
+ <THURET, GILLES>
+Cluster:
+ <Patrícia de Sá Freire>
+Cluster:
+ <Tobergte A.>
+Cluster:
+ <Maria Marlene de Souza Pires>
+Cluster:
+ <Madalena Pereira da Silva>
+Cluster:
+ <Rogério Cid Bastos>
+Cluster:
+ <André Bastos>
+Cluster:
+ <Liliane Passerino>
+Cluster:
+ <Néstor Darío Duque Méndez>
+Cluster:
+ <COMUNELLO, EROS>
+Cluster:
+ <LINHARES, RODRIGO>
+Cluster:
+ <Chiara Renso>
+Cluster:
+ <HAGER, GREGORY>
+Cluster:
+ <Silvia Modesto Nassar>
+Cluster:
+ <Vanessa de Paula Braganholo>
+Cluster:
+ <Demetrio Arturo Ovalle Carranza>
+Cluster:
+ <Roberta Lima-Gomes>
+Cluster:
+ <Antonio Carlos Mariani>
+Cluster:
+ <Lucimar F de Carvalho>
+Cluster:
+ <LEANDRO L. PONCE>
+Cluster:
+ <Denise Bousfield da Silva>
+Cluster:
+ <Cristiano Almeida Cunha>
+Cluster:
+ <Patrick Sénac>
+Cluster:
+ <Nogueira, José Marcos>
+Cluster:
+ <RIVALINO MATIAS JUNIOR>
+Cluster:
+ <Gregory Hager>
+Cluster:
+ <João Artur de Souza>
+Cluster:
+ <Rosa Vicari>
+Cluster:
+ <Fernando M Azevedo>
+Cluster:
+ <Vânia Ribas Ulbricht>
+Cluster:
+ <Lea da Cruz Fagundes>
+Cluster:
+ <Chaves, Shirlei Aparecida>
+Cluster:
+ <Fernando Schnaid>
+Cluster:
+ <GUILLEMOT, C>
+Cluster:
+ <Yannis Theodoridis>
+Cluster:
+ <Bruno Jedynak>
+Cluster:
+ <Rodrigo Gonçalves>
+Cluster:
+ <Cândice Abella Dani>
+Cluster:
+ <Bart Kuijpers>
+Cluster:
+ <Andréia Alves dos Santos>
+Cluster:
+ <ZHIXIAN YAN>
+Cluster:
+ <Hugo T de Carvalho>
+Cluster:
+ <Bó, Antônio P.L.>
+Cluster:
+ <HAGER, G>
+Cluster:
+ <VON WANGENHEIM, A>
+Cluster:
+ <SCHEIDT, RAFAEL DE FARIA>
+Cluster:
+ <Renata de Matos Galante>
+Cluster:
+ <Westphall, Carla Merkle>
+Cluster:
+ <SCHNITZLER, JEAN-YVES>
+Cluster:
+ <MARIA M. DE S. PIRES>
+Cluster:
+ <Rogerio de Almeida Richa>
+Cluster:
+ <LOPES, MÁRCIA MARIA BRAGANÇA>
+Cluster:
+ <Dorneles, Carina Friedrich>
+Cluster:
+ <Beatriz Wilges>
+Cluster:
+ <Clarisse Araújo Cassol>
+Cluster:
+ <F. A. CRUZ>
+Cluster:
+ <Carla Merkle Westphall>
+Cluster:
+ <Vânia Bogorny>
+Cluster:
+ <Raul Sidnei Wazlawick>
+Cluster:
+ <Schroeder, Rebeca>
+Cluster:
+ <Renso, Chiara>
+Cluster:
+ <Pedro Ivo R.B.G. Rodrigues>
+Cluster:
+ <Lia Caetano Bastos>
+Cluster:
+ <Fernando Mendes de Azevedo>
+Cluster:
+ <Flesch, Carlos A.>
+Cluster:
+ <GAIN, PHILIPPE>
+Cluster:
+ <Helo Petry>
+Cluster:
+ <VON WANGENHEIM, ALDO>
+Cluster:
+ <Christine Prim de Pellegrin>
+Cluster:
+ <Paula Andrea Rodríguez Marín>
+Cluster:
+ <Hirzinger, G.>
+Cluster:
+ <Ricardo Azambuja Silveira>
+Cluster:
+ <Arthur Pereira Frantz>
+Cluster:
+ <Evandro César Freiberger>
+Cluster:
+ <Hugo Jose T. Carvalho>
+Cluster:
+ <MM de Souza Pires>
+Cluster:
+ <Roberto Willrich>
+Cluster:
+ <Rosalie Ocker>
+Cluster:
+ <Ricardo Alexandre Reinaldo de Moraes>
+Cluster:
+ <C. M. LORENZO>
+Cluster:
+ <Maria Arminda da Silva Mendes Carneiro da Costa>
+Cluster:
+ <Mariana Dehon Costa Lima>
+Cluster:
+ <Francisco Vasques>
+Cluster:
+ <Celso Alberto Saibel Santos>
+Cluster:
+ <M Fisberg>
+Cluster:
+ <Adriano COSER>
+Cluster:
+ <C A Dani>
+Cluster:
+ <GAIN, P>
+Cluster:
+ <Loy, Alisson Moscato>
+Cluster:
+ <Francisco Moreno>
+Cluster:
+ <VIEGAS, RAIMUNDO>
+Cluster:
+ <Cristiane Koeller>
+Cluster:
+ <Samuel Elias da Silva Salomão>
+Cluster:
+ <Rogerio Cid Bastos>
+Cluster:
+ <Luis Otavio Alvares>
+Cluster:
+ <Portugal, Paulo>
+Cluster:
+ <Silvia Maria Azevedo dos Santos>
+Cluster:
+ <MONTEIRO, HELLEN KARINNA>
+Cluster:
+ <Regina G Santini Costenaro>
+Cluster:
+ <Juliana Leonardi>
+Cluster:
+ <Nilo César Consoli>
+Cluster:
+ <Fernando M de Azevedo>
+Cluster:
+ <Penz, Cesar A.>
+Cluster:
+ <José Cé Júnior>
+Cluster:
+ <LSM da Silva>
+Cluster:
+ <Tolfo, Cristiano>
+Cluster:
+ <Luis Roque Klering>
+Cluster:
+ <Hager, G.>
+Cluster:
+ <SCHNITZLER, JY>
+Cluster:
+ <Rafaela Comarella>
+Cluster:
+ <Claudio Kirner>
+Cluster:
+ <Custódio, Ricardo Felipe>
+Cluster:
+ <Paulo Jose de Freitas Filho>
+Cluster:
+ <Alvares, Luis O.>
+Cluster:
+ <Zerbato D.>
+Cluster:
+ <Lucas Lese Monteiro>
+Cluster:
+ <Adja Ferreira de Andrade>
+Cluster:
+ <Mônica Lisboa Chang Wayhs>
+Cluster:
+ <Joel Pinho Lucas>
+Cluster:
+ <Ulema, Mehmet>
+Cluster:
+ <Carlos Becker Westphall>
+Cluster:
+ <Roberta Zunino>
+Cluster:
+ <XAVIER, E.>
+Cluster:
+ <K. S. Borges>
+Cluster:
+ <WAYHS, M. L. C.>
+Cluster:
+ <Lucimar F. Carvalho>
+Cluster:
+ <Portugal, P.>
+Cluster:
+ <Erlaine Binotto>
+Cluster:
+ <Edla Maria Faust Ramos>
+Cluster:
+ <Hugo José Teixeira de Carvalho>
+Cluster:
+ <Andressa Sasaki Vasques Pacheco>
+Cluster:
+ <Fonseca, José Alberto>
+Cluster:
+ <Júlia Marques Carvalho da Silva>
+Cluster:
+ <Márcia Barros de Sales>
+Cluster:
+ <Guillermo de Jesús Hoyos-Rivera>
+Cluster:
+ <Lucas L. Monteiro>
+Cluster:
+ <Vera Rejane Niederberg Schuhmacher>
+Cluster:
+ <LEONARDI, J.>
+Cluster:
+ <Vasques, Francisco>
+Cluster:
+ <Maria Francisca Santos Daussy>
+Cluster:
+ <Rebeca Schroeder>
+Cluster:
+ <Arnoldo Uber Júnior>
+Cluster:
+ <Lucimar Maria Fossatti de Carvalho>
+Cluster:
+ <A Latreche>
+Cluster:
+ <Gomes, Roberta Lima>
+Cluster:
+ <Tiago Jaime Nascimento>
+Cluster:
+ <Pedro Alberto BARBETTA>
+Cluster:
+ <Ricardo Pereira e Silva>
+Cluster:
+ <Forcellini, Fernando Antonio>
+Cluster:
+ <Raymundo Carlos Machado Ferreira Filho>
+Cluster:
+ <SILVANA MARIA DE MIRANDA>
+Cluster:
+ <Carlos M. D. Veigas>
+Cluster:
+ <Fiorini, P.>
+Cluster:
+ <Poignet, P.>
+Cluster:
+ <Mauro Roisenberg>
+Cluster:
+ <Walter de Abreu Cybis>
+Cluster:
+ <Alexandre Lazaretti Zanatta>
+Cluster:
+ <Dino Pedreschi>
+Cluster:
+ <Antonio Carlos da Rocha Costa>
+Cluster:
+ <Aris Gkoulalas-Divanis>
+Cluster:
+ <Nikos Pelekis>
+Cluster:
+ <Cassiano Kuplich>
+Cluster:
+ <Carreiro, Francisco Borges>
+Cluster:
+ <Ramesh Pinnamanemi>
+Cluster:
+ <MORO, Mirella M.>
+Cluster:
+ <Lucimar Fossatti de Carvalho>
+Cluster:
+ <Analúcia S. M. De Franceschi>
+Cluster:
+ <Rita Cristina Galarraga Bernardi>
+Cluster:
+ <Lucimar F Carvalho>
+Cluster:
+ <Araci Hack Catapan>
+Cluster:
+ <José Gonçalo dos Santos>
