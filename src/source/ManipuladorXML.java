@@ -32,6 +32,10 @@ public class ManipuladorXML {
 	static List<Tupla> listaDePares = new ArrayList<Tupla>();
 	static Map<String, Pessoa> mapaPessoas = new HashMap<String, Pessoa>();
 
+	public static Map<String, Pessoa> getMapaPessoas() {
+		return mapaPessoas;
+	}
+
 	public static List<Publicacao> geraListaDePublicacoes(List<File> listaDeCurriculoXML) {
 		try {
 
@@ -48,13 +52,7 @@ public class ManipuladorXML {
 				XPathExpression exprAchaTitulo = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@TITULO-DO-ARTIGO|DADOS-BASICOS-DO-TRABALHO/@TITULO-DO-TRABALHO");
 				XPathExpression exprAchaAno = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@ANO-DO-ARTIGO|DADOS-BASICOS-DO-TRABALHO/@ANO-DO-TRABALHO");
 				XPathExpression exprAchaAutores = xpath.compile("AUTORES");
-				//XPathExpression exprAchaAreasConhecimento = xpath.compile("//AREAS-DO-CONHECIMENTO");
-			//	XPathExpression exprAchaNomeAreaConhecimento = xpath.compile("@NOME-DA-AREA-DO-CONHECIMENTO");
-			//	XPathExpression exprAchaNomeEspecialidade = xpath.compile("@NOME-DA-ESPECIALIDADE");
-				//XPathExpression exprAchaUniversidade = xpath.compile("/CURRICULO-VITAE/DADOS-GERAIS/ENDERECO/ENDERECO-PROFISSIONAL/@CODIGO-INSTITUICAO-EMPRESA");
-				//XPathExpression exprAchaNomeCurriculo = xpath.compile("/CURRICULO-VITAE/DADOS-GERAIS/@NOME-COMPLETO");
-				//String codUniversidade = (String) exprAchaUniversidade.evaluate(document, XPathConstants.STRING);
-				//String nomeCurriculo = (String) exprAchaNomeCurriculo.evaluate(document, XPathConstants.STRING);
+				XPathExpression exprAchaNomePrincipal = xpath.compile("/CURRICULO-VITAE/DADOS-GERAIS/@NOME-COMPLETO");
 
 				for (int i = 0; i < nlArtigos.getLength(); i++) {
 					Node artigo = nlArtigos.item(i);
@@ -62,6 +60,7 @@ public class ManipuladorXML {
 					// consulta titulo e ano do artigo
 					String titulo = (String) exprAchaTitulo.evaluate(artigo, XPathConstants.STRING);
 					String ano = (String) exprAchaAno.evaluate(artigo, XPathConstants.STRING);
+					String nomeDonoArtigo = (String) exprAchaNomePrincipal.evaluate(artigo, XPathConstants.STRING);
 					// System.out.println("\n\n\n" + titulo + "-"+ ano);
 					Publicacao publicacao = new Publicacao(titulo, ano);
 					boolean estaNaLista = false;
@@ -81,7 +80,28 @@ public class ManipuladorXML {
 						String idCNPQAutor = (atributosDoAutor.getNamedItem("NRO-ID-CNPQ") == null ? ""
 								: atributosDoAutor.getNamedItem("NRO-ID-CNPQ").getNodeValue());
 
+						String nomeTratadoAutor="";
+						if(nomeCompletoAutor.contains(",")){
+							String[] nomeSplit;
+							nomeSplit = nomeCompletoAutor.split(",");
+							for (int s =nomeSplit.length-1 ; s>=0;s--) {
+								if(s==0){
+									nomeTratadoAutor += nomeSplit[s];
+								}else{
+									nomeTratadoAutor += nomeSplit[s]+" ";
+								}
 
+			
+							}
+							
+							nomeCompletoAutor ="";
+							nomeCompletoAutor = nomeTratadoAutor.trim();
+							System.out.println(nomeCompletoAutor);
+						}
+						
+						
+
+						//System.out.println("nome tratado "+ nomeCompletoAutor);
 						Pessoa pessoaux = pessoaExiste(nomeCompletoAutor, idCNPQAutor);
 						if (pessoaux == null){
 							//System.out.println("Incluindo autor " + nomeCompletoAutor);
@@ -137,12 +157,14 @@ public class ManipuladorXML {
 							String nomeEspecialidade = atributosDoArea.getNamedItem("NOME-DA-ESPECIALIDADE")
 									.getNodeValue();
 							
-							if(nomeArea != "" && nomeEspecialidade != ""){
-								pessoaux.getAreas().put(nomeEspecialidade, nomeArea);
+									
+									if(nomeArea != "" && nomeEspecialidade != "" && pessoaux.getNome().equals(nomeDonoArtigo)){
+										pessoaux.getAreas().put(nomeEspecialidade, nomeArea);
 
-							}
-//							System.out.println("nome da area " +x+": "+nomeArea);
-//							System.out.println("especialidade "+x+": "+nomeEspecialidade);
+									}
+							
+							
+							
 						}
 					}
 					continue;

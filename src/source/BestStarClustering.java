@@ -43,9 +43,6 @@ public class BestStarClustering extends BestStarClusteringStrategy {
 		// 2. Create the other clusters
 		for (int i = 1; i < dataSize; i++) {
 
-			if (dataObjects.get(i).toString().contains("Ronaldo") || dataObjects.get(i).toString().contains("Carina")) {
-				System.out.println("debug");
-			}
 			
 			// Check the need for a new cluster
 			boolean createNewCluster = true;

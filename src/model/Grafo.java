@@ -249,11 +249,11 @@ public class Grafo {
 		for (Map.Entry<String,Set<String>> v1 : quantidadeVertices.entrySet()) {
 			for (Map.Entry<String,Set<String>> v2 : quantidadeVertices.entrySet()) {
 		
-//				if (v1.getKey().equals("Ronaldo dos Santos Mello") && v2.getKey().equals("Carina Friedrich Dorneles")) {
-//					
-//					System.out.println("debug");
-//				}
-//				
+				if (v1.getKey().equals("Ronaldo dos Santos Mello") && v2.getKey().equals("Carina Friedrich Dorneles")) {
+					
+					System.out.println("debug");
+				}
+				
 				
 				JaccardSimilaridade j = new JaccardSimilaridade();
 

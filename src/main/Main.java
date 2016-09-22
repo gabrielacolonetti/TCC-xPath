@@ -40,6 +40,7 @@ public class Main {
 		List<File> listaDeCurriculoXML = calcFilesUtil.getCurriculosXML();
 		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
 		List<Tupla> listaTupla = ManipuladorXML.criaPares();
+		Map<String, Pessoa> mapaPessoas = ManipuladorXML.getMapaPessoas();
 		
 		//cria grafo
 		Grafo g = new Grafo();
@@ -51,6 +52,7 @@ public class Main {
 		List<JaccardSimilaridade> listaCoeficientesJaccard = g.coeficienteJaccard();
 		List<CosineSimilaridade> listaCoeficientesCosine =  g.coeficienteCosine();
 		List<OverlapSimilaridade> listaCoeficientesOverlap = g.coeficienteOverlap();
+		
 		
 		//clusterizando utilizando best star
 		JaccardSimilaridade j = new JaccardSimilaridade();
@@ -77,38 +79,43 @@ public class Main {
      	Matrix2D matrizDeSimilaridades = o.criaMatriz(hashCoeficientes, autores.size(), autores);
      	
 
-//     	for (String autor1 : hashCoeficientes.keySet()) {
-//     		for (Entry<String,Double> tupla: hashCoeficientes.get(autor1).entrySet() ) {
-//     			if (autor1.contains("Ronaldo") && tupla.getKey().contains("Carina")) {
-//     				System.out.println("Similaridade <" + autor1 + "> e <" + tupla.getKey() + "> = " + tupla.getValue());
-//     			}
-//     		}
-//     	}
+     	for (String autor1 : hashCoeficientes.keySet()) {
+     		for (Entry<String,Double> tupla: hashCoeficientes.get(autor1).entrySet() ) {
+     			if (autor1.contains("Ronaldo") && tupla.getKey().contains("Carina")) {
+     				System.out.println("Similaridade <" + autor1 + "> e <" + tupla.getKey() + "> = " + tupla.getValue());
+     			}
+     		}
+     	}
      	
      	//System.out.println("\n\n\n");
      	
      	
 		//System.out.println(matrizDeSimilaridades);
-		
+     	PrintStream p = new PrintStream("clusters.txt");
+		System.setOut(p);
+     	
 		//inserindo data object
      	int valordeK = 0;
 		DataObjectAutor autor;
 		for(int k=0;k<autores.size();k++){
 			String nomeautor = autores.get(k);
+			HashMap<String, String> areas = mapaPessoas.get(nomeautor).getAreas();
 			autor = new DataObjectAutor(nomeautor);
 			autor.setIndex(k);
+			autor.setLista(areas);
 			primeiroProcesso.addDataObject(autor);
 			segundoProcesso.addDataObject(autor);
 			
 		}
+		
 		primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
 
 		for (DataCluster cluster : primeiroProcesso.getDataClusters()) {
-				//cluster.print();
-				if(cluster.getDataObjects().size() > 1){
-					valordeK++;
-				}
+				cluster.print();
+//				if(cluster.getDataObjects().size() > 1){
+//					valordeK++;
+//				}
 				
 //				for (DataObject autImp: cluster.getDataObjects()) {
 //					String autImp1 = ((DataObjectAutor)autImp).getMt().getValue();
@@ -119,20 +126,16 @@ public class Main {
 //					}
 //				}
 		}
-		System.out.println("segudo processo: "+ valordeK);
-		//segundoProcesso.setClusteringStrategy(new KmedoidsClusteringStrategy(valordeK, 0, 2, 0));
 		segundoProcesso.setClusteringStrategy(new KmedoidsClusteringStrategy(valordeK, -1, 2, 2));
 		segundoProcesso.similarityMatrix = matrizDeSimilaridades;
-		System.out.println("problema");
-		segundoProcesso.dataClusters = segundoProcesso.clusteringStrategy.executeClustering(segundoProcesso.dataObjects, segundoProcesso.similarityMatrix);
+//		segundoProcesso.dataClusters = segundoProcesso.clusteringStrategy.executeClustering(segundoProcesso.dataObjects, segundoProcesso.similarityMatrix);
 		
-		for (DataCluster clusterK : segundoProcesso.getDataClusters()) {
-			clusterK.print();
-		}
+//		for (DataCluster clusterK : segundoProcesso.getDataClusters()) {
+//			clusterK.print();
+//		}
 		
 //		List<Grupo> listaDegrupos = g.criaGrupoAlgoritmoSimples();
-//		PrintStream p = new PrintStream("grupos.txt");
-//		System.setOut(p);
+		
 		
 		//lista de publicacao imprimi titulo, ano, autor, coautores
 //		for (Publicacao p1 : listaPublicacao) {
@@ -175,7 +178,7 @@ public class Main {
 //			}
 //			System.out.println("\n\n");
 //		}
-//		p.close();
+		p.close();
 
 
 		//imprimi a lista de tuplas
