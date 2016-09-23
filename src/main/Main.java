@@ -14,7 +14,6 @@ import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
 
 import clusteringstrategies.implementation.clustering.BestStarClusteringStrategy;
-import clusteringstrategies.implementation.clustering.KmedoidsClusteringStrategy;
 import datastructures.core.DataCluster;
 import datastructures.core.DataObject;
 import datastructures.core.Matrix2D;
@@ -60,7 +59,6 @@ public class Main {
 
 		//criando cluster usando ursa
 		ClusteringProcess primeiroProcesso = new ClusteringProcess();
-		ClusteringProcess segundoProcesso = new ClusteringProcess();
 		primeiroProcesso.setClusteringStrategy(new BestStarClusteringStrategy(0.05));
 
 		//alterar a lista de coeficientes que deseja clusterizar
@@ -91,25 +89,19 @@ public class Main {
 		//System.out.println(matrizDeSimilaridades);
 		
 		//inserindo data object
-     	int valordeK = 0;
 		DataObjectAutor autor;
 		for(int k=0;k<autores.size();k++){
 			String nomeautor = autores.get(k);
 			autor = new DataObjectAutor(nomeautor);
 			autor.setIndex(k);
 			primeiroProcesso.addDataObject(autor);
-			segundoProcesso.addDataObject(autor);
-			
+
 		}
 		primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
 
 		for (DataCluster cluster : primeiroProcesso.getDataClusters()) {
-				//cluster.print();
-				if(cluster.getDataObjects().size() > 1){
-					valordeK++;
-				}
-				
+				cluster.print();
 //				for (DataObject autImp: cluster.getDataObjects()) {
 //					String autImp1 = ((DataObjectAutor)autImp).getMt().getValue();
 //					for (DataObject autImpX: cluster.getDataObjects()) {
@@ -119,16 +111,9 @@ public class Main {
 //					}
 //				}
 		}
-		System.out.println("segudo processo: "+ valordeK);
-		//segundoProcesso.setClusteringStrategy(new KmedoidsClusteringStrategy(valordeK, 0, 2, 0));
-		segundoProcesso.setClusteringStrategy(new KmedoidsClusteringStrategy(valordeK, -1, 2, 2));
-		segundoProcesso.similarityMatrix = matrizDeSimilaridades;
-		System.out.println("problema");
-		segundoProcesso.dataClusters = segundoProcesso.clusteringStrategy.executeClustering(segundoProcesso.dataObjects, segundoProcesso.similarityMatrix);
 		
-		for (DataCluster clusterK : segundoProcesso.getDataClusters()) {
-			clusterK.print();
-		}
+		
+		
 		
 //		List<Grupo> listaDegrupos = g.criaGrupoAlgoritmoSimples();
 //		PrintStream p = new PrintStream("grupos.txt");
