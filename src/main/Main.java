@@ -35,13 +35,18 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/plus");
+		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/testeArtigos");
 //		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculosplus");
 		List<File> listaDeCurriculoXML = calcFilesUtil.getCurriculosXML();
-		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
-		List<Tupla> listaTupla = ManipuladorXML.criaPares();
-		Map<String, Pessoa> mapaPessoas = ManipuladorXML.getMapaPessoas();
+//		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
+		Map<String,List<Pessoa>> listaPublicacao = ManipuladorXML.geraListaDePublicacoesUFSC(listaDeCurriculoXML);
 		
+		
+		
+		//List<Tupla> listaTupla = ManipuladorXML.criaPares();
+		List<Tupla> listaTupla = ManipuladorXML.criaParesUFSC();
+		Map<String, Pessoa> mapaPessoas = ManipuladorXML.getMapaPessoas();
+			
 		//cria grafo
 		Grafo g = new Grafo();
 		g.criaVertice(listaTupla);
@@ -53,10 +58,13 @@ public class Main {
 		List<CosineSimilaridade> listaCoeficientesCosine =  g.coeficienteCosine();
 		List<OverlapSimilaridade> listaCoeficientesOverlap = g.coeficienteOverlap();
 		
+		for (OverlapSimilaridade overlapSimilaridade : listaCoeficientesOverlap) {
+			System.out.println(overlapSimilaridade.getP1()+" "+overlapSimilaridade.getP2()+" "+overlapSimilaridade.getCalculo());
+		}
 		
 		//clusterizando utilizando best star
 		JaccardSimilaridade j = new JaccardSimilaridade();
-		//CosineSimilaridade c = new CosineSimilaridade();
+		CosineSimilaridade c = new CosineSimilaridade();
 		OverlapSimilaridade o = new OverlapSimilaridade();
 		
 
@@ -78,21 +86,20 @@ public class Main {
      	//Matrix2D matrizDeSimilaridades = c.criaMatriz(hashCoeficientes, autores.size(), autores);
      	Matrix2D matrizDeSimilaridades = o.criaMatriz(hashCoeficientes, autores.size(), autores);
      	
-
-     	for (String autor1 : hashCoeficientes.keySet()) {
-     		for (Entry<String,Double> tupla: hashCoeficientes.get(autor1).entrySet() ) {
-     			if (autor1.contains("Ronaldo") && tupla.getKey().contains("Carina")) {
-     				System.out.println("Similaridade <" + autor1 + "> e <" + tupla.getKey() + "> = " + tupla.getValue());
-     			}
-     		}
-     	}
+//
+//     	for (String autor1 : hashCoeficientes.keySet()) {
+//     		for (Entry<String,Double> tupla: hashCoeficientes.get(autor1).entrySet() ) {
+//     			if (autor1.contains("Ronaldo") && tupla.getKey().contains("Carina")) {
+//     				System.out.println("Similaridade <" + autor1 + "> e <" + tupla.getKey() + "> = " + tupla.getValue());
+//     			}
+//     		}
+//     	}
      	
      	//System.out.println("\n\n\n");
      	
      	
 		//System.out.println(matrizDeSimilaridades);
-     	PrintStream p = new PrintStream("clusters.txt");
-		System.setOut(p);
+     	
      	
 		//inserindo data object
      	int valordeK = 0;
@@ -104,12 +111,14 @@ public class Main {
 			autor.setIndex(k);
 			autor.setLista(areas);
 			primeiroProcesso.addDataObject(autor);
-			segundoProcesso.addDataObject(autor);
+//			segundoProcesso.addDataObject(autor);
 			
 		}
 		
 		primeiroProcesso.similarityMatrix = matrizDeSimilaridades;
 		primeiroProcesso.dataClusters = primeiroProcesso.clusteringStrategy.executeClustering(primeiroProcesso.dataObjects, primeiroProcesso.similarityMatrix);
+		PrintStream p = new PrintStream("clusters.txt");
+		System.setOut(p);
 
 		for (DataCluster cluster : primeiroProcesso.getDataClusters()) {
 				cluster.print();
@@ -125,9 +134,9 @@ public class Main {
 //						System.out.println("Similaridade " + autImp1 + " e " + autImp2 + " = " + hashCoeficientes.get(autImp1).get(autImp2));
 //					}
 //				}
-		}
-		segundoProcesso.setClusteringStrategy(new KmedoidsClusteringStrategy(valordeK, -1, 2, 2));
-		segundoProcesso.similarityMatrix = matrizDeSimilaridades;
+	}
+//		segundoProcesso.setClusteringStrategy(new KmedoidsClusteringStrategy(valordeK, -1, 2, 2));
+//		segundoProcesso.similarityMatrix = matrizDeSimilaridades;
 //		segundoProcesso.dataClusters = segundoProcesso.clusteringStrategy.executeClustering(segundoProcesso.dataObjects, segundoProcesso.similarityMatrix);
 		
 //		for (DataCluster clusterK : segundoProcesso.getDataClusters()) {
@@ -135,7 +144,27 @@ public class Main {
 //		}
 		
 //		List<Grupo> listaDegrupos = g.criaGrupoAlgoritmoSimples();
-		
+
+//		for (Entry<String, List<Pessoa>> titulo : listaPublicacao.entrySet()) {
+//		System.out.println("\n"+titulo.getKey());
+//		for (Pessoa autor : titulo.getValue()) {
+//			System.out.println(autor.getNome());
+//		}
+//	}
+
+//		//imprimi a lista de tuplas
+//		for (Tupla tupla : listaTupla) {
+//			System.out.println(
+//					"\n" + tupla.getP1().getNome() + "---" + tupla.getP2().getNome() +
+//					"---" + tupla.getPeso());
+//
+//			for (int i = 0; i < tupla.getPublicacoesUFSC().size(); i++) {
+//				System.out.println(
+//						tupla.getPublicacoesUFSC().get(i));
+//
+//			}
+//		}
+
 		
 		//lista de publicacao imprimi titulo, ano, autor, coautores
 //		for (Publicacao p1 : listaPublicacao) {
@@ -181,20 +210,6 @@ public class Main {
 		p.close();
 
 
-		//imprimi a lista de tuplas
-		
-//		 for (Tupla tupla : listaTupla) {
-//		 System.out.println(
-//		 "\n" + tupla.getP1().getNome() + "---" + tupla.getP2().getNome() +
-//		 "---" + tupla.getPeso());
-//		
-//		 for (int i = 0; i < tupla.getPublicacoes().size(); i++) {
-//		 System.out.println(
-//		 tupla.getPublicacoes().get(i).getTitulo() + "-" +
-//		 tupla.getPublicacoes().get(i).getAno());
-//		
-//		 }
-//		 }
 		
 		//imprimi os vertices e seus vizinhos	
 //	    HashMap<String,Set<String>> mapaDeVerticeQuantidadeVizinhos = g.retornaTodosVerticesGrafo();

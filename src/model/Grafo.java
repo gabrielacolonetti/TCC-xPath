@@ -75,7 +75,6 @@ public class Grafo {
 				continue;
 			}
 			try {
-
 				incluirDupla(grafo, p1, p2, tupla);
 				incluirDupla(grafoCopia, p1, p2, tupla);
 			} catch (Exception e) {

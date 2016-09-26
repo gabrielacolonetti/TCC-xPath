@@ -1,0 +1,4 @@
+Cluster:
+ <Ronaldo dos Santos Mello> {Banco de Dados=Ciência da Computação, Sistemas de Informação=Ciência da Computação, Engenharia de Software=Ciência da Computação, Linguagens de Programação=Ciência da Computação, Avaliação de Sistemas, Instituições, Planos e Programas Educacionais=Educação, Processamento Gráfico (Graphics)=Ciência da Computação, Hardware=Ciência da Computação, Information Retrieval=Ciência da Computação, Arquitetura de Sistemas de Computação=Ciência da Computação, Redes de Computadores=Ciência da Computação}
+Cluster:
+ <Carina Friedrich Dorneles> {Banco de Dados=Ciência da Computação, Interfaces=Ciência da Computação, Documentos=Ciência da Computação, Dados Semi Estruturados e Web=Ciência da Computação, Sistemas de Informação=Ciência da Computação, Engenharia de Software=Ciência da Computação, Xml=Ciência da Computação, Consulta Por Similaridade=Ciência da Computação, Extração de Informações=Ciência da Computação}

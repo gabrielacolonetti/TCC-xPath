@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -31,6 +32,8 @@ public class ManipuladorXML {
 	static List<Publicacao> listaPublicacoes = new ArrayList<Publicacao>();
 	static List<Tupla> listaDePares = new ArrayList<Tupla>();
 	static Map<String, Pessoa> mapaPessoas = new HashMap<String, Pessoa>();
+	static List<Publicacao> listaPublicacoesAutoresUFSC = new ArrayList<Publicacao>();
+	static Map<String,List<Pessoa>> mapaAutoresUFSC = new HashMap<String,List<Pessoa>>();
 
 	public static Map<String, Pessoa> getMapaPessoas() {
 		return mapaPessoas;
@@ -91,18 +94,18 @@ public class ManipuladorXML {
 									nomeTratadoAutor += nomeSplit[s]+" ";
 								}
 
-			
+
 							}
-							
+
 							nomeCompletoAutor ="";
 							nomeCompletoAutor = nomeTratadoAutor.trim();
 							System.out.println(nomeCompletoAutor);
 						}
-						
-						
+
+
 
 						//System.out.println("nome tratado "+ nomeCompletoAutor);
-						Pessoa pessoaux = pessoaExiste(nomeCompletoAutor, idCNPQAutor);
+						Pessoa pessoaux = pessoaExiste(nomeCompletoAutor);
 						if (pessoaux == null){
 							//System.out.println("Incluindo autor " + nomeCompletoAutor);
 							pessoaux = new Pessoa(nomeCompletoAutor, idCNPQAutor);
@@ -117,12 +120,6 @@ public class ManipuladorXML {
 							publicacao.getCoautores().add(pessoaux);
 						}
 
-						//adiciono codigo da univesidade no autor dono do curriculo
-//						if(pessoaux.getNome().equals(nomeCurriculo)){
-//							pessoaux.setCodUniversidade(codUniversidade);
-//						}else{
-//							pessoaux.setCodUniversidade("Não é da UFSC");;
-//						}
 
 						if (listaPublicacoes.isEmpty()) {
 							listaPublicacoes.add(publicacao);
@@ -153,18 +150,16 @@ public class ManipuladorXML {
 							// pega elemento nome autor
 							String nomeArea = atributosDoArea.getNamedItem("NOME-DA-AREA-DO-CONHECIMENTO")
 									.getNodeValue();
-							
+
 							String nomeEspecialidade = atributosDoArea.getNamedItem("NOME-DA-ESPECIALIDADE")
 									.getNodeValue();
-							
-									
-									if(nomeArea != "" && nomeEspecialidade != "" && pessoaux.getNome().equals(nomeDonoArtigo)){
-										pessoaux.getAreas().put(nomeEspecialidade, nomeArea);
 
-									}
-							
-							
-							
+
+							if(nomeArea != "" && nomeEspecialidade != "" && pessoaux.getNome().equals(nomeDonoArtigo)){
+								pessoaux.getAreas().put(nomeEspecialidade, nomeArea);
+
+							}
+
 						}
 					}
 					continue;
@@ -176,10 +171,139 @@ public class ManipuladorXML {
 		}
 	}
 
-//	public static boolean saoUFSC(Pessoa p1,Pessoa p2){
-//		return p1.getCodUniversidade().equals("004300000009") && p1.getCodUniversidade().equals("004300000009");
-//	}
+	public static Map<String,List<Pessoa>> geraListaDePublicacoesUFSC(List<File> listaDeCurriculoXML) {
+		try {
+			for (File curriculo : listaDeCurriculoXML) {
+				System.out.println("Analisando curriculo " + curriculo.getName());
+				if (curriculo.isDirectory())
+					continue;
+				Document document = criaDocument(curriculo);
 
+				XPathFactory xPathfactory = XPathFactory.newInstance();
+				XPath xpath = xPathfactory.newXPath();
+				XPathExpression exprAchaArtigos = xpath.compile("/CURRICULO-VITAE/PRODUCAO-BIBLIOGRAFICA/ARTIGOS-PUBLICADOS/ARTIGO-PUBLICADO|/CURRICULO-VITAE/PRODUCAO-BIBLIOGRAFICA/TRABALHOS-EM-EVENTOS/TRABALHO-EM-EVENTOS");
+				NodeList nlArtigos = (NodeList) exprAchaArtigos.evaluate(document, XPathConstants.NODESET);
+				XPathExpression exprAchaTitulo = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@TITULO-DO-ARTIGO|DADOS-BASICOS-DO-TRABALHO/@TITULO-DO-TRABALHO");
+				XPathExpression exprAchaAno = xpath.compile("DADOS-BASICOS-DO-ARTIGO/@ANO-DO-ARTIGO|DADOS-BASICOS-DO-TRABALHO/@ANO-DO-TRABALHO");
+				XPathExpression exprAchaAutores = xpath.compile("AUTORES");
+				XPathExpression exprAchaNomePrincipal = xpath.compile("/CURRICULO-VITAE/DADOS-GERAIS/@NOME-COMPLETO");
+
+				for (int i = 0; i < nlArtigos.getLength(); i++) {
+					Node artigo = nlArtigos.item(i);
+
+					// consulta titulo e ano do artigo
+					String titulo = (String) exprAchaTitulo.evaluate(artigo, XPathConstants.STRING);
+					String ano = (String) exprAchaAno.evaluate(artigo, XPathConstants.STRING);
+					String nomeDonoArtigo = (String) exprAchaNomePrincipal.evaluate(artigo, XPathConstants.STRING);
+					//System.out.println("\n\n" + titulo + "-"+ ano);
+
+					NodeList nlAutores = (NodeList) exprAchaAutores.evaluate(artigo, XPathConstants.NODESET);
+
+					for (int j = 0; j < nlAutores.getLength(); j++) {
+						Node autor = nlAutores.item(j);
+						//hashmap...
+						NamedNodeMap atributosDoAutor = autor.getAttributes();
+
+						// pega elemento nome autor
+						String nomeCompletoAutor = atributosDoAutor.getNamedItem("NOME-COMPLETO-DO-AUTOR")
+								.getNodeValue();
+
+						// pega tag id autor
+						String idCNPQAutor = (atributosDoAutor.getNamedItem("NRO-ID-CNPQ") == null ? ""
+								: atributosDoAutor.getNamedItem("NRO-ID-CNPQ").getNodeValue());
+						String nomeTratadoAutor="";
+						if(nomeCompletoAutor.contains(",")){
+							String[] nomeSplit;
+							nomeSplit = nomeCompletoAutor.split(",");
+							for (int s =nomeSplit.length-1 ; s>=0;s--) {
+								if(s==0){
+									nomeTratadoAutor += nomeSplit[s];
+								}else{
+									nomeTratadoAutor += nomeSplit[s]+" ";
+								}
+
+								nomeCompletoAutor = nomeTratadoAutor.trim();
+							}
+						}
+
+
+						//System.out.println(nomeCompletoAutor);
+						if(nomeCompletoAutor.equals(nomeDonoArtigo)){
+							Pessoa pessoaux = pessoaExiste(nomeCompletoAutor);
+							if (pessoaux == null){
+								//System.out.println("criando pessoa"+nomeCompletoAutor);
+								pessoaux = new Pessoa(nomeCompletoAutor, idCNPQAutor);
+								mapaPessoas.put(nomeCompletoAutor, pessoaux);
+							}
+							Teste similaridade = new Teste();
+							if(!mapaAutoresUFSC.isEmpty()){
+								double similaridadeValor = similaridade.verificaPalavras(mapaAutoresUFSC, titulo);
+								if(titulo.equals("A Similarity Search Method for Web Forms")){
+									System.out.println(similaridadeValor);
+								}
+								if(!mapaAutoresUFSC.containsKey(titulo.toUpperCase())){
+									List<Pessoa> pessoasDaLista = new ArrayList<Pessoa>();
+									pessoasDaLista.add(pessoaux);
+									//System.out.println("adicionando no mapa "+titulo+" e pessoa "+nomeCompletoAutor);
+									mapaAutoresUFSC.put(titulo.toUpperCase(), pessoasDaLista);
+								}else{
+									if(!verificaPessoaNoMapa(pessoaux,mapaAutoresUFSC, titulo)){
+										//System.out.println("adicionando a pessoa "+nomeCompletoAutor);
+										mapaAutoresUFSC.get(titulo.toUpperCase()).add(pessoaux);
+									}
+								}
+							}else{
+								List<Pessoa> pessoasDaLista = new ArrayList<Pessoa>();
+								pessoasDaLista.add(pessoaux);
+								//	System.out.println("adicionando no pela primeira vez "+titulo+" e pessoa "+nomeCompletoAutor);
+
+								mapaAutoresUFSC.put(titulo.toUpperCase(), pessoasDaLista);
+							}
+
+							//recupero elementos "area de conhecimento"
+							XPathExpression exprAchaArea = xpath.compile("//*[starts-with(name(), 'AREA-DO-CONHECIMENTO')]");
+							NodeList nlAreasConhecimento = (NodeList) exprAchaArea.evaluate(document, XPathConstants.NODESET);
+
+							for (int x=0; x < nlAreasConhecimento.getLength() ;x++){
+								Node nodeAreas = nlAreasConhecimento.item(x);
+								NamedNodeMap atributosDoArea = nodeAreas.getAttributes();
+
+								// pega elemento nome autor
+								String nomeArea = atributosDoArea.getNamedItem("NOME-DA-AREA-DO-CONHECIMENTO")
+										.getNodeValue();
+
+								String nomeEspecialidade = atributosDoArea.getNamedItem("NOME-DA-ESPECIALIDADE")
+										.getNodeValue();
+
+
+								if(nomeArea != "" && nomeEspecialidade != "" && pessoaux.getNome().equals(nomeDonoArtigo)){
+									pessoaux.getAreas().put(nomeEspecialidade, nomeArea);
+
+								}
+
+							}
+						}
+					}
+					continue;
+				}
+			}
+			return mapaAutoresUFSC;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+
+	public static boolean verificaPessoaNoMapa(Pessoa pessoaux, Map<String, List<Pessoa>> mapaAutoresUFSC2, String titulo) {
+		List<Pessoa> pessoas = mapaAutoresUFSC2.get(titulo.toUpperCase());
+		for (Pessoa autores : pessoas) {
+			if(autores.getNome().trim().equals(pessoaux.getNome().trim())){
+				return true;
+			}
+
+		}
+		return false;
+	}
 
 	public static List<Tupla> criaPares() {
 		// varre a lista de publicacoes
@@ -210,6 +334,42 @@ public class ManipuladorXML {
 		return listaDePares;
 	}
 
+	public static List<Tupla> criaParesUFSC() {
+		// varre a lista de publicacoes
+		for (Entry<String, List<Pessoa>> mapa : mapaAutoresUFSC.entrySet()) {
+			String publicacao = mapa.getKey();
+
+			// varre a lista de coautores de cada publicacao
+			for(int i=0; i< mapa.getValue().size();i++){
+				for(int j=0; j< mapa.getValue().size();j++){
+					if(!mapa.getValue().get(i).equals(mapa.getValue().get(j))){
+						Tupla par = existePar(mapa.getValue().get(i),mapa.getValue().get(j));
+						if (par == null) { //saoUFSC
+
+							par = new Tupla();
+							par.setP1(mapa.getValue().get(i));
+							par.setP2(mapa.getValue().get(j));
+							par.getPublicacoesUFSC().add(publicacao);
+							par.setPeso(1);
+							listaDePares.add(par);
+							//System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
+						} else {
+							if(!checaEAdicionaPublicacaoUFSC(publicacao, par)){
+								par.getPublicacoesUFSC().add(publicacao);
+								par.setPeso(par.getPeso()+1);
+								//System.out.println(par.getP1().getNome()+"--"+par.getP2().getNome()+"--"+par.getPeso());
+							}
+						}
+					}else{
+						continue;
+					}
+				}
+			}
+		}
+		return listaDePares;
+	}
+
+
 	public static boolean checaEAdicionaPublicacao(Publicacao publi, Tupla par){
 
 		for(int i=0; i< par.getPublicacoes().size();i++){
@@ -219,7 +379,17 @@ public class ManipuladorXML {
 		}
 		return false;
 	}
-	
+
+	public static boolean checaEAdicionaPublicacaoUFSC(String publi, Tupla par){
+
+		for(int i=0; i< par.getPublicacoesUFSC().size();i++){
+			if(par.getPublicacoesUFSC().get(i).equals(publi)){
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public static Tupla existePar(Pessoa p1, Pessoa p2){
 
 		for (Tupla tupla : listaDePares) {
@@ -231,7 +401,7 @@ public class ManipuladorXML {
 		return null;
 	}
 
-	public static Pessoa pessoaExiste(String nome, String id){
+	public static Pessoa pessoaExiste(String nome){
 		return mapaPessoas.get(nome);
 	}
 

@@ -10,7 +10,14 @@ public class Tupla {
 	private Pessoa p2;
 	private int peso;
 	private List<Publicacao> publicacoes = new ArrayList<Publicacao>();
+	private List<String> publicacoesUFSC = new ArrayList<String>();
 	
+	public List<String> getPublicacoesUFSC() {
+		return publicacoesUFSC;
+	}
+	public void setPublicacoesUFSC(List<String> publicacoesUFSC) {
+		this.publicacoesUFSC = publicacoesUFSC;
+	}
 	public Pessoa getP1() {
 		return p1;
 	}
