@@ -237,10 +237,10 @@ public class ManipuladorXML {
 							}
 							Teste similaridade = new Teste();
 							if(!mapaAutoresUFSC.isEmpty()){
-								double similaridadeValor = similaridade.verificaPalavras(mapaAutoresUFSC, titulo);
-								if(titulo.equals("A Similarity Search Method for Web Forms")){
-									System.out.println(similaridadeValor);
-								}
+//								double similaridadeValor = similaridade.verificaPalavras(mapaAutoresUFSC, titulo);
+//								if(titulo.equals("A Similarity Search Method for Web Forms")){
+//									System.out.println(similaridadeValor);
+//								}
 								if(!mapaAutoresUFSC.containsKey(titulo.toUpperCase())){
 									List<Pessoa> pessoasDaLista = new ArrayList<Pessoa>();
 									pessoasDaLista.add(pessoaux);
@@ -248,6 +248,8 @@ public class ManipuladorXML {
 									mapaAutoresUFSC.put(titulo.toUpperCase(), pessoasDaLista);
 								}else{
 									if(!verificaPessoaNoMapa(pessoaux,mapaAutoresUFSC, titulo)){
+//										for (String file : mapaAutoresUFSC.keySet()) {
+//										}
 										//System.out.println("adicionando a pessoa "+nomeCompletoAutor);
 										mapaAutoresUFSC.get(titulo.toUpperCase()).add(pessoaux);
 									}
