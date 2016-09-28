@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -15,6 +16,11 @@ import java.util.TreeSet;
 
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
+import org.simmetrics.StringMetric;
+import org.simmetrics.metrics.CosineSimilarity;
+import org.simmetrics.metrics.OverlapCoefficient;
+import org.simmetrics.simplifiers.Simplifiers;
+import org.simmetrics.tokenizers.Tokenizers;
 
 import clusteringstrategies.implementation.clustering.BestStarClusteringStrategy;
 import clusteringstrategies.implementation.clustering.KmedoidsClusteringStrategy;
@@ -33,9 +39,39 @@ import source.DataObjectAutor;
 import source.JaccardSimilaridade;
 import source.ManipuladorXML;
 import source.OverlapSimilaridade;
+import static org.simmetrics.builders.StringMetricBuilder.with;
 
 public class Main {
 
+	
+	public static void main2(String[] args) throws FileNotFoundException {
+		
+		String str1 = "A Similarity Search Method for Web Forms";
+	    String str2 = "A Similarity Search Alternative to New Forms";
+
+//	    StringMetric metric =
+//	            with(new CosineSimilarity<String>())
+//	            .simplify(Simplifiers.toLowerCase(Locale.ENGLISH))
+//	            .simplify(Simplifiers.replaceNonWord())
+//	            .tokenize(Tokenizers.whitespace())
+//	            .build();
+
+	    StringMetric metric =
+	            with(new OverlapCoefficient<String>())
+	            .simplify(Simplifiers.toLowerCase(Locale.ENGLISH))
+	            .simplify(Simplifiers.replaceNonWord())
+	            .tokenize(Tokenizers.whitespace())
+	            .build();
+	    
+	    System.out.println(metric.compare(str1, str2));
+		
+		
+		
+		
+		
+	}
+	
+	
 	public static void main(String[] args) throws FileNotFoundException {
 
 		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/testeArtigos");
