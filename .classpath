@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="lib/jgrapht-ext-0.9.1.jar"/>
 	<classpathentry kind="lib" path="lib/jgraphx-2.0.0.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gbcolonetti/git/CALC/lib/URSA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gbcolonetti/git/TCC-xPath/lib/simmetrics-core-4.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

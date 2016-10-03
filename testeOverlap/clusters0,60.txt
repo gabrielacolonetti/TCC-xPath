@@ -1,0 +1,184 @@
+
+Cluster 1
+ <Manuel Rosa de Oliveira Lino>
+ <Silvia Modesto Nassar>
+ <José Leomar Todesco>
+ <Fernando Alvaro Ostuni Gauthier>
+ <Mario Antonio Ribeiro Dantas>
+ <Aldo von Wangenheim>
+ <Raul Sidnei Wazlawick>
+ <Lia Caetano Bastos>
+ <Gregório Jean Varvakis Rados>
+ <Paulo Mauricio Selig>
+Áreas de conhecimento do cluster [Administração da Produção, Administração de Recursos Humanos, Agentes Inteligentes, Análise de Custos, Análise de Dados, Análise de Valor, Arquitetura de Sistemas de Computação, Banco de Dados, Cancerologia, Cardiologia, Cirurgia Cardiovascular, Cirurgia Otorrinolaringológica, Climatologia, Computação Paralela e Distribuída, Conjuntos Difusos, Data Warehouse, Desenvolvimento de Produto, Direito Civil, Economia de Tecnologia, Educação Especial, Educação Permanente, Educação a Distância, Educação de Adultos, Engenharia de Software, Estatística Sócio-Econômica, Garantia de Controle de Qualidade, Gerenciamento de Processos, Gerência de Redes de Computadores, Gerência do Projeto e do Produto, Gestão Hospitalar, Gestão da Estratégia, Gestão da Informação, Gestão da Qualidade, Gestão de Serviços, Gestão do Conhecimento, Hardware, Informática Médica, Instrumentação Meteorológica, Inteligência Artificial, Linguagem Formais e Autômatos, Linguagens de Programação, Lipídeos, Matemática Discreta e Combinatória, Mercadologia, Meteorologia Sinótica, Mineração de Dados, Mineração de Texto, Modelos Analíticos e de Simulação, Métodos e Técnicas de Ensino, Neurologia, Neuropatologia, Oftalmologia, Ontologias, Organização Industrial e Estudos Industriais, Organizações Públicas, Ortopedia, Otorrinolaringologia, Pediatria, Petrologia, Planejamento Institucional, Planejamento em Ciência e Tecnologia, Planejamento, Projeto e Controle de Sistemas de Produção, Política e Planejamento Governamentais, Processamento Gráfico (Graphics), Processamento de Imagens, Processamento de Sinais Biológicos, Processos Construtivos, Processos Estocásticos e Teoria das Filas, Processos da Comunicação, Processos de Disseminação da Informação, Processos de Fabricação, Seleção Econômica, Processos de Trabalho, Realidade Virtual, Reconhecimento de Padrões, Redes Neuronais Artificiais, Representação da Informação, Sensoriamento Remoto da Atmosfera, Sistemas Especialistas, Sistemas de Informação, Sistemas de Telecomunicações, Software Básico, Tecnologia Educacional, Tecnologia da Informação, Teleinformática, Telerradiologia, Teoria dos Jogos, Transmissão da Energia Elétrica, Distribuição da Energia Elétrica, Transporte e Tráfego Urbano e Regional, Videodifusão, prototipagem rápida, Ótica]
+Especializações do cluster [Administração, Bioquímica, Ciência da Computação, Ciência da Informação, Comunicação, Direito, Economia, Educação, Engenharia Biomédica, Engenharia Civil, Engenharia Elétrica, Engenharia Mecânica, Engenharia de Produção, Física, Geociências, Matemática, Medicina, Planejamento Urbano e Regional, Probabilidade e Estatística]
+
+Cluster 2
+ <Fernando Augusto da Silva Cruz>
+ <João Bosco Mangueira Sobral>
+ <Joao Candido Lima Dovicchi>
+Áreas de conhecimento do cluster [Administração de Sistemas Educacionais, Agentes Móveis, Análise Numérica, Análise de Algoritmos e Complexidade de Computação, Aplicativos Web, Arquitetura de Sistemas de Computação, Avaliação e Controle de Qualidade de Alimentos, Canto, Circuitos Eletrônicos, Composição Musical, Computação Com Objetos Distribuídos, Computação Sônica, Comércio Eletrônico, Educação a Distância, Educação de Adultos, Engenharia de Software, Ensino Profissionalizante, Frameworks, Gerência de Redes de Telecomunicações, Gerência de Serviços, Instrumentação Musical, J2me, Linguagem Formais e Autômatos, Linguagens de Programação, Matemática Discreta e Combinatória, Mecânica das Estruturas, Modelos Analíticos e de Simulação, Musicologia, Padrões, Legislação e Fiscalização de Alimentos, Planejamento Educacional, Planejamento, Projeto e Controle de Sistemas de Produção, Processamento Digital de Sinais, Programação Para Web, Reconhecimento de Padrões, Redes de Computadores, Referência Ambígua, Segurança de Sistemas de Computaçao, Sistemas de Informação, Sistemas de Telecomunicações, Software Aplicativo, Software Básico, Sonoplastia, Tecnologia Educacional, Teleinformática, Teoria Geral de Planejamento e Desenvolvimento Curricular, Web Services]
+Especializações do cluster [Artes, Ciência da Computação, Ciência e Tecnologia de Alimentos, Educação, Engenharia Civil, Engenharia Elétrica, Engenharia de Produção, Matemática]
+
+Cluster 3
+ <Luciana de Oliveira Rech>
+ <Ricardo Felipe Custodio>
+ <Jean Marie Alexandre Farines>
+ <Joni da Silva Fraga>
+ <Lau Cheuk Lung>
+ <Frank Augusto Siqueira>
+ <Ricardo José Rabelo>
+Áreas de conhecimento do cluster [Adaptação de Qos, Administração da Produção, Administração de Recursos Humanos, Algoritmos Distribuídos, Análise Numérica, Análise de Algoritmos e Complexidade de Computação, Arquitetura de Sistemas de Computação, Automação Eletrônica de Processos Elétricos e Industriais, Circuitos Eletrônicos, Computabilidade e Modelos de Computação, Controle Númerico de Maquinas Elétricas, Controle de Processos Eletrônicos, Retroalimentação, Controle de QoS, Criptografia, Economia de Tecnologia, Educação Tecnologica, Educação Tecnológica Em Automação, Eletrônica Industrial, Engenharia de Software, GOVERNO ELETRÔNICO, Garantia de Controle de Qualidade, Hardware, Instrumentação Odontológica e Médico-Hospitalar, Intrusion Tolerance, Linguagem Formais e Autômatos, Linguagens de Programação, Matemática Aplicada, Modelagem de Sistemas, Modelos Analíticos e de Simulação, Métodos e Técnicas de Ensino, Otimização, Planejamento de Instalações Industriais, Planejamento, Projeto e Controle de Sistemas de Produção, Pneumologia, Processamento de Sinais Biológicos, Redes de Computadores, Robótica móvel, Segurança, Segurança Em Sistemas Computacionais, Segurança Em Sistemas Distribuídos, Segurança em Informática, Segurança em Sistemas Computacionais, Sistemas Distribuídos, Sistemas Embarcados, Sistemas Híbridos, Sistemas Multimídias Distribuídos, Sistemas Tempo Real, Sistemas a Eventos Discretos, Sistemas de Controle e Supervisão, Sistemas de Informação, Sistemas de Informação em Transportes, Sistemas de Multimídia, Sistemas de Telecomunicações, Sistemas de Tempo Real, Software Básico, Suprimentos, Tecnologia Educacional, Teleinformática, Teoria de Controle, Tolerância a Falhas, Tolerância a Intrusões, Tolerância a falhas, Transmissão da Energia Elétrica, Distribuição da Energia Elétrica, Veiculo aereo não tripulado, Verificação de Sistemas]
+Especializações do cluster [Administração, Ciência da Computação, Educação, Engenharia Aeroespacial, Engenharia Biomédica, Engenharia Elétrica, Engenharia de Produção, Engenharia de Transportes, Física, Matemática, Medicina]
+
+Cluster 4
+ <Guilherme Bittencourt>
+Áreas de conhecimento do cluster [Arquitetura de Sistemas de Computação, Computabilidade e Modelos de Computação, Lógicas e Semântica de Programas]
+Especializações do cluster [Ciência da Computação]
+
+Cluster 5
+ <Antonio Carlos Mariani>
+Áreas de conhecimento do cluster [Software Básico]
+Especializações do cluster [Ciência da Computação]
+
+Cluster 6
+ <Carlos Alberto Maziero>
+ <Rômulo Silva de Oliveira>
+ <Carla Merkle Westphall>
+ <Cristian Koliver>
+ <Carlos Barros Montez>
+Áreas de conhecimento do cluster [Análise de Algoritmos e Complexidade de Computação, Arquitetura de Computadores, Arquitetura de Sistemas de Computação, Arquiteturas Paralelas, Avaliação da Aprendizagem, Banco de Dados, Compiladores, Desenvolvimento de Produto, Engenharia de Software, Gerência do Projeto e do Produto, Linguagem Formais e Autômatos, Matemática Simbólica, Modelos Analíticos e de Simulação, Métodos e Técnicas de Ensino, Processamento Gráfico (Graphics), Processamento Paralelo, Qualidade de Serviço, Redes de Computadores, Robotização, Sistemas Distribuídos, Sistemas Multimídia e Hipermídia, Sistemas de Informação, Sistemas de Telecomunicações, Sistemas de Tempo Real, Software Aplicativo, Software Básico, Tecnologia Educacional, Telecomunicações, Teleinformática]
+Especializações do cluster [Ciência da Computação, Educação, Engenharia Elétrica, Engenharia Mecânica, Engenharia de Produção]
+
+Cluster 7
+ <Jefferson Luiz Brum Marques>
+ <Jorge Muniz Barreto>
+ <Renato Garcia Ojeda>
+ <Mauro Roisenberg>
+Áreas de conhecimento do cluster [Abordagem Holística, Administração da Produção, Agentes, Agentes Autônomos, Agentes Cognitivos, Algoritmos Genéticos, Angiologia, Análise Numérica, Análise de Algoritmos e Complexidade de Computação, Arquitetura de Sistemas de Computação, Automação Eletrônica de Processos Elétricos e Industriais, Avaliação da Aprendizagem, Banco de Dados, Bioeletromagnetismo, Bioinformática, Biologia Matemática, Biomateriais e Materiais Biocompatíveis, Biomédica, Cancerologia, Cardiologia, Circuitos Lineares e Não-Lineares, Circuitos Magnéticos , Magnetismos e Eletromagnetismos, Computabilidade e Modelos de Computação, Computação Evolucionária, Computação Móvel, Conjuntos Nebulosos, Controle Nebuloso, Controle de Procesos, Controle de Processos Eletrônicos, Retroalimentação, Criptografia, Currículos Específicos para Níveis e Tipos de Educação, Datamining, EQUIPAMENTOS MEDICO-HOSPITALARES, Eletroquímica, Endocrinologia, Engenharia Clinica, Engenharia de Software, Ensino Com Computador, Estruturas de Concreto, Estudo de Mercado, Fisiologia Cardiovascular, Fisiologia Endócrina, Geofísica Aplicada, Geração da Energia Elétrica, Gerência do Projeto e do Produto, Hardware, Informática Em Saúde, Informática no Ensino, Instrumentação Eletromecânica, Instrumentação Eletrônica, Instrumentação Odontológica e Médico-Hospitalar, Inteligência Artificial, Linguagem Formais e Autômatos, Linguagens de Programação, Localização Industrial, Lógica Matemática, Lógicas e Semântica de Programas, Materiais e Componentes Semicondutores, Medidas Elétricas, Medidas Magnéticas, Medição, Controle, Correção e Proteção de Sistemas Elétricos de Potência, Metodologia, Instrumentação e Equipamento em Psicologia, Modelagem de Fenômenos Biológicos, Modelagem de Sistemas Biológicos, Modelos Analíticos e de Simulação, Métodos e Técnicas de Ensino, Neurofisiologia, Neurologia, Ortopedia, Processamento Digital de Sinais, Processamento Gráfico (Graphics), Processamento de Imagens, Processamento de Sinais Biológicos, Processos Estocásticos e Teoria das Filas, Psicologia Educacional, Raciocínio Por Casos, Realidade Virtual, Reconhecimento de Padrões, Redes Neurais, Relações do Comércio; Política Comercial; Integração Econômica, Reumatologia, Robótica, Segurança, Simulação, Sistemas Eletrônicos de Medida e de Controle, Sistemas Especialistas, Sistemas Híbridos, Sistemas de Agentes, Sistemas de Informação, Software Básico, Tecnologia Educacional, Tecnologia de Próteses, Teleinformática, Teoria Geral de Planejamento e Desenvolvimento Curricular, Teoria Geral de Sistemas, Teoria Geral dos Circuitos Elétricos, Transdutores para Aplicações Biomédicas, Técnicas de Processamento Estatístico, Matemático e Computacional em Psicologia]
+Especializações do cluster [Administração, Ciência da Computação, Economia, Educação, Engenharia Biomédica, Engenharia Civil, Engenharia Elétrica, Engenharia de Produção, Fisiologia, Geociências, Matemática, Medicina, Psicologia, Química]
+
+Cluster 8
+ <Jomi Fred Hübner>
+ <Antonio Augusto Medeiros Fröhlich>
+ <Alex Sandro Roschildt Pinto>
+Áreas de conhecimento do cluster [Arquitetura de Sistemas de Computação, Computação Paralela, Computação Paralela e Distribuída, Engenharia de Software, Hardware, Inteligência Artificial, Redes Móveis, Redes de Computadores, Sistemas Para Internet, Software Básico, Teleinformática]
+Especializações do cluster [Ciência da Computação]
+
+Cluster 9
+ <Eduardo Augusto Bezerra>
+ <Marcelo Ricardo Stemmer>
+ <Jean Everson Martina>
+ <Leandro Buss Becker>
+ <Rafael Luiz Cancian>
+Áreas de conhecimento do cluster [Algoritmos e Estruturas de Dados, Arquitetura de Computadores, Arquitetura de Sistemas de Computação, Astronomia Espacial, Astronomia Fundamental, Automação Eletrônica de Processos Elétricos e Industriais, Avaliação de Sistemas, Instituições, Planos e Programas Educacionais, Banco de Dados, Bioinformática, Cerimônias Criptográficas, Circuitos Eletrônicos, Clusters de Processamento Distribuído, Computabilidade e Modelos de Computação, Computação Reconfigurável, Controle de Processos Eletrônicos, Retroalimentação, Criptoanálise, Dinâmica dos Fluídos, Economia Matemática, Eletrônica Industrial, Emissão de Documentos Digitais, Energia Solar Fotovoltáica, Engenharia de Software, Geomorfologia Submarina, Geração da Energia Elétrica, Gerenciamento de Certificados Digitais, Hardware, Inferência Paramétrica, Instrumentação para Medida e Controle de Radiação, Inteligência Artificial, Interação do Oceano com a Atmosfera, Interação entre os Organismos Marinhos e os Parâmetros Ambientais, Linguagem Formais e Autômatos, Linguagens de Programação, Lógicas e Semântica de Programas, Manejo e Conservação de Recursos Pesqueiros Marinhos, Maricultura, Matemática Simbólica, Materiais e Componentes Semicondutores, Mecanismos de Assinatura Digital, Microeletrônica, Mobilidade e Computação Ubíqua, Modelagem de Sistemas Biológicos, Modelos Analíticos e de Simulação, Métodos Formais para Segurança, Métodos e Modelos Matemáticos, Econométricos e Estatísticos, Métodos e Técnicas de Ensino, Operação de Sistemas de Transporte, Planejamento de Experimentos, Planejamento e Organização do Sistema de Transporte, Processos de Colisão e Interações de Átomos e Moléculas, Processos de Fabricação, Seleção Econômica, Proteínas, Protocolos Criptográficos, Práticas de Segurança, Reconhecimento de Padrões, Redes Privadas Virtuais, Redes Troncalizadas, Redes de Computadores, Redes de Sensores Sem Fio, Robotização, SISTEMAS OPERACIONAIS, Satélites e Outros Dispositivos Aeroespaciais, Sedimentologia Marinha, Segurança de Redes, Sistema Planetário, Sistema de Tempo Real, Sistemas Computacionais Embarcados, Sistemas Dinâmicos, Sistemas Distribuídos, Sistemas Eletrônicos de Medida e de Controle, Sistemas Embarcados, Sistemas de Informação, Sistemas de Telecomunicações, Sistemas de Tempo Real, Software Básico, Séries Temporais, Teleinformática, Tempo real, Teoria Geral de Planejamento e Desenvolvimento Curricular, Teste Software e Hardware, Tolerância a Falhas, Tolerância a Falhas e Confiabilidade de Sistemas, Transporte e Tráfego Urbano e Regional, Uso Eficiente de Energia]
+Especializações do cluster [Astronomia, Bioquímica, Ciência da Computação, Economia, Educação, Engenharia Aeroespacial, Engenharia Biomédica, Engenharia Elétrica, Engenharia Mecânica, Engenharia Nuclear, Engenharia de Energia, Engenharia de Produção, Engenharia de Transportes, Física, Matemática, Oceanografia, Planejamento Urbano e Regional, Probabilidade e Estatística, Recursos Pesqueiros e Engenharia de Pesca]
+
+Cluster 10
+ <João Artur de Souza>
+ <Gertrudes Aparecida Dandolini>
+ <Francisco Antonio Pereira Fialho>
+Áreas de conhecimento do cluster [Administração de Unidades Educativas, Análise Multivariada, Avaliação da Aprendizagem, Avaliação de Sistemas, Instituições, Planos e Programas Educacionais, Banco de Dados, Classificação de Padrões, Educação a Distancia, Engenharia de Software, Ensino de Matemática a Distância, Ergonomia, Ergonomia Cognitiva, Lógicas e Semântica de Programas, Metodologia, Instrumentação e Equipamento em Psicologia, Métodos e Técnicas de Ensino, Processamento de Sinais Biológicos, Processamento de Sinal, Reconhecimento de Padrões, Redes Neurais, Sistemas de Informação, Tecnologia Educacional, Tecnologias educacionais]
+Especializações do cluster [Ciência da Computação, Educação, Engenharia Biomédica, Engenharia de Produção, Matemática, Probabilidade e Estatística, Psicologia]
+
+Cluster 11
+ <Carina Friedrich Dorneles>
+Áreas de conhecimento do cluster [Banco de Dados, Consulta Por Similaridade, Dados Semi Estruturados e Web, Documentos, Engenharia de Software, Extração de Informações, Interfaces, Sistemas de Informação, Xml]
+Especializações do cluster [Ciência da Computação]
+
+Cluster 12
+ <Rogerio Cid Bastos>
+ <Adriano Ferreti Borgatto>
+ <Mauricio Uriona Maldonado>
+Áreas de conhecimento do cluster [Amostragem, Análise Bayesiana, Análise de Dados, Arquitetura de Sistemas de Computação, Capital Humano, Crescimento e Desenvolvimento Econômico, Economia Regional, Estatística Básica, Estatística Experimental, Gerência do Projeto e do Produto, Inferência Estatística, Modelos Analíticos e de Simulação, Modelos Lineares Generalizados, Métodos Quantitativos. Bibliometria, Métodos e Modelos Matemáticos, Econométricos e Estatísticos, Planejamento de Experimentos, Planejamento em Ciência e Tecnologia, Planejamento, Projeto e Controle de Sistemas de Produção, Sistemas de Informação, Técnicas de Antecipação]
+Especializações do cluster [Administração, Ciência Política, Ciência da Computação, Ciência da Informação, Economia, Engenharia de Produção, Probabilidade e Estatística]
+
+Cluster 13
+ <Neri dos Santos>
+Áreas de conhecimento do cluster [Administração Geral, Administração da Produção, Antropotecnologia, Análise de Custos, Arquitetura dos Espaços de Trabalho, Avaliação de Projetos, Controladoria, Controle de Gestão, Empreendedorismo, Ergonomia, Ergonomia Cognitiva, Ergonomia Física, Garantia de Controle de Qualidade, Gestão de Negócios, Gestão de Riscos, Gestão do Conhecimento, Higiene e Segurança do Trabalho, Inteligência Artificial, Inteligência Competitiva, Inteligência Tecnológica, Metodologia de Projeto do Produto, Planejamento de Instalações Industriais, Planejamento e Organização do Sistema de Transporte, Planejamento, Projeto e Controle de Sistemas de Produção, Política e Planejamento Governamentais, Processo de Gestão, Processos de Trabalho, Programação Linear, Não-Linear, Mista e Dinâmica, Suprimentos, Tecnologia Educacional, Teoria dos Grafos]
+Especializações do cluster [Administração, Arquitetura e Urbanismo, Ciência da Computação, Educação, Engenharia de Produção, Engenharia de Transportes]
+
+Cluster 14
+ <Joao Bosco da Mota Alves>
+ <Tarcísio Vanzin>
+Áreas de conhecimento do cluster [Adequação Ambiental, Administração da Produção, Arquitetura de Sistemas de Computação, Coreografia, Design de Hipermídia, Design de Interface, Educação Especial, Educação Permanente, Educação a Distância, Ensino Profissionalizante, Ensino da Computação, Ergonomia, Geometria, Hardware, Hipermídia - Computação gráfica, Inteligência Artificial, Linguagens de Programação, Modelos de Consciência, Métodos e Técnicas de Ensino, Mídia e Conhecimento, Organização Editorial de Jornais, Planejamento e Projetos da Edificação, Processos da Comunicação, Sistemas Inteligentes Multiagentes, Sistemas Remotos, Sistemas de Informação, Software Básico, Tecnologia Educacional, Teleinformática, Videodifusão, web semântica]
+Especializações do cluster [Administração, Arquitetura e Urbanismo, Artes, Ciência da Computação, Ciência da Informação, Comunicação, Desenho Industrial, Educação, Engenharia de Produção, Matemática, Psicologia]
+
+Cluster 15
+ <Luis Fernando Friedrich>
+ <José Luís Almada Güntzel>
+ <Ricardo Pereira e Silva>
+Áreas de conhecimento do cluster [Arquitetura de Sistemas de Computação, Automação Eletrônica de Processos Elétricos e Industriais, Circuitos Eletrônicos, Engenharia de Software, Frameworks orientados a objetos, Hardware, Linguagens de Programação, Microeletrônica, Planejamento, Projeto e Controle de Sistemas de Produção, Processamento Gráfico (Graphics), Sistemas de Informação, Software Básico, Teleinformática, desenvolvimento baseado em componentes, metodologias de desenvolvimento de software, teste de software]
+Especializações do cluster [Ciência da Computação, Engenharia Elétrica, Engenharia de Produção]
+
+Cluster 16
+ <Alexandre Leopoldo Gonçalves>
+ <Roberto Carlos dos Santos Pacheco>
+ <Aline França de Abreu>
+ <Rodrigo de Souza Vieira>
+Áreas de conhecimento do cluster [Administração Financeira, Administração de Recursos Humanos, Administração de Sistemas Educacionais, Administração de Unidades Educativas, Agentes Inteligentes, Alinhamento Estratégico da TI, Análise de Agrupamentos, Análise de Algoritmos e Complexidade de Computação, Análise de Dados, Análise de Links, Aprendizagem Organizacional, Aprendizagem e Desempenho Acadêmicos, Arquitetura de Sistemas de Computação, Automação Eletrônica de Processos Elétricos e Industriais, Avaliação de Sistemas, Instituições, Planos e Programas Educacionais, Banco de Dados, Circuitos Eletrônicos, Computação Evolucionária, Comércio Eletrônico, Data Warehouse, Desenvolvimento de Produto, Design, Difusão da Inovação, Dinâmica dos Corpos Rígidos, Elásticos e Plásticos, Direito Administrativo, Direito Civil, Direito Penal, Economia de Tecnologia, Educação Especial, Engenharia de Software, Ensino a Distância, Estrutura Organizacional, Estática e Dinâmica Aplicada, Fundamentos Gerais de Projetos das Máquinas, Garantia de Controle de Qualidade, Geracao de Ideias, Geração de Idéias, Gestao da Informacao, Gestão Ambiental, Gestão Integrada de Tecnologia da Informação, Gestão do Conhecimento, Higiene e Segurança do Trabalho, História, Teorias e Sistemas em Psicologia, Inovação Tecnológica, Instrumentação Meteorológica, Integração e Compartilhamento da Informação, Inteligência Artificial, Inteligência Competitiva, Inteligência de Negócios, Legislação Ambiental, Linguagens de Programação, Mercadologia, Metodologia de Engenharia do conhecimento, Metodologia de Projeto do Produto, Mineração de Dados, Máquinas, Motores e Equipamentos, Métodos e Técnicas de Ensino, Ontologia, Organização Industrial e  Estudos Industriais, Organizações Públicas, Organizações Virtuais, Origem das Massas de Água, Planejamento em Ciência e Tecnologia, Planos e Programas Educacionais, Política e Planejamento Governamentais, Processamento de Sinais Biológicos, Processos, Raciocínio Baseado em Casos, Reconhecimento de Padrões, Redes Neuronais Artificiais, Redes de Inovação, Regressão e Correlação, Relações Internacionais, Bilaterais e Multilaterais, Representação da Informação, SISTEMAS DE INFORMAÇÃO, Sistemas Difusos, Sistemas Especialistas, Sistemas Híbridos, Sistemas Multiagentes, Sistemas Operacionais, Sistemas de Informacao, Sistemas de Informação, Tecnologia Educacional, Tecnologia de Informação, Teletrabalho, Teoria dos Grafos, Text Mining, Transporte e Tráfego Urbano e Regional, Tratamentos Térmicos, Mecânicos e Químicos, Técnica de Previsão Urbana e Regional, Universidade]
+Especializações do cluster [Administração, Ciência Política, Ciência da Computação, Ciência da Informação, Direito, Economia, Educação, Engenharia Biomédica, Engenharia Elétrica, Engenharia Mecânica, Engenharia Sanitária, Engenharia de Materiais e Metalúrgica, Engenharia de Produção, Geociências, Oceanografia, Planejamento Urbano e Regional, Probabilidade e Estatística, Psicologia]
+
+Cluster 17
+ <Ronaldo dos Santos Mello>
+Áreas de conhecimento do cluster [Arquitetura de Sistemas de Computação, Banco de Dados, Engenharia de Software, Information Retrieval, Linguagens de Programação, Métodos e Modelos Matemáticos, Econométricos e Estatísticos, Sistemas de Informação]
+Especializações do cluster [Ciência da Computação, Economia]
+
+Cluster 18
+ <Paulo Jose de Freitas Filho>
+ <Carlos Becker Westphall>
+Áreas de conhecimento do cluster [Administração de Recursos Humanos, Administração e Gerência de Redes, Análise de Custos, Análise de Risco em Gerência da Saúde, Aprendizagem Colaborativa, Arquitetura de Sistemas de Computação, Clusters, Computação Paralela e Distribuida, Custos da Construção de Sistemas Para a Perfuração e Completação de Poços de Petróleo, Custos de Construção Naval, Desempenho de Sistemas de Computação, Desempenho na Web, Engenharia de Software, Gerencia de Redes de Telecomunicações, Gerência Operacional, Gerência de Redes de Computadores, Gerência de Redes de Telecomunicações, Gerência de Serviços Computacionais, Grid, Linguagens de Programação, Modelagem e Simulação, Modelos Analíticos e de Simulação, Modelos Probabilisticos, Planejamento de Instalações Industriais, Planejamento, Projeto e Controle de Sistemas de Produção, Processos Estocásticos e Teoria das Filas, Redes Neurais, Redes de Computadores, Redes de Telecomunicações, Simulação Discreta, Simulação de Sistemas, Sistemas Cliente Servidor, Sistemas Epecialistas, Tecnologias de Perfuração e Completação de Poços de Petróleo, Teleinformática, Tratamento da Incerteza]
+Especializações do cluster [Administração, Ciência da Computação, Engenharia Naval e Oceânica, Engenharia de Produção, Matemática, Probabilidade e Estatística]
+
+Cluster 19
+ <Renato Fileto>
+Áreas de conhecimento do cluster [Análise de Dados, Banco de Dados, Bioinformática Estrutural, Engenharia de Software, Lógicas e Semântica de Programas, Sistemas de Informação]
+Especializações do cluster [Ciência da Computação, Probabilidade e Estatística]
+
+Cluster 20
+ <Fernando Mendes de Azevedo>
+ <Jovelino Falqueto>
+Áreas de conhecimento do cluster [Anestesiologia, Automação Eletrônica de Processos Elétricos e Industriais, Cardiologia, Circuitos Eletrônicos, Computabilidade e Modelos de Computação, Controle Numérico, Controle de Processos Eletrônicos, Retroalimentação, Engenharia de Software, Equipamentos Auxiliares e Controles, Gastroenterologia, Instrumentação Odontológica e Médico-Hospitalar, Inteligência Artificial - Agentes, Inteligência Artificial - Redes Neurais Artificiais, Linguagem Formais e Autômatos, Lógicas e Semântica de Programas, Modelagem de Fenômenos Biológicos, Modelagem de Sistemas Biológicos, Modelos Analíticos e de Simulação, Métodos e Técnicas de Ensino, Neurologia, Processamento Gráfico (Graphics), Processamento de Sinais Biológicos, Sistema especialista fuzzy, Sistemas de Informação, Sistemas de Telecomunicações, Software Básico, Teleinformática, Transdutores para Aplicações Biomédicas]
+Especializações do cluster [Ciência da Computação, Educação, Engenharia Biomédica, Engenharia Elétrica, Engenharia Mecânica, Engenharia de Transportes, Medicina]
+
+Cluster 21
+ <Luismar Marques Porto>
+Áreas de conhecimento do cluster [Análise Numérica, Bacterologia, Biomateriais e Materiais Biocompatíveis, Cinética Química e Catálise, Engenharia de Tecidos, Linguagens de Programação, Mecânica dos Fluídos, Modelagem de Sistemas Biológicos, Operações de Separação e Mistura, Petróleo e Petroquímica, Processos Inorgânicos, Produtos Naturais, Proteínas, Reatores Químicos, Sistemas de Informação, Software Básico, Transferência de Calor, Tratamento de Minérios, Óleos]
+Especializações do cluster [Bioquímica, Ciência da Computação, Engenharia Biomédica, Engenharia Mecânica, Engenharia Química, Engenharia de Materiais e Metalúrgica, Matemática, Microbiologia, Química]
+
+Cluster 22
+ <Jose Eduardo De Lucca>
+Áreas de conhecimento do cluster [Arquitetura de Sistemas de Computação, Banco de Dados, Direito Comercial, Educação Especial, Empreendedorismo, Engenharia de Software, Hardware, Inovação, Linguagem Formais e Autômatos, Linguagens de Programação, Localização, Lógicas e Semântica de Programas, Modelagem de Fenômenos Biológicos, Modelagem de Sistemas Biológicos, Mudança Tecnológica, Métodos e Técnicas de Ensino, Negócios Internacionais, Organização Industrial e  Estudos Industriais, Planejamento em Ciência e Tecnologia, Política e Planejamento Governamentais, Processamento Gráfico, Processamento Gráfico (Graphics), Sistemas de Informação, Software Básico, Tecnologia Educacional, Teleinformática, Teoria e Política de Planejamento Econômico, Tradução]
+Especializações do cluster [Administração, Ciência da Computação, Direito, Economia, Educação, Engenharia Biomédica, Letras]
+
+Cluster 23
+ <Walter de Abreu Cybis>
+Áreas de conhecimento do cluster [Avaliação de Sistemas, Instituições, Planos e Programas Educacionais, Engenharia de Software, Engenharia de Usabilidade, Ergonomia, Estudos Eleitorais e Partidos Políticos, Interfaces Homem-Computador, Metodologia de Projeto do Produto, Métodos e Técnicas de Ensino, Planejamento Educacional, Sistemas de Informação, Tecnologia Educacional]
+Especializações do cluster [Ciência Política, Ciência da Computação, Educação, Engenharia de Produção, Saúde Coletiva]
+
+Cluster 24
+ <Murilo Silva de Camargo>
+Áreas de conhecimento do cluster [?	Administração, planejamento, financiamento e custos, ?	Gestão acadêmica e práticas educativas na universidade, Arquitetura de Sistemas de Computação, Computabilidade e Modelos de Computação, Diversidade na universidade: acesso, permanência , evasão e sucesso, Engenharia de Software, Lógicas e Semântica de Programas, Métodologias e Tecnologias de Apoio a Aprendizagem, Regulação, legislação e Avaliação, Sistemas Distribuídos, Teleinformática, Universidade e desenvolvimento da nação]
+Especializações do cluster [Ciência da Computação, Educação]
+
+Cluster 25
+ <José Mazzucco Junior>
+ <Patricia Della Méa Plentz>
+ <Luiz Cláudio Villar dos Santos>
+Áreas de conhecimento do cluster [Análise de Algoritmos e Complexidade de Computação, Hardware, Inteligência Artificial, Linguagens de Programação, Middleware, Sistemas Distribuidos e Computação Paralela, Sistemas Distribuídos, Sistemas de Informação, Sistemas de Tempo Real, Software Básico]
+Especializações do cluster [Ciência da Computação]
+
+Cluster 26
+ <Ricardo Azambuja Silveira>
+Áreas de conhecimento do cluster [Administração de Recursos Humanos, Arquitetura de Sistemas de Computação, Lógicas e Semântica de Programas, Tecnologia Educacional]
+Especializações do cluster [Administração, Ciência da Computação, Educação]
+
+Cluster 27
+ <Vitório Bruno Mazzola>
+Áreas de conhecimento do cluster [Controle de Processos Eletrônicos, Retroalimentação, Engenharia de Software, Linguagem Formais e Autômatos, Lógicas e Semântica de Programas, Redes de Computadores, Software Básico, Transmissão da Energia Elétrica, Distribuição da Energia Elétrica]
+Especializações do cluster [Ciência da Computação, Engenharia Elétrica]
+
+Cluster 28
+ <Roberto Willrich>
+Áreas de conhecimento do cluster [Arquitetura de Sistemas de Computação, Automação Eletrônica de Processos Elétricos e Industriais, Avaliação da Aprendizagem, Banco de Dados, Engenharia de Software, Hardware, Linguagem Formais e Autômatos, Linguagens de Programação, Lógicas e Semântica de Programas, Mercadologia, Modelos Analíticos e de Simulação, Métodos e Técnicas de Ensino, Planejamento, Projeto e Controle de Sistemas de Produção, Sistemas Eletrônicos de Medida e de Controle, Sistemas de Informação, Software Básico, Tecnologia Educacional, Teleinformática]
+Especializações do cluster [Administração, Ciência da Computação, Educação, Engenharia Elétrica, Engenharia de Produção]

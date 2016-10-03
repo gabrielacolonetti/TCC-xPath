@@ -44,55 +44,56 @@ import static org.simmetrics.builders.StringMetricBuilder.with;
 public class Main {
 
 	
-	public static void main2(String[] args) throws FileNotFoundException {
-		
-		String str1 = "A Similarity Search Method for Web Forms";
-	    String str2 = "A Similarity Search Alternative to New Forms";
-
+//	public static void main2(String[] args) throws FileNotFoundException {
+//		
+//		String str1 = "A Similarity Search Method for Web Forms";
+//	    String str2 = "A Similarity Search Alternative to New Forms";
+//
+////	    StringMetric metric =
+////	            with(new CosineSimilarity<String>())
+////	            .simplify(Simplifiers.toLowerCase(Locale.ENGLISH))
+////	            .simplify(Simplifiers.replaceNonWord())
+////	            .tokenize(Tokenizers.whitespace())
+////	            .build();
+//
 //	    StringMetric metric =
-//	            with(new CosineSimilarity<String>())
+//	            with(new OverlapCoefficient<String>())
 //	            .simplify(Simplifiers.toLowerCase(Locale.ENGLISH))
 //	            .simplify(Simplifiers.replaceNonWord())
 //	            .tokenize(Tokenizers.whitespace())
 //	            .build();
-
-	    StringMetric metric =
-	            with(new OverlapCoefficient<String>())
-	            .simplify(Simplifiers.toLowerCase(Locale.ENGLISH))
-	            .simplify(Simplifiers.replaceNonWord())
-	            .tokenize(Tokenizers.whitespace())
-	            .build();
-	    
-	    System.out.println(metric.compare(str1, str2));
-		
-		
-		
-		
-		
-	}
+//	    
+//	    System.out.println(metric.compare(str1, str2));
+//		
+//		
+//		
+//		
+//		
+//	}
 	
 	
 	public static void main(String[] args) throws FileNotFoundException {
 
-		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/testeArtigos");
-		double valorClusterizacao = 0.05;
+		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculos/ine");
+		double valorClusterizacao = 0.1;
 		DecimalFormat formatter = new DecimalFormat("#0.00");
 		
 		//		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculosplus");
 		List<File> listaDeCurriculoXML = calcFilesUtil.getCurriculosXML();
-		//		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
-		Map<String,List<Pessoa>> listaPublicacao = ManipuladorXML.geraListaDePublicacoesUFSC(listaDeCurriculoXML);
+		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
+		//Map<String,List<Pessoa>> listaPublicacao = ManipuladorXML.geraListaDePublicacoesUFSC(listaDeCurriculoXML);
 
 
 
-		//List<Tupla> listaTupla = ManipuladorXML.criaPares();
-		List<Tupla> listaTupla = ManipuladorXML.criaParesUFSC();
+		List<Tupla> listaTupla = ManipuladorXML.criaPares();
+		//List<Tupla> listaTupla = ManipuladorXML.criaParesUFSC();
 		Map<String, Pessoa> mapaPessoas = ManipuladorXML.getMapaPessoas();
 
 		//cria grafo
 		Grafo g = new Grafo();
 		g.criaVertice(listaTupla);
 		g.setThreshold(3);
+
 
 		//calculo similaridade
 		HashMap<String, Set<String>> quantidadeVertices = g.retornaTodosVerticesGrafo();
@@ -111,12 +112,12 @@ public class Main {
 
 
 		//criando cluster usando ursa
-		while (valorClusterizacao <= 1.5){
+		while (valorClusterizacao <= 1.0){
 			String valorClusterizacaoString = formatter.format(valorClusterizacao);
-			String nomeArquivoExcel = "testeOverlapExcel\\clusters"+valorClusterizacaoString;
+			String nomeArquivoExcel = "testeCosineExcelTodosAutores\\clusters"+valorClusterizacaoString;
 		
 			PrintStream formatoExcel = new PrintStream(nomeArquivoExcel+".txt");
-			String nomeArquivo = "testeOverlap\\clusters"+valorClusterizacaoString;
+			String nomeArquivo = "testeCosineTodosAutores\\clusters"+valorClusterizacaoString;
 			PrintStream p = new PrintStream(nomeArquivo+".txt");
 
 			ClusteringProcess primeiroProcesso = new ClusteringProcess();
@@ -125,16 +126,16 @@ public class Main {
 
 			//alterar a lista de coeficientes que deseja clusterizar
 			//HashMap<String, HashMap<String, Double>> hashCoeficientes = j.criaHashMap(listaCoeficientesJaccard);
-			//HashMap<String, HashMap<String, Double>> hashCoeficientes = c.criaHashMap(listaCoeficientesCosine);
-			HashMap<String, HashMap<String, Double>> hashCoeficientes = o.criaHashMap(listaCoeficientesOverlap);
+			HashMap<String, HashMap<String, Double>> hashCoeficientes = c.criaHashMap(listaCoeficientesCosine);
+			//HashMap<String, HashMap<String, Double>> hashCoeficientes = o.criaHashMap(listaCoeficientesOverlap);
 
 			//List <String> autores = j.listaDeTodosAutores(quantidadeVertices);
-			//List <String> autores = c.listaDeTodosAutores(quantidadeVertices);
-			List <String> autores = o.listaDeTodosAutores(quantidadeVertices);
+			List <String> autores = c.listaDeTodosAutores(quantidadeVertices);
+			//List <String> autores = o.listaDeTodosAutores(quantidadeVertices);
 
 			//Matrix2D matrizDeSimilaridades = j.criaMatriz(hashCoeficientes, autores.size(), autores);
-			//Matrix2D matrizDeSimilaridades = c.criaMatriz(hashCoeficientes, autores.size(), autores);
-			Matrix2D matrizDeSimilaridades = o.criaMatriz(hashCoeficientes, autores.size(), autores);
+			Matrix2D matrizDeSimilaridades = c.criaMatriz(hashCoeficientes, autores.size(), autores);
+			//Matrix2D matrizDeSimilaridades = o.criaMatriz(hashCoeficientes, autores.size(), autores);
 
 			//
 			//     	for (String autor1 : hashCoeficientes.keySet()) {
@@ -215,7 +216,7 @@ public class Main {
 				}
 				cont++;
 			}
-			valorClusterizacao = valorClusterizacao + 0.05;
+			valorClusterizacao = valorClusterizacao + 0.1;
 			formatoExcel.close();
 			p.close();
 		}
@@ -237,19 +238,18 @@ public class Main {
 		//		}
 		//	}
 
-		//		//imprimi a lista de tuplas
-		//		for (Tupla tupla : listaTupla) {
-		//			System.out.println(
-		//					"\n" + tupla.getP1().getNome() + "---" + tupla.getP2().getNome() +
-		//					"---" + tupla.getPeso());
-		//
-		//			for (int i = 0; i < tupla.getPublicacoesUFSC().size(); i++) {
-		//				System.out.println(
-		//						tupla.getPublicacoesUFSC().get(i));
-		//
-		//			}
-		//		}
-
+		//imprimi a lista de tuplas
+//		for (Tupla tupla : listaTupla) {
+//			System.out.println(
+//					"\n" + tupla.getP1().getNome() + "---" + tupla.getP2().getNome() +
+//					"---" + tupla.getPeso());
+//
+//			for (int i = 0; i < tupla.getPublicacoesUFSC().size(); i++) {
+//				System.out.println(
+//						tupla.getPublicacoesUFSC().get(i));
+//
+//			}
+//		}
 
 		//lista de publicacao imprimi titulo, ano, autor, coautores
 		//		for (Publicacao p1 : listaPublicacao) {

@@ -1,10 +1,13 @@
 package source;
 
+import static org.simmetrics.builders.StringMetricBuilder.with;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -15,6 +18,11 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathFactory;
+
+import org.simmetrics.StringMetric;
+import org.simmetrics.metrics.OverlapCoefficient;
+import org.simmetrics.simplifiers.Simplifiers;
+import org.simmetrics.tokenizers.Tokenizers;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -34,6 +42,12 @@ public class ManipuladorXML {
 	static Map<String, Pessoa> mapaPessoas = new HashMap<String, Pessoa>();
 	static List<Publicacao> listaPublicacoesAutoresUFSC = new ArrayList<Publicacao>();
 	static Map<String,List<Pessoa>> mapaAutoresUFSC = new HashMap<String,List<Pessoa>>();
+	static StringMetric metric =
+	            with(new OverlapCoefficient<String>())
+	            .simplify(Simplifiers.toLowerCase(Locale.ENGLISH))
+	            .simplify(Simplifiers.replaceNonWord())
+	            .tokenize(Tokenizers.whitespace())
+	            .build();
 
 	public static Map<String, Pessoa> getMapaPessoas() {
 		return mapaPessoas;
@@ -240,18 +254,25 @@ public class ManipuladorXML {
 //								double similaridadeValor = similaridade.verificaPalavras(mapaAutoresUFSC, titulo);
 //								if(titulo.equals("A Similarity Search Method for Web Forms")){
 //									System.out.println(similaridadeValor);
-//								}
+//								}								
 								if(!mapaAutoresUFSC.containsKey(titulo.toUpperCase())){
 									List<Pessoa> pessoasDaLista = new ArrayList<Pessoa>();
 									pessoasDaLista.add(pessoaux);
-									//System.out.println("adicionando no mapa "+titulo+" e pessoa "+nomeCompletoAutor);
 									mapaAutoresUFSC.put(titulo.toUpperCase(), pessoasDaLista);
 								}else{
 									if(!verificaPessoaNoMapa(pessoaux,mapaAutoresUFSC, titulo)){
-//										for (String file : mapaAutoresUFSC.keySet()) {
-//										}
-										//System.out.println("adicionando a pessoa "+nomeCompletoAutor);
 										mapaAutoresUFSC.get(titulo.toUpperCase()).add(pessoaux);
+										//System.out.println("adicionando a pessoa "+nomeCompletoAutor);
+									}
+								}
+								for (String file : mapaAutoresUFSC.keySet()) {
+									double similaridadeTitulo = metric.compare(file, titulo.toUpperCase());
+//									if(titulo.equals("A Similarity Search Approach for Web Forms")){
+//										System.out.println(similaridadeTitulo);	
+//									}
+									if(similaridadeTitulo > 0.8 && !verificaPessoaNoMapa(pessoaux,mapaAutoresUFSC, titulo)){
+										System.out.println(similaridadeTitulo+" adicionando "+pessoaux.getNome()+" no "+file +" como "+ titulo);
+										mapaAutoresUFSC.get(file.toUpperCase()).add(pessoaux);
 									}
 								}
 							}else{
@@ -297,12 +318,14 @@ public class ManipuladorXML {
 
 
 	public static boolean verificaPessoaNoMapa(Pessoa pessoaux, Map<String, List<Pessoa>> mapaAutoresUFSC2, String titulo) {
-		List<Pessoa> pessoas = mapaAutoresUFSC2.get(titulo.toUpperCase());
-		for (Pessoa autores : pessoas) {
-			if(autores.getNome().trim().equals(pessoaux.getNome().trim())){
-				return true;
-			}
+		if(mapaAutoresUFSC2.containsKey(titulo.toUpperCase())){
+			List<Pessoa> pessoas = mapaAutoresUFSC2.get(titulo.toUpperCase());
+			for (Pessoa autores : pessoas) {
+				if(autores.getNome().trim().equals(pessoaux.getNome().trim())){
+					return true;
+				}
 
+			}
 		}
 		return false;
 	}
