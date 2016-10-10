@@ -80,13 +80,13 @@ public class Main {
 		
 		//		CalcFilesUtil calcFilesUtil = new CalcFilesUtil("curriculosplus");
 		List<File> listaDeCurriculoXML = calcFilesUtil.getCurriculosXML();
-		List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
-		//Map<String,List<Pessoa>> listaPublicacao = ManipuladorXML.geraListaDePublicacoesUFSC(listaDeCurriculoXML);
+		//List<Publicacao> listaPublicacao = ManipuladorXML.geraListaDePublicacoes(listaDeCurriculoXML);
+		Map<String,List<Pessoa>> listaPublicacao = ManipuladorXML.geraListaDePublicacoesUFSC(listaDeCurriculoXML);
 
 
 
-		List<Tupla> listaTupla = ManipuladorXML.criaPares();
-		//List<Tupla> listaTupla = ManipuladorXML.criaParesUFSC();
+		//List<Tupla> listaTupla = ManipuladorXML.criaPares();
+		List<Tupla> listaTupla = ManipuladorXML.criaParesUFSC();
 		Map<String, Pessoa> mapaPessoas = ManipuladorXML.getMapaPessoas();
 
 		//cria grafo
@@ -101,9 +101,9 @@ public class Main {
 		List<CosineSimilaridade> listaCoeficientesCosine =  g.coeficienteCosine();
 		List<OverlapSimilaridade> listaCoeficientesOverlap = g.coeficienteOverlap();
 
-//		for (OverlapSimilaridade overlapSimilaridade : listaCoeficientesOverlap) {
-//			System.out.println(overlapSimilaridade.getP1()+" "+overlapSimilaridade.getP2()+" "+overlapSimilaridade.getCalculo());
-//		}
+		for (OverlapSimilaridade overlapSimilaridade : listaCoeficientesOverlap) {
+			System.out.println(overlapSimilaridade.getP1()+" "+overlapSimilaridade.getP2()+" "+overlapSimilaridade.getCalculo());
+		}
 
 		//clusterizando utilizando best star
 		JaccardSimilaridade j = new JaccardSimilaridade();
@@ -153,7 +153,7 @@ public class Main {
 
 
 			//inserindo data object
-			//int valordeK = 0;
+			int valordeK = 0;
 			DataObjectAutor autor;
 			for(int k=0;k<autores.size();k++){
 				String nomeautor = autores.get(k);
@@ -192,9 +192,9 @@ public class Main {
 				System.out.println("Especializações do cluster " + especializacaoClusterInterseccao);
 				i++;
 
-				//				if(cluster.getDataObjects().size() > 1){
-				//					valordeK++;
-				//				}
+								if(cluster.getDataObjects().size() > 1){
+									valordeK++;
+								}
 
 				//				for (DataObject autImp: cluster.getDataObjects()) {
 				//					String autImp1 = ((DataObjectAutor)autImp).getMt().getValue();
@@ -204,6 +204,8 @@ public class Main {
 				//						System.out.println("Similaridade " + autImp1 + " e " + autImp2 + " = " + hashCoeficientes.get(autImp1).get(autImp2));
 				//					}
 				//				}
+								
+								System.out.println("clusters com mais de 1 membro"+ valordeK);
 			}
 
 			int cont =1;

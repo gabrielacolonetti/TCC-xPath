@@ -1,0 +1,885 @@
+Grupo 0
+
+
+(Gertrudes Aparecida Dandolini : João Artur de Souza) - 143.0
+(Gertrudes Aparecida Dandolini : Aline França de Abreu) - 6.0
+(Gertrudes Aparecida Dandolini : Tarcísio Vanzin) - 9.0
+(Gertrudes Aparecida Dandolini : Roberto Carlos dos Santos Pacheco) - 4.0
+(Gertrudes Aparecida Dandolini : Fernando Alvaro Ostuni Gauthier) - 4.0
+(Tarcísio Vanzin : João Artur de Souza) - 7.0
+(Aline França de Abreu : João Artur de Souza) - 6.0
+(Roberto Carlos dos Santos Pacheco : João Artur de Souza) - 4.0
+(Roberto Carlos dos Santos Pacheco : José Leomar Todesco) - 8.0
+(Alexandre Leopoldo Gonçalves : Roberto Carlos dos Santos Pacheco) - 12.0
+(Alexandre Leopoldo Gonçalves : José Leomar Todesco) - 4.0
+(Roberto Carlos dos Santos Pacheco : Fernando Alvaro Ostuni Gauthier) - 6.0
+(João Artur de Souza : Fernando Alvaro Ostuni Gauthier) - 4.0
+
+
+
+Grupo 1
+
+
+(Carla Merkle Westphall : Carlos Becker Westphall) - 41.0
+(Joni da Silva Fraga : Carla Merkle Westphall) - 5.0
+(Jean Marie Alexandre Farines : Joni da Silva Fraga) - 9.0
+(Jean Marie Alexandre Farines : Roberto Willrich) - 5.0
+(Jean Marie Alexandre Farines : Murilo Silva de Camargo) - 4.0
+(Jean Marie Alexandre Farines : Rômulo Silva de Oliveira) - 5.0
+(Jean Marie Alexandre Farines : Cristian Koliver) - 4.0
+(Jean Marie Alexandre Farines : Leandro Buss Becker) - 9.0
+(Rômulo Silva de Oliveira : Joni da Silva Fraga) - 5.0
+(Rômulo Silva de Oliveira : Luciana de Oliveira Rech) - 8.0
+(Rômulo Silva de Oliveira : Carlos Barros Montez) - 29.0
+(Rômulo Silva de Oliveira : Luis Fernando Friedrich) - 4.0
+(Rômulo Silva de Oliveira : Patricia Della Méa Plentz) - 7.0
+(Joni da Silva Fraga : Carlos Barros Montez) - 5.0
+(Joni da Silva Fraga : Lau Cheuk Lung) - 37.0
+(Joni da Silva Fraga : Frank Augusto Siqueira) - 9.0
+(Joni da Silva Fraga : Ricardo Felipe Custodio) - 4.0
+
+
+
+Grupo 2
+
+
+(Jorge Muniz Barreto : Fernando Mendes de Azevedo) - 35.0
+(Jorge Muniz Barreto : Mauro Roisenberg) - 9.0
+(Fernando Mendes de Azevedo : Silvia Modesto Nassar) - 8.0
+(Jefferson Luiz Brum Marques : Fernando Mendes de Azevedo) - 7.0
+(Mauro Roisenberg : Fernando Mendes de Azevedo) - 6.0
+(Guilherme Bittencourt : Mauro Roisenberg) - 6.0
+
+
+
+Grupo 3
+
+
+(Gregório Jean Varvakis Rados : Mauricio Uriona Maldonado) - 18.0
+(Gregório Jean Varvakis Rados : Paulo Mauricio Selig) - 7.0
+(Mauricio Uriona Maldonado : Paulo Mauricio Selig) - 6.0
+
+
+
+Grupo 4
+
+
+(Carlos Barros Montez : Alex Sandro Roschildt Pinto) - 18.0
+(Carlos Barros Montez : Patricia Della Méa Plentz) - 8.0
+(Carlos Barros Montez : Luciana de Oliveira Rech) - 5.0
+(Mario Antonio Ribeiro Dantas : Alex Sandro Roschildt Pinto) - 8.0
+(Mario Antonio Ribeiro Dantas : Aldo von Wangenheim) - 6.0
+(Mario Antonio Ribeiro Dantas : José Leomar Todesco) - 11.0
+
+
+
+Grupo 5
+
+
+(José Leomar Todesco : Fernando Alvaro Ostuni Gauthier) - 16.0
+
+
+
+Grupo 6
+
+
+(Lau Cheuk Lung : Luciana de Oliveira Rech) - 11.0
+(Lau Cheuk Lung : Carlos Alberto Maziero) - 6.0
+(Lau Cheuk Lung : Frank Augusto Siqueira) - 6.0
+
+
+
+Grupo 7
+
+
+(Rafael Luiz Cancian : Marcelo Ricardo Stemmer) - 10.0
+(Rafael Luiz Cancian : Antonio Augusto Medeiros Fröhlich) - 7.0
+(Marcelo Ricardo Stemmer : Antonio Augusto Medeiros Fröhlich) - 4.0
+
+
+
+Grupo 8
+
+
+(Jean Everson Martina : Ricardo Felipe Custodio) - 9.0
+
+
+
+Grupo 9
+
+
+(Neri dos Santos : Francisco Antonio Pereira Fialho) - 9.0
+
+
+
+Grupo 10
+
+
+(Lia Caetano Bastos : Rogerio Cid Bastos) - 8.0
+(Rogerio Cid Bastos : Silvia Modesto Nassar) - 5.0
+
+
+
+Grupo 11
+
+
+(Ricardo Azambuja Silveira : Silvia Modesto Nassar) - 7.0
+
+
+
+Grupo 12
+
+
+(Joao Bosco da Mota Alves : Joao Candido Lima Dovicchi) - 5.0
+
+
+
+Grupo 13
+
+
+(José Luís Almada Güntzel : Luiz Cláudio Villar dos Santos) - 5.0
+
+
+
+Grupo 14
+
+
+(Carina Friedrich Dorneles : Ronaldo dos Santos Mello) - 4.0
+
+
+
+Grupo 15
+
+
+(Antonio Augusto Medeiros Fröhlich : Leandro Buss Becker) - 4.0
+
+
+
+Grupo 16
+
+
+(Gertrudes Aparecida Dandolini : Paulo Mauricio Selig) - 3.0
+
+
+
+Grupo 17
+
+
+(Paulo Mauricio Selig : João Artur de Souza) - 3.0
+
+
+
+Grupo 18
+
+
+(Roberto Willrich : Murilo Silva de Camargo) - 2.0
+
+
+
+Grupo 19
+
+
+(Jean Marie Alexandre Farines : Carlos Barros Montez) - 3.0
+
+
+
+Grupo 20
+
+
+(Luis Fernando Friedrich : Patricia Della Méa Plentz) - 1.0
+
+
+
+Grupo 21
+
+
+(Gregório Jean Varvakis Rados : Tarcísio Vanzin) - 3.0
+
+
+
+Grupo 22
+
+
+(Francisco Antonio Pereira Fialho : Fernando Alvaro Ostuni Gauthier) - 2.0
+
+
+
+Grupo 23
+
+
+(Ronaldo dos Santos Mello : Ricardo Felipe Custodio) - 1.0
+
+
+
+Grupo 24
+
+
+(Luiz Cláudio Villar dos Santos : Ricardo Pereira e Silva) - 2.0
+
+
+
+Grupo 25
+
+
+(Luis Fernando Friedrich : José Mazzucco Junior) - 1.0
+
+
+
+Grupo 26
+
+
+(Roberto Carlos dos Santos Pacheco : Paulo Mauricio Selig) - 1.0
+
+
+
+Grupo 27
+
+
+(Leandro Buss Becker : Jomi Fred Hübner) - 1.0
+
+
+
+Grupo 28
+
+
+(Lia Caetano Bastos : Joao Bosco da Mota Alves) - 1.0
+
+
+
+Grupo 29
+
+
+(Eduardo Augusto Bezerra : Antonio Augusto Medeiros Fröhlich) - 1.0
+
+
+
+Grupo 30
+
+
+(Mauro Roisenberg : Paulo Jose de Freitas Filho) - 1.0
+
+
+
+Grupo 31
+
+
+(Rômulo Silva de Oliveira : Lau Cheuk Lung) - 1.0
+
+
+
+Grupo 32
+
+
+(Carlos Barros Montez : Antonio Augusto Medeiros Fröhlich) - 1.0
+
+
+
+Grupo 33
+
+
+(Neri dos Santos : José Leomar Todesco) - 1.0
+
+
+
+Grupo 34
+
+
+(Gregório Jean Varvakis Rados : José Leomar Todesco) - 1.0
+
+
+
+Grupo 35
+
+
+(Mauricio Uriona Maldonado : José Leomar Todesco) - 1.0
+
+
+
+Grupo 36
+
+
+(Paulo Mauricio Selig : José Leomar Todesco) - 2.0
+
+
+
+Grupo 37
+
+
+(Alexandre Leopoldo Gonçalves : Fernando Alvaro Ostuni Gauthier) - 2.0
+
+
+
+Grupo 38
+
+
+(Carla Merkle Westphall : Lau Cheuk Lung) - 3.0
+
+
+
+Grupo 39
+
+
+(Joao Bosco da Mota Alves : Fernando Augusto da Silva Cruz) - 2.0
+
+
+
+Grupo 40
+
+
+(Aline França de Abreu : Francisco Antonio Pereira Fialho) - 2.0
+
+
+
+Grupo 41
+
+
+(Joni da Silva Fraga : Cristian Koliver) - 2.0
+
+
+
+Grupo 42
+
+
+(Neri dos Santos : Roberto Carlos dos Santos Pacheco) - 3.0
+
+
+
+Grupo 43
+
+
+(Lau Cheuk Lung : Ricardo Felipe Custodio) - 2.0
+
+
+
+Grupo 44
+
+
+(Jean Marie Alexandre Farines : Frank Augusto Siqueira) - 3.0
+
+
+
+Grupo 45
+
+
+(Gregório Jean Varvakis Rados : Neri dos Santos) - 3.0
+
+
+
+Grupo 46
+
+
+(Gertrudes Aparecida Dandolini : Ricardo Azambuja Silveira) - 1.0
+
+
+
+Grupo 47
+
+
+(Ricardo Azambuja Silveira : João Artur de Souza) - 2.0
+
+
+
+Grupo 48
+
+
+(Joni da Silva Fraga : Carlos Alberto Maziero) - 1.0
+
+
+
+Grupo 49
+
+
+(Renato Fileto : Roberto Willrich) - 3.0
+
+
+
+Grupo 50
+
+
+(Jean Everson Martina : Aldo von Wangenheim) - 1.0
+
+
+
+Grupo 51
+
+
+(Rafael Luiz Cancian : Rômulo Silva de Oliveira) - 2.0
+
+
+
+Grupo 52
+
+
+(Rafael Luiz Cancian : Luis Fernando Friedrich) - 2.0
+
+
+
+Grupo 53
+
+
+(Carlos Barros Montez : Roberto Willrich) - 2.0
+
+
+
+Grupo 54
+
+
+(Mario Antonio Ribeiro Dantas : Vitório Bruno Mazzola) - 3.0
+
+
+
+Grupo 55
+
+
+(Carlos Barros Montez : Mario Antonio Ribeiro Dantas) - 2.0
+
+
+
+Grupo 56
+
+
+(Gregório Jean Varvakis Rados : Francisco Antonio Pereira Fialho) - 2.0
+
+
+
+Grupo 57
+
+
+(Jose Eduardo De Lucca : Luismar Marques Porto) - 3.0
+
+
+
+Grupo 58
+
+
+(Carlos Barros Montez : Lau Cheuk Lung) - 1.0
+
+
+
+Grupo 59
+
+
+(Lia Caetano Bastos : Gertrudes Aparecida Dandolini) - 1.0
+
+
+
+Grupo 60
+
+
+(Gertrudes Aparecida Dandolini : Joao Bosco da Mota Alves) - 2.0
+
+
+
+Grupo 61
+
+
+(Joao Bosco da Mota Alves : João Artur de Souza) - 1.0
+
+
+
+Grupo 62
+
+
+(Aldo von Wangenheim : Ricardo Felipe Custodio) - 1.0
+
+
+
+Grupo 63
+
+
+(Jean Marie Alexandre Farines : Lau Cheuk Lung) - 2.0
+
+
+
+Grupo 64
+
+
+(Antonio Carlos Mariani : Raul Sidnei Wazlawick) - 2.0
+
+
+
+Grupo 65
+
+
+(Antonio Carlos Mariani : Walter de Abreu Cybis) - 1.0
+
+
+
+Grupo 66
+
+
+(Raul Sidnei Wazlawick : Walter de Abreu Cybis) - 1.0
+
+
+
+Grupo 67
+
+
+(Neri dos Santos : Fernando Alvaro Ostuni Gauthier) - 1.0
+
+
+
+Grupo 68
+
+
+(Carlos Barros Montez : Jomi Fred Hübner) - 1.0
+
+
+
+Grupo 69
+
+
+(Gregório Jean Varvakis Rados : Mario Antonio Ribeiro Dantas) - 1.0
+
+
+
+Grupo 70
+
+
+(Carlos Becker Westphall : João Bosco Mangueira Sobral) - 3.0
+
+
+
+Grupo 71
+
+
+(Carla Merkle Westphall : Paulo Jose de Freitas Filho) - 1.0
+
+
+
+Grupo 72
+
+
+(Ricardo José Rabelo : Rômulo Silva de Oliveira) - 1.0
+
+
+
+Grupo 73
+
+
+(Ricardo José Rabelo : Carlos Barros Montez) - 2.0
+
+
+
+Grupo 74
+
+
+(Ricardo José Rabelo : Frank Augusto Siqueira) - 2.0
+
+
+
+Grupo 75
+
+
+(Rômulo Silva de Oliveira : Frank Augusto Siqueira) - 1.0
+
+
+
+Grupo 76
+
+
+(Carlos Barros Montez : Frank Augusto Siqueira) - 1.0
+
+
+
+Grupo 77
+
+
+(Aldo von Wangenheim : Adriano Ferreti Borgatto) - 1.0
+
+
+
+Grupo 78
+
+
+(Rodrigo de Souza Vieira : Roberto Carlos dos Santos Pacheco) - 1.0
+
+
+
+Grupo 79
+
+
+(Rogerio Cid Bastos : Aldo von Wangenheim) - 1.0
+
+
+
+Grupo 80
+
+
+(Gregório Jean Varvakis Rados : Rogerio Cid Bastos) - 1.0
+
+
+
+Grupo 81
+
+
+(Fernando Alvaro Ostuni Gauthier : Silvia Modesto Nassar) - 2.0
+
+
+
+Grupo 82
+
+
+(Jorge Muniz Barreto : Jovelino Falqueto) - 1.0
+
+
+
+Grupo 83
+
+
+(Carlos Becker Westphall : Fernando Augusto da Silva Cruz) - 2.0
+
+
+
+Grupo 84
+
+
+(Carlos Barros Montez : Ricardo Felipe Custodio) - 1.0
+
+
+
+Grupo 85
+
+
+(Ricardo José Rabelo : Joni da Silva Fraga) - 3.0
+
+
+
+Grupo 86
+
+
+(Jean Marie Alexandre Farines : Carlos Alberto Maziero) - 1.0
+
+
+
+Grupo 87
+
+
+(Leandro Buss Becker : Alex Sandro Roschildt Pinto) - 1.0
+
+
+
+Grupo 88
+
+
+(Carlos Becker Westphall : Ricardo Felipe Custodio) - 1.0
+
+
+
+Grupo 89
+
+
+(Guilherme Bittencourt : Marcelo Ricardo Stemmer) - 1.0
+
+
+
+Grupo 90
+
+
+(Renato Fileto : Ricardo Azambuja Silveira) - 1.0
+
+
+
+Grupo 91
+
+
+(Alexandre Leopoldo Gonçalves : Neri dos Santos) - 1.0
+
+
+
+Grupo 92
+
+
+(Rômulo Silva de Oliveira : Luiz Cláudio Villar dos Santos) - 2.0
+
+
+
+Grupo 93
+
+
+(Rogerio Cid Bastos : Mario Antonio Ribeiro Dantas) - 1.0
+
+
+
+Grupo 94
+
+
+(Jorge Muniz Barreto : Aldo von Wangenheim) - 1.0
+
+
+
+Grupo 95
+
+
+(Lia Caetano Bastos : Roberto Willrich) - 1.0
+
+
+
+Grupo 96
+
+
+(Jorge Muniz Barreto : Renato Garcia Ojeda) - 1.0
+
+
+
+Grupo 97
+
+
+(Fernando Mendes de Azevedo : Renato Garcia Ojeda) - 1.0
+
+
+
+Grupo 98
+
+
+(Carlos Becker Westphall : Silvia Modesto Nassar) - 1.0
+
+
+
+Grupo 99
+
+
+(Alexandre Leopoldo Gonçalves : Jomi Fred Hübner) - 1.0
+
+
+
+Grupo 100
+
+
+(Gertrudes Aparecida Dandolini : Alexandre Leopoldo Gonçalves) - 1.0
+
+
+
+Grupo 101
+
+
+(Alexandre Leopoldo Gonçalves : João Artur de Souza) - 1.0
+
+
+
+Grupo 102
+
+
+(Luis Fernando Friedrich : Luiz Cláudio Villar dos Santos) - 1.0
+
+
+
+Grupo 103
+
+
+(Alexandre Leopoldo Gonçalves : Francisco Antonio Pereira Fialho) - 2.0
+
+
+
+Grupo 104
+
+
+(Raul Sidnei Wazlawick : Rogerio Cid Bastos) - 2.0
+
+
+
+Grupo 105
+
+
+(Joao Bosco da Mota Alves : Carlos Becker Westphall) - 1.0
+
+
+
+Grupo 106
+
+
+(Mario Antonio Ribeiro Dantas : Renato Fileto) - 2.0
+
+
+
+Grupo 107
+
+
+(Marcelo Ricardo Stemmer : Jomi Fred Hübner) - 2.0
+
+
+
+Grupo 108
+
+
+(Rogerio Cid Bastos : Manuel Rosa de Oliveira Lino) - 1.0
+
+
+
+Grupo 109
+
+
+(Joao Bosco da Mota Alves : Paulo Jose de Freitas Filho) - 1.0
+
+
+
+Grupo 110
+
+
+(Rogerio Cid Bastos : José Leomar Todesco) - 1.0
+
+
+
+Grupo 111
+
+
+(Rogerio Cid Bastos : Fernando Alvaro Ostuni Gauthier) - 1.0
+
+
+
+Grupo 112
+
+
+(Rodrigo de Souza Vieira : Neri dos Santos) - 1.0
+
+
+
+Grupo 113
+
+
+(Joao Bosco da Mota Alves : Vitório Bruno Mazzola) - 1.0
+
+
+
+Grupo 114
+
+
+(Paulo Jose de Freitas Filho : Silvia Modesto Nassar) - 2.0
+
+
+
+Grupo 115
+
+
+(Rogerio Cid Bastos : Paulo Mauricio Selig) - 1.0
+
+
+
+Grupo 116
+
+
+(Jean Everson Martina : Antonio Augusto Medeiros Fröhlich) - 1.0
+
+
+
+Grupo 117
+
+
+(Raul Sidnei Wazlawick : Neri dos Santos) - 1.0
+
+
+
+Grupo 118
+
+
+(Carina Friedrich Dorneles : Renato Fileto) - 1.0
+
+
+
+Grupo 119
+
+
+(Renato Fileto : Ronaldo dos Santos Mello) - 1.0
+
+
+
